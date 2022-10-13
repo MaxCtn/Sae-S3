@@ -1,0 +1,15 @@
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: #0071B9;
+    color: black;
+}
+
+.titre{
+    color: #FBBA00;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+}
