@@ -15,16 +15,18 @@
             <div id="overlay">
                 <div class="affiche">
                     <div class="enteteChoix">
-                        <h3>Réseaux</h3>
-                        <button>X</button>
+                        <h3 id="titre_choix"></h3>
+                        <button class="bouton_overlay" onclick="closeScreen()">X</button>
                     </div>
                     <div class="corpsChoix">
-                        <p>
+                        <p id="p_choix">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Fusce commodo quam nec ex bibendum sodales. Phasellus massa urna, finibus sit amet tortor eget, congue rutrum purus. 
                         Phasellus pellentesque mollis dolor. 
                         Mauris lacinia elementum nisl id luctus. 
-                        Mauris sollicitudin eleifend tellus, ac convallis risus gravida id. 
+                        Mauris sollicitudin eleifend tellus, ac convallis risus gravida id.
+                        </br>
+                        </br>
                         Sed eu tellus non leo finibus sodales et placerat odio. Donec commodo nulla quis pharetra semper. 
                         Sed eget risus sit amet ex mollis pharetra. Donec sed ante magna. In fringilla a quam non gravida. 
                         Fusce sit amet metus porttitor, congue est ultrices, vestibulum quam. Cras maximus aliquet nibh ac consequat.
@@ -38,16 +40,16 @@
             </div>
             <div class="ensembleBouton">
                 <div class="bouton">
-                    <button id="reseaux" onclick="setScreen()">Réseaux</button>
-                    <button>Web</button>
+                    <button id="reseaux" onclick="setScreen(this.id)">Réseaux</button>
+                    <button id="web" onclick="setScreen(this.id)">Web</button>
                 </div>
                 <div class="bouton">
-                    <button>Base de données</button>
-                    <button>Algorithmie</button>
+                    <button id="bd" onclick="setScreen(this.id)">Base de données</button>
+                    <button id="algo" onclick="setScreen(this.id)">Algorithmie</button>
                 </div>
                 <div class="bouton">
-                    <button>Système</button>
-                    <button>Je ne sais pas</button>
+                    <button id="systeme" onclick="setScreen(this.id)">Système</button>
+                    <button id="jsp" onclick="setScreen(this.id)">Je ne sais pas</button>
                 </div>
             </div>
         </div>
