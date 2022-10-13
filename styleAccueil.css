@@ -10,6 +10,7 @@
 }
 
 h1{
+    display: flex;
     padding: 5px;
     font-family: 'Open Sans Bold';
     font-size: 50px;
@@ -25,11 +26,22 @@ h2{
 header{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     background-color: #0071B9;
     color: black;
     padding: 10px;
     font-family: 'Open Sans';
+}
+
+.img_info{
+    display: flex;
+    justify-content: right;
+}
+
+.titre_info{
+    display: flex;
+    justify-content: right;
+    padding-right: 70%;
 }
 
 *{
