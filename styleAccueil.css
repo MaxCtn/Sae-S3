@@ -1,0 +1,105 @@
+@font-face{
+    font-family: 'Open Sans Regular';
+    src: url('./OpenSans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url('./OpenSans/OpenSans-Bold.ttf') format('truetype');
+}
+
+h1{
+    padding: 5px;
+    font-family: 'Open Sans Bold';
+    font-size: 50px;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #0071B9;
+    color: black;
+    padding: 10px;
+    font-family: 'Open Sans';
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans Regular';
+}
+
+.titre{
+    color: #FBBA00;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.presentation{
+    background-color: lightgrey;
+    color: black;
+    margin: 40px;
+    padding: 20px;
+    height: fit-content;
+    margin-top: 10%;
+    font-family: 'Open Sans Regular';
+}
+
+.boutton_droite{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+button {
+    background-color: #00B7E9;
+    /* bleu */
+    border-radius: 30px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    width: 250px;
+    height: 100px;
+    display: block;
+    font-family: 'Open Sans Bold';
+    
+}
+
+.boutton_droite > a {
+    margin: 5%;
+}
+
+a{
+    text-decoration: none;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:active {
+    background-color: #3e638e;
+    box-shadow: 0 5px rgb(102, 102, 102);
+    transform: translateY(4px);
+}
+
+body{
+    background-size: cover;
+    font-family: 'Open Sans';
+}

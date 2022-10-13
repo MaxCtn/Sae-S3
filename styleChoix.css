@@ -12,14 +12,19 @@
 h1{
     padding: 5px;
     font-family: 'Open Sans Bold';
-    font-size: 50px;
+    font-size: 25px;
 }
 
 h2{
     display: flex;
     justify-content: center;
     padding: 10px;
+    margin-top: 20px;
+    padding-left: 15%;
+    padding-right: 15%;
     text-align: center;
+    font-size: 60px;
+    font-family: 'Open Sans Bold';
 }
 
 header{
@@ -29,7 +34,9 @@ header{
     background-color: #0071B9;
     color: black;
     padding: 10px;
+    margin-right: 80%;
     font-family: 'Open Sans';
+    border-radius: 0px 0px 30px 0px;
 }
 
 *{
@@ -44,7 +51,7 @@ header{
 
 .menu{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .presentation{
@@ -57,16 +64,50 @@ header{
     font-family: 'Open Sans Regular';
 }
 
-.boutton_droite{
+.bouton{
     display: flex;
     flex-direction: column;
+    margin: 10px;
+    justify-content: space-around;
+}
+
+.ensembleBouton{
+    display: flex;
+    flex-direction: row;
     margin: 20px;
     padding: 20px;
     justify-content: space-around;
 }
 
-.boutton_droite > button{
+.bouton > button{
     margin: 20px;
+    margin-bottom: 40px;
+    padding: 20px;
+}
+
+#overlay{
+    position:absolute;
+    top:20%;
+    left:17%;
+    z-index:2;
+    display:none;
+    width:65%;
+    height:60%;
+    overflow:auto;
+    border-style:solid;
+    border-color:#909090;
+    border-width:1px;
+    background-color:#f0f0f0;
+}
+
+.affiche{
+    display: flex;
+    flex-direction: column;
+}
+
+.enteteChoix{
+    display: flex;
+    flex-direction: row;
 }
 
 button {
@@ -75,14 +116,24 @@ button {
     border-radius: 30px;
     border: none;
     color: white;
-    padding: 30px 50px;
+    /*padding: 30px 50px;*/
     text-align: center;
     text-decoration: none;
-    font-size: 25px;
-    width: 250px;
+    font-size: 35px;
+    width: 350px;
+    height: 100px;
     display: block;
+    text-align: center;
     font-family: 'Open Sans Bold';
     
+}
+
+.boutton_droite > a {
+    margin: 5%;
+}
+
+a{
+    text-decoration: none;
 }
 
 button:hover {
