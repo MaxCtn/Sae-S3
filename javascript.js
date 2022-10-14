@@ -17,9 +17,9 @@ function setScreen(spe){
     if(spe == 'systeme'){
         document.getElementById('titre_choix').innerHTML = "Qu'est ce que l'étude des système ?";
     }
-    document.getElementById('overlay').style.display='block'
+    document.getElementById('popup').style.display='block'
 }
 
 function closeScreen(){
-    document.getElementById('overlay').style.display='none'
+    document.getElementById('popup').style.display='none'
 }
