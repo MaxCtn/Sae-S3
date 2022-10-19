@@ -23,3 +23,7 @@ function setScreen(spe){
 function closeScreen(){
     document.getElementById('popup').style.display='none'
 }
+
+function formConfirme(){
+    document.getElementById('confirmeForm').style.display='flex';
+}

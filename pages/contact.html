@@ -14,25 +14,26 @@
                 <div class="rubrique_menu"><h1 class="a_propos">Nous contacter</h1></div>
             </div>
         </header>
+        <div id="confirmeForm">Votre formulaire à bien été envoyé</div>
         <div class="menu">
-            <div class="presentation">
+            <div class="presentation_form">
                 <div class="titre_mail">
                     Formulaire :
                 </div>
                 <div class="info_mail">
                     <div class="nom_prenom">
-                        <input type="text" placeholder="Nom">
-                        <input type="text" placeholder="Prenom">
+                        <input id="nom" type="text" placeholder="Nom">
+                        <input id="prenom" type="text" placeholder="Prenom">
                     </div>
                     <div class="mail">
-                        <input type="mail" placeholder="Adresse E-Mail">
+                        <input id="mail" type="mail" placeholder="Adresse E-Mail">
                     </div>
                 </div>
                 <div class="p_mail">
-                    <textarea placeholder="Qu'avez-vous pensés du jeu ?"></textarea>
+                    <textarea id="p_mail" placeholder="Qu'avez-vous pensés du jeu ?"></textarea>
                 </div>
                 <div class="valide_form">
-                    <button id="valideChoix">Valider</button>
+                    <button id="valideChoix" onclick="formConfirme()">Valider</button>
                 </div>
             </div>
         </div>
