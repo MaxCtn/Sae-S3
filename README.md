@@ -1,2 +1,2 @@
 # Sae-S3
-Contino/Toureille/Albertelli/Lecompte/Vigon
+Contino/Toureille/Albertelli/Lecomte/Vigon
