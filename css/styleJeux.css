@@ -1,0 +1,124 @@
+@font-face{
+    font-family: 'Open Sans Regular';
+    src: url('../OpenSans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url('../OpenSans/OpenSans-Bold.ttf') format('truetype');
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Open Sans Bold';
+}
+
+.affichage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.affichage_gauche{
+    display: flex;
+    flex-direction: column;
+}
+
+.affichage_droite{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.entete{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: #0071B9;
+    color: black;
+    padding: 10px;
+    font-family: 'Open Sans Bold';
+    border-radius: 0px 0px 0px 30px;
+}
+
+.titre{
+    color:#FBBA00;
+    padding-right: 10px;
+}
+
+.corps_question{
+    margin-right: 100px;
+}
+
+.num_question{
+    font-family: 'Open Sans Regular';
+    font-size: 40px;
+}
+
+.question{
+    display:flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.reponse{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 200px;
+    width: 550px;
+}
+
+.reponseLigne{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.soumettre{
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: #00B7E9;
+    /* bleu */
+    border-radius: 40px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 35px;
+    width: 250px;
+    height: 75px;
+    display: block;
+    font-family: 'Open Sans Bold';
+    
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:active {
+    background-color: #3e638e;
+    box-shadow: 0 5px rgb(102, 102, 102);
+    transform: translateY(4px);
+}
+
+#soumettre{
+    background-color: #0071B9;
+    color: #FBBA00; 
+}
