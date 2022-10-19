@@ -27,6 +27,11 @@ h2{
     font-family: 'Open Sans Bold';
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 header{
     display: flex;
     flex-direction: row;
