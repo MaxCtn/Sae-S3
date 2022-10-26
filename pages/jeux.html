@@ -28,20 +28,20 @@
                 </div>
                 <div class="corps_question">
                     <div class="question">
-                        <h2>Emplacement de la question ?</h2>
+                        <h2>Cliquez sur oui</h2>
                     </div>
                     <div class="reponse">
                         <div class="reponseLigne">
-                            <button>Réponse 1</button>
-                            <button>Réponse 2</button>
+                            <button id="rep1" style="background-color: #00B7E9;" onclick="reponseQuestion(this.id)">non</button>
+                            <button id="rep2" style="background-color: #00B7E9;" onclick="reponseQuestion(this.id)">oui</button>
                         </div>
                         <div class="reponseLigne">
-                            <button>Réponse 3</button>
-                            <button>Réponse 4</button>
+                            <button id="rep3" style="background-color: #00B7E9;" onclick="reponseQuestion(this.id)">non</button>
+                            <button id="rep4" style="background-color: #00B7E9;" onclick="reponseQuestion(this.id)">non</button>
                         </div>
                     </div>
                     <div class="soumettre">
-                        <button id="soumettre">Valider</button>
+                        <button id="soumettre" onclick="resultatReponse(this.id)">Valider</button>
                     </div>
                 </div>
             </div>
