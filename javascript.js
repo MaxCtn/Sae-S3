@@ -81,7 +81,7 @@ function valideReponse(){  // fonction gérant la réponse validée par l'utilis
             stringRep = document.getElementById('rep3').innerHTML;
     if(colBout4 == "rgb(255, 165, 0)")
             stringRep = document.getElementById('rep4').innerHTML;
-    return stringRep; 
+    return stringRep;
 }
 
 function resultatReponse(idRep){
@@ -94,5 +94,114 @@ function resultatReponse(idRep){
         document.getElementById('rep1').style.backgroundColor = 'red';
         document.getElementById('rep3').style.backgroundColor = 'red';
         document.getElementById('rep4').style.backgroundColor = 'red';
+    }
+}
+
+const myQuestions = [
+    {
+      question: "Lequel des ces langages est un langage balisé ?",
+      answers: {
+        a: "C++",
+        b: "Java",
+        c: "HTML",
+        d: "C#"
+      },
+      correctAnswer: "c"
+    }
+    /*{
+      question: "Dans le But, une ressource correspond à ",
+      answers: {
+        a: "une matière",
+        b: "des références",
+        c: "un cours magistral",
+        d: "une documentation"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Combien y'a t'il de compétences a valider?",
+      answers: {
+        a: "4",
+        b: "6",
+        c: "8",
+        d: "100"
+      },
+      correctAnswer: "b"
+    }*/
+  ];
+
+var quizContainer = document.getElementById('corps_question');
+var resultsContainer = document.getElementById('question');
+var submitButton = document.getElementById('soumettre');
+
+function generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton){
+
+    function showQuestions(questions, quizContainer){
+        // we'll need a place to store the output and the answer choices
+        var output = [];
+        var answers;
+
+        // for each question...
+        for(var i=0; i<questions.length; i++){
+            
+            // first reset the list of answers
+            answers = [];
+
+            // for each available answer to this question...
+            for(letter in questions[i].answers){
+
+                // ...add an html radio button
+                answers.push(
+                    '<button id="rep1" style="background-color: #00B7E9;" onclick="reponseQuestion(this.id)">' + questions[i].answers[letter] +'</button>'
+                );
+            }
+
+            // add this question and its answers to the output
+            output.push(
+                '<div class="question">' + questions[i].question + '</div>'
+                + '<div class="reponse">' + answers.join('') + '</div>'
+            );
+        }
+
+        // finally combine our output list into one string of html and put it on the page
+        quizContainer.innerHTML = output.join('');
+    }
+
+    function showResults(questions, quizContainer, resultsContainer){
+        
+        // gather answer containers from our quiz
+        var answerContainers = quizContainer.querySelectorAll('.answers');
+        
+        // keep track of user's answers
+        var userAnswer = '';
+        var numCorrect = 0;
+        
+        // for each question...
+        for(var i=0; i<questions.length; i++){
+
+            // find selected answer
+            userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+            
+            // if answer is correct
+            if(userAnswer===questions[i].correctAnswer){
+                // add to the number of correct answers
+                numCorrect++;
+                
+                // color the answers green
+                answerContainers[i].style.color = 'lightgreen';
+            }
+            // if answer is wrong or blank
+            else{
+                // color the answers red
+                answerContainers[i].style.color = 'red';
+            }
+        }
+
+        // show number of correct answers out of total
+        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+    }
+
+    submitButton.onclick = function(){
+        showResults(questions, quizContainer, resultsContainer);
     }
 }
