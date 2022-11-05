@@ -187,7 +187,7 @@ button:active {
 
 .presentation_form{
     display: flex;
-    background-color: lightgrey;
+    background-color: blue;
     color: black;
     justify-content: center;
     flex-direction: column;
