@@ -16,17 +16,20 @@
 
 body{
     font-family: 'Open Sans Bold';
+    height: 50%;
 }
 
 .affichage{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 45em;
 }
 
 .affichage_gauche{
     display: flex;
     flex-direction: column;
+    height: 80%;
 }
 
 .affichage_droite{
@@ -34,6 +37,8 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    height: 80%;
+
 }
 
 .entete{
@@ -60,6 +65,7 @@ header{
 
 .corps_question{
     margin-right: 100px;
+    height: 100%;
 }
 
 .num_question{
@@ -77,8 +83,8 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 200px;
-    width: 550px;
+    height: 350px;
+    width: 800px;
     margin-top: 100px;
     margin-bottom: 30px;
 }
@@ -102,12 +108,11 @@ button {
     color: white;
     text-align: center;
     text-decoration: none;
-    font-size: 35px;
-    width: 250px;
-    height: 75px;
+    font-size: 25px;
+    width: 350px;
+    height: 100px;
     display: block;
     font-family: 'Open Sans Bold';
-    
 }
 
 button:hover {
@@ -123,4 +128,76 @@ button:active {
 #soumettre{
     background-color: #0071B9;
     color: #FBBA00;
+    width: 250px;
+    height: 75px;
+}
+
+
+
+
+
+#boiteCarteAideBot{
+    margin-right: 40%;
+    margin-bottom: 100%;
+    justify-content: space-between;
+    
+}
+
+#aideBot{
+    position:fixed;
+    top:92%;
+    left:0;
+    width:500px;
+    border-radius:10 px;
+}
+
+#chatBot{
+    background-color: grey;
+    height:0px;
+}
+
+#barreNavBot{
+    background-color: #303030;
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+/*#ouvrirBot{
+    border : none;
+    background-color: #303030;
+    border-top-right-radius: 100 px;
+}*/
+
+#titreBot{
+    color:white;
+    margin-left: 10px;
+    font-family:impact;
+}
+
+.logoBouttonBot{
+    width:20%;
+    height: auto;
+}
+
+
+
+
+#logoBouttonBotBas{
+   display: none;
+}
+
+#test{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+#tempsRestant{
+    color:white;
+}
+
+#AHA{
+   height:auto;
+   width:2000%;  
 }
