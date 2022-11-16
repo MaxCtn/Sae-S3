@@ -27,6 +27,10 @@ h1{
     width: 400px;
 }
 
+#video{
+    padding: 15px;
+}
+
 h2{
     display: flex;
     justify-content: center;
@@ -80,7 +84,7 @@ header{
     padding: 20px;
     height: fit-content;
     width: fit-content;
-    margin-top: 10%;
+    margin-top: 5%;
     font-family: 'Open Sans Regular';
 }
 
@@ -187,7 +191,7 @@ button:active {
 
 .presentation_form{
     display: flex;
-    background-color: blue;
+    background-color: lightgrey;
     color: black;
     justify-content: center;
     flex-direction: column;

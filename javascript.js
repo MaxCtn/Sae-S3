@@ -26,28 +26,62 @@ function setScreen(spe){ // fonction ouvrant l'overlay et affichant des paragrap
     document.getElementById('popup').style.display='block';
 }
 
+
+
+
+
+
+
 function closeScreen(){ // fonction fermant l'overlay (page choix spe)
     document.getElementById('popup').style.display='none';
 }
+
+
+
 
 function formConfirme(){ // fonction ouvrant l'overlay (page formulaire)
     document.getElementById('confirmeForm').style.display='flex';
 }
 
+
+
+
+
 const question={
     question : "Cliquez sur oui",
-    reponsePossible : ["non","non","oui","non"],
+    sPossible : ["non","non","oui","non"],
     bonneReponse : "oui"
 };
 
-function reponseQuestion(idRep){ // fonction gestion des la couleur des boutons selectionnés
+
+
+
+function gestionReponseSelectionne(idBoiteRep
+    
+    
+    
+    
+    
+    
+    
+    
+    ){ // fonction gestion des la couleur des boutons selectionnés
     var colBout1 = document.getElementById('rep1').style.backgroundColor;
     var colBout2 = document.getElementById('rep2').style.backgroundColor;
     var colBout3 = document.getElementById('rep3').style.backgroundColor;
     var colBout4 = document.getElementById('rep4').style.backgroundColor;
     var couleurBoutons = [colBout1,colBout2,colBout3,colBout4];
 
-    var s = document.getElementById(idRep).style.backgroundColor;
+    var s = document.getElementById(idBoiteRep
+        
+        
+        
+        
+        
+        
+        
+        
+        ).style.backgroundColor;
     if(s == "rgb(0, 183, 233)"){
         if(colBout1 == "rgb(255, 165, 0)")
             document.getElementById('rep1').style.backgroundColor='#00B7E9';
@@ -57,19 +91,42 @@ function reponseQuestion(idRep){ // fonction gestion des la couleur des boutons 
             document.getElementById('rep3').style.backgroundColor='#00B7E9';
         if(colBout4 == "rgb(255, 165, 0)")
             document.getElementById('rep4').style.backgroundColor='#00B7E9';
-        document.getElementById(idRep).style.backgroundColor='#FFA500'; 
+        document.getElementById(idBoiteRep
+            
+            
+            
+            
+            
+            
+            
+            
+            ).style.backgroundColor='#FFA500'; 
     }
     else if(s == "rgb(255, 165, 0)"){
-        document.getElementById(idRep).style.backgroundColor='#00B7E9';
+        document.getElementById(idBoiteRep
+            
+            
+            
+            
+            
+            
+            
+            
+            ).style.backgroundColor='#00B7E9';
     }
 }
 
-function valideReponse(){  // fonction gérant la réponse validée par l'utilisateur
+
+
+
+
+function valideReponse(){  
+    // fonction gérant la réponse validée par l'utilisateur
     var colBout1 = document.getElementById('rep1').style.backgroundColor;
     var colBout2 = document.getElementById('rep2').style.backgroundColor;
     var colBout3 = document.getElementById('rep3').style.backgroundColor;
     var colBout4 = document.getElementById('rep4').style.backgroundColor;
-    var couleurBoutons = [colBout1,colBout2,colBout3,colBout4];
+    //var couleurBoutons = [colBout1,colBout2,colBout3,colBout4];
     
     var stringRep;
 
@@ -84,124 +141,174 @@ function valideReponse(){  // fonction gérant la réponse validée par l'utilis
     return stringRep;
 }
 
-function resultatReponse(idRep){
-    stringRep = valideReponse();
-    if(stringRep == "oui"){
-        document.getElementById('rep2').style.backgroundColor = 'green';
-    }
-    else if(stringRep == "non"){
-        document.getElementById('rep2').style.backgroundColor = 'green';
-        document.getElementById('rep1').style.backgroundColor = 'red';
-        document.getElementById('rep3').style.backgroundColor = 'red';
-        document.getElementById('rep4').style.backgroundColor = 'red';
-    }
+function changeQuestionReponse(){  // fonction gérant la réponse validée par l'utilisateur
+
+    document.getElementById('questionPosee').innerHTML = "question 2";
+    document.getElementById('rep1').innerHTML = "ouistiti";
+    document.getElementById('rep2').innerHTML = "ouistito";
+    document.getElementById('rep3').innerHTML = "ouistita";
+    document.getElementById('rep4').innerHTML = "ouistity";
+     
+   
+}
+function changeAideQuestion(aides, indiceRep){  // fonction gérant la réponse validée par l'utilisateur
+    aideQuestion = aides[indiceRep];
+    //alert(aideQuestion);
+    document.getElementById('chatBot').innerHTML = aideQuestion;
+    
+     
+   
 }
 
-const myQuestions = [
-    {
-      question: "Lequel des ces langages est un langage balisé ?",
-      answers: {
-        a: "C++",
-        b: "Java",
-        c: "HTML",
-        d: "C#"
-      },
-      correctAnswer: "c"
-    }
-    /*{
-      question: "Dans le But, une ressource correspond à ",
-      answers: {
-        a: "une matière",
-        b: "des références",
-        c: "un cours magistral",
-        d: "une documentation"
-      },
-      correctAnswer: "a"
-    },
-    {
-      question: "Combien y'a t'il de compétences a valider?",
-      answers: {
-        a: "4",
-        b: "6",
-        c: "8",
-        d: "100"
-      },
-      correctAnswer: "b"
-    }*/
-  ];
 
-var quizContainer = document.getElementById('corps_question');
-var resultsContainer = document.getElementById('question');
-var submitButton = document.getElementById('soumettre');
 
-function generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton){
 
-    function showQuestions(questions, quizContainer){
-        // we'll need a place to store the output and the answer choices
-        var output = [];
-        var answers;
 
-        // for each question...
-        for(var i=0; i<questions.length; i++){
-            
-            // first reset the list of answers
-            answers = [];
+function resultatValidage(idBoiteRep){
+   
+   // alert(indiceRep);
+    var colBout1 = document.getElementById('rep1').style.backgroundColor;
+    var colBout2 = document.getElementById('rep2').style.backgroundColor;
+    var colBout3 = document.getElementById('rep3').style.backgroundColor;
+    var colBout4 = document.getElementById('rep4').style.backgroundColor;
+    
+    var questions = [['Quelle est l’objectif d’une saé?','Mettre en pratique les connaissances liées à une compétence',
+    'bon','Savoir réaliser un projet en autonomie complète',
+    'mauvais','Acquérir un grand nombre de connaissance théorique','mauvais','Donner les connaissances nécessaires a la création d une entreprise','mauvais'],
 
-            // for each available answer to this question...
-            for(letter in questions[i].answers){
+    ['Dans le But, une ressource correspond à ','une matière','bon','des références','mauvais','un cours magistral ',
+    'mauvais','une documentation','mauvais'],
 
-                // ...add an html radio button
-                answers.push(
-                    '<button id="rep1" style="background-color: #00B7E9;" onclick="reponseQuestion(this.id)">' + questions[i].answers[letter] +'</button>'
-                );
+
+    ['Un ORE peut s apparenter à','une aide aux devoir','mauvais',
+    'intervenir auprès des premières années ','mauvais','un exercice de prise de parole à l oral ',
+    'mauvais','non3','bon'],
+   
+   
+    ['question 4','oui4','bon','non4','mauvais','non4','mauvais','non4','mauvais']]; 
+
+
+
+    var aides = ['c est un projet collaboratif',
+    'Elle fait l objet de partiels',
+     'on s en sert nottament pour s entrainer avant un partiel' ];
+
+    let indiceRep =  parseInt(document.getElementById('num').innerHTML);
+    var bonRep = "oui"; //pour la premiere question
+    var aideQuestion; //aide affichée dans le chatBot
+
+
+    //a faire en fonction
+    var indiceBonRep;
+    if (indiceRep > 0) {
+        for(let i = 1; i<9; ++i) {
+            if(questions[indiceRep-1][i] == 'bon') {
+                indiceBonRep = i -1;
             }
 
-            // add this question and its answers to the output
-            output.push(
-                '<div class="question">' + questions[i].question + '</div>'
-                + '<div class="reponse">' + answers.join('') + '</div>'
-            );
         }
-
-        // finally combine our output list into one string of html and put it on the page
-        quizContainer.innerHTML = output.join('');
+        bonRep = questions[indiceRep-1][indiceBonRep];
+      
     }
 
-    function showResults(questions, quizContainer, resultsContainer){
-        
-        // gather answer containers from our quiz
-        var answerContainers = quizContainer.querySelectorAll('.answers');
-        
-        // keep track of user's answers
-        var userAnswer = '';
-        var numCorrect = 0;
-        
-        // for each question...
-        for(var i=0; i<questions.length; i++){
+    //
+    // console.log(questions[indiceRep].length);
+    if (document.getElementById('soumettre').innerHTML == "Valider") {
+        stringRep = valideReponse();
+        if(stringRep == bonRep){
 
-            // find selected answer
-            userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-            
-            // if answer is correct
-            if(userAnswer===questions[i].correctAnswer){
-                // add to the number of correct answers
-                numCorrect++;
+            if (document.getElementById('rep1').innerHTML == bonRep) {
+                document.getElementById('rep1').style.backgroundColor = 'green';
+            }
+            else if (document.getElementById('rep2').innerHTML == bonRep) {
+                document.getElementById('rep2').style.backgroundColor = 'green';
+            }
+            else if (document.getElementById('rep3').innerHTML == bonRep) {
+                document.getElementById('rep3').style.backgroundColor = 'green';
+            }
+            else if (document.getElementById('rep4').innerHTML == bonRep) {
+                document.getElementById('rep4').style.backgroundColor = 'green';
+            }
                 
-                // color the answers green
-                answerContainers[i].style.color = 'lightgreen';
-            }
-            // if answer is wrong or blank
-            else{
-                // color the answers red
-                answerContainers[i].style.color = 'red';
-            }
         }
+        else {
+            document.getElementById('rep2').style.backgroundColor = 'red';
+            document.getElementById('rep1').style.backgroundColor = 'red';
+            document.getElementById('rep3').style.backgroundColor = 'red';
+            document.getElementById('rep4').style.backgroundColor = 'red';
+            for(let numRep = 1; numRep < 5; ++numRep)
+                if(document.getElementById('rep' + numRep.toString()).innerHTML == bonRep) {
+                    document.getElementById('rep' + numRep.toString()).style.backgroundColor = 'green';
+                }
 
-        // show number of correct answers out of total
-        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+            
+
+        }
+        
+        document.getElementById('soumettre').innerHTML ="Continuer";
+    }
+    else {
+        //remet a zero()
+
+
+        document.getElementById('rep1').style.backgroundColor = '#00B7E9';
+        document.getElementById('rep2').style.backgroundColor = '#00B7E9';
+        document.getElementById('rep3').style.backgroundColor = '#00B7E9';
+        document.getElementById('rep4').style.backgroundColor = '#00B7E9';
+        document.getElementById('soumettre').innerHTML ="Valider";
+        document.getElementById('questionPosee').innerHTML = questions[indiceRep][0];
+        document.getElementById('rep1').innerHTML = questions[indiceRep][1];
+        document.getElementById('rep2').innerHTML = questions[indiceRep][3];
+        document.getElementById('rep3').innerHTML = questions[indiceRep][5];
+        document.getElementById('rep4').innerHTML = questions[indiceRep][7];
+        //changeQuestionReponse();
+        document.getElementById('num').innerHTML = parseInt(document.getElementById('num').innerHTML) + 1;
+
+        fermerBot();
+        changeAideQuestion(aides,indiceRep);
+        ouvrirBot();
+
     }
 
-    submitButton.onclick = function(){
-        showResults(questions, quizContainer, resultsContainer);
+    
+    
+}
+
+
+
+
+
+//Partie permettant l'ouverture et la fermeture de l'onglet du bot d'aide
+let chat = false;
+function fermerBot() {
+        document.getElementById("logoBouttonBotHaut").style.display = "initial";
+        document.getElementById("logoBouttonBotBas").style.display = "none";
+        document.getElementById("chatBot").style.height -= 100 + "px";
+        document.getElementById("aideBot").style.top = 92 + "%";
+        chat = false;
+}
+
+function ouvrirBot() {
+    setTimeout(function(){
+        chat = true;
+        document.getElementById("logoBouttonBotHaut").style.display = "none";
+        document.getElementById("logoBouttonBotBas").style.display = "initial"; 
+        document.getElementById("chatBot").style.height += 100 + "px";
+        document.getElementById("aideBot").style.top = 75 + "%";
+    }, 5000);
+    
+}
+
+function ouvrirFermerBot () {
+    if (chat === true){
+        fermerBot();
+        //code permettant l'indice
+    }else{
+        ouvrirBot();
+        //code permettant l'indice
     }
 }
+
+
+
+
