@@ -79,13 +79,13 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                         <div class="reponseLigne">
                             <?php $nombre =0; ?>
                             
-                            <button id="rep1" style="background-color: #00B7E9; width: 20em;" onclick="gestionReponseSelectionne(this.id)">non</button>
+                            <button id="rep1" style="background-color: #00B7E9; width: 350px;" onclick="gestionReponseSelectionne(this.id)">non</button>
                             
-                            <button id="rep2" style="background-color: #00B7E9; width: 20em;" onclick="gestionReponseSelectionne(this.id)">non</button>
+                            <button id="rep2" style="background-color: #00B7E9; width: 350px;" onclick="gestionReponseSelectionne(this.id)">non</button>
                         </div>
                         <div class="reponseLigne">
-                            <button id="rep3" style="background-color: #00B7E9; width: 20em;" onclick="gestionReponseSelectionne(this.id)">oui</button>
-                            <button id="rep4" style="background-color: #00B7E9; width: 20em;" onclick="gestionReponseSelectionne(this.id)">non</button>
+                            <button id="rep3" style="background-color: #00B7E9; width: 350px;" onclick="gestionReponseSelectionne(this.id)">oui</button>
+                            <button id="rep4" style="background-color: #00B7E9; width: 350px;" onclick="gestionReponseSelectionne(this.id)">non</button>
                         </div>
                     </div>
                     <div class="soumettre">

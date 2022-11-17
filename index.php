@@ -24,7 +24,7 @@ function start_index() {
                 </div>
                 <div class="boutton_droite">
                     <a href="./pages/choixSpe.php"><button id="jouer">Jouer</button></a>
-                    <a href="./pages/choixSpe.php"><button id="classement">classement</button></a>
+                    <a href="./pages/classement.php"><button id="classement">classement</button></a>
                     <a href="./pages/info.php"><button id="infos">Infos</button></a>
                     <a href="./pages/contact.php"><button id="contact">Nous contacter</button></a>
                 </div> 
