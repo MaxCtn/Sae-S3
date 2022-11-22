@@ -21,9 +21,10 @@ h1{
     font-size: 50px;
 }
 
-
-#video{
-    padding: 15px;
+.a_propos {
+    justify-content: center;
+    max-height: 64px;
+    width: 400px;
 }
 
 h2{
@@ -59,9 +60,6 @@ header{
     font-family: 'Open Sans Regular';
 }
 
-.titre{
-    color: #FBBA00;
-}
 
 .menu{
     display: flex;
@@ -83,14 +81,6 @@ header{
     font-family: 'Open Sans Regular';
 }
 
-.boutton_droite{
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    padding: 20px;
-    justify-content: space-around;
-}
-
 button {
     background-color: #00B7E9;
     /* bleu */
@@ -109,24 +99,6 @@ button {
     
 }
 
-.boutton_droite > a {
-    margin: 5%;
-}
-
-#valideChoix{
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    border-style: solid;
-    border-color: black;
-    border-radius: 0px;
-    color: black;
-    width: 200px;
-    height: 35px;
-    font-size: 20px;
-    font-family: 'Open Sans Regular';
-    margin: 5%;
-}
 
 a{
     text-decoration: none;
@@ -141,77 +113,6 @@ button:active {
     background-color: #3e638e;
     box-shadow: 0 5px rgb(102, 102, 102);
     transform: translateY(4px);
-}
-
-/* Page Contact */
-
-.nom_prenom{
-    padding-bottom: 10px;
-}
-
-#nom{
-    margin-right: 30px;
-    padding: 10px;
-    border:none;
-}
-
-#prenom{
-    padding: 10px;
-    border: none;
-}
-
-#mail{
-    padding: 10px;
-    padding-right: 30%;
-    margin-bottom: 10px;
-    border: none;
-}
-
-.valide_form{
-    display: flex;
-    justify-content: center;
-}
-
-#p_mail{
-    border: none;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 30%;
-    width: 95%;
-}
-
-.titre_mail{
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    padding: 10px;
-}
-
-.presentation_form{
-    display: flex;
-    background-color: lightgrey;
-    color: black;
-    justify-content: center;
-    flex-direction: column;
-    margin: 40px;
-    padding: 20px;
-    height: fit-content;
-    width: 50%;
-    margin-top: 10%;
-    font-family: 'Open Sans Regular';
-}
-
-#confirmeForm{
-    display: none;
-    background-color: #0071B9;
-    color: white;
-    position:absolute;
-    top:20%;
-    left:17%;
-    z-index:2;
-    overflow:auto;
-    padding: 10px;
-    justify-content: left;
 }
 
 /*responsive*/
@@ -230,24 +131,14 @@ button:active {
         justify-content: center;
     }
     .menu2 {
+        display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    #video{
-        display: flex;
-        justify-content: center;
-        padding: 0px;
-    }
+  
     .presentation {
         margin: 0%;
         width: auto;
-    }
-    .boutton_droite{
-        margin: 10px;
-        padding: 10px;
-        /*justify-content:space-between;*/
-        flex-direction: row;
-        max-width: 920px;
     }
 
     button {
@@ -265,9 +156,26 @@ button:active {
         font-family: 'Open Sans Bold';
         
     }
+    p {
+        font-size: small;
+    }
+    .rubrique_menu {
+        width: 15%;
+
+    }
+    #return {
+        width: 70%;
+    }
+
+    .a_propos {
+        width: 500%;
+        display: flex;
+        justify-content: center;
+        font-size: 200%;
+    }
 }
 
-@media screen and (min-width: 750px){
+@media screen and (min-width: 751px){
     .menu2 {
         display: none;
     }

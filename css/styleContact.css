@@ -21,9 +21,10 @@ h1{
     font-size: 50px;
 }
 
-
-#video{
-    padding: 15px;
+.contact_titre {
+    justify-content: center;
+    max-height: 64px;
+    width: 400px;
 }
 
 h2{
@@ -59,36 +60,10 @@ header{
     font-family: 'Open Sans Regular';
 }
 
-.titre{
-    color: #FBBA00;
-}
-
 .menu{
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
-
-.presentation{
-    display: flex;
-    background-color: lightgrey;
-    color: black;
-    justify-content: center;
-    flex-direction: column;
-    margin: 40px;
-    padding: 20px;
-    height: fit-content;
-    width: fit-content;
-    margin-top: 5%;
-    font-family: 'Open Sans Regular';
-}
-
-.boutton_droite{
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    padding: 20px;
-    justify-content: space-around;
 }
 
 button {
@@ -107,10 +82,6 @@ button {
     transition: box-shadow 0.3s ease-in;
 
     
-}
-
-.boutton_droite > a {
-    margin: 5%;
 }
 
 #valideChoix{
@@ -162,7 +133,6 @@ button:active {
 
 #mail{
     padding: 10px;
-    padding-right: 30%;
     margin-bottom: 10px;
     border: none;
 }
@@ -218,6 +188,28 @@ button:active {
 
 @media screen and (max-width: 750px){
 
+    #prenom{
+        width: 75%;
+    }
+
+    #nom{
+        width: 75%;
+    }
+
+    .nom_prenom{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #p_mail{
+        width: 75%;
+    }
+
+    .presentation_form{
+        margin: 0%;
+        width:100%;
+    }
+
     h1{
         font-size: 180%;
     }
@@ -230,24 +222,9 @@ button:active {
         justify-content: center;
     }
     .menu2 {
+        display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-    #video{
-        display: flex;
-        justify-content: center;
-        padding: 0px;
-    }
-    .presentation {
-        margin: 0%;
-        width: auto;
-    }
-    .boutton_droite{
-        margin: 10px;
-        padding: 10px;
-        /*justify-content:space-between;*/
-        flex-direction: row;
-        max-width: 920px;
     }
 
     button {
@@ -264,6 +241,24 @@ button:active {
         display: block;
         font-family: 'Open Sans Bold';
         
+    }
+
+    #nom{
+        margin-bottom: 5%;
+    }
+
+    .rubrique_menu {
+        width: 15%;
+
+    }
+    #return {
+        width: 70%;
+    }
+    .contact_titre {
+        width: 500%;
+        display: flex;
+        justify-content: center;
+        font-size: 160%;
     }
 }
 
