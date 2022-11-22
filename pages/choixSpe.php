@@ -6,6 +6,7 @@
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleChoix.css">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     </head>
     <body>
         <header>
@@ -32,7 +33,7 @@
                         Sed eget risus sit amet ex mollis pharetra. Donec sed ante magna. In fringilla a quam non gravida. 
                         Fusce sit amet metus porttitor, congue est ultrices, vestibulum quam. Cras maximus aliquet nibh ac consequat.
                         </p>
-                        <a href="./jeux.php"><button id="valideChoix">Valider mon choix</button></a>
+                        <a id="jeux" href="./jeux.php"><button id="valideChoix">Valider mon choix</button></a>
                     </div>
                 </div>
             </div>
@@ -40,6 +41,21 @@
                 <h2>Vers quel domaine pensez-vous vous diriger ?</h2>
             </div>
             <div class="ensembleBouton">
+                <div class="bouton">
+                    <button id="reseaux" onclick="setScreen(this.id)">Réseaux</button>
+                    <button id="web" onclick="setScreen(this.id)">Web</button>
+                </div>
+                <div class="bouton">
+                    <button id="bd" onclick="setScreen(this.id)">Base de données</button>
+                    <button id="algo" onclick="setScreen(this.id)">Programmation</button>
+                </div>
+                <div class="bouton">
+                    <button id="systeme" onclick="setScreen(this.id)">Système</button>
+                    <button id="jsp" onclick="setScreen(this.id)">Je ne sais pas</button>
+                </div>
+            </div>
+
+            <div class="ensembleBouton2">
                 <div class="bouton">
                     <button id="reseaux" onclick="setScreen(this.id)">Réseaux</button>
                     <button id="web" onclick="setScreen(this.id)">Web</button>

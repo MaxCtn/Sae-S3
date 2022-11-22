@@ -109,6 +109,8 @@ button {
     height: 100px;
     display: block;
     font-family: 'Open Sans Bold';
+    transition: box-shadow 0.3s ease-in;
+
     
 }
 
@@ -137,6 +139,7 @@ a{
 
 button:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.3s ease-in;
 }
 
 button:active {
@@ -214,4 +217,64 @@ button:active {
     overflow:auto;
     padding: 10px;
     justify-content: left;
+}
+
+/*responsive*/
+
+@media screen and (max-width: 750px){
+
+    h1{
+        font-size: 180%;
+    }
+    h2 {
+        font-size: 130%;
+    }
+    .menu{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .menu2 {
+        flex-direction: column;
+        justify-content: center;
+    }
+    #video{
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+    }
+    .presentation {
+        margin: 0%;
+        width: auto;
+    }
+    .boutton_droite{
+        margin: 10px;
+        padding: 10px;
+        /*justify-content:space-between;*/
+        flex-direction: row;
+        max-width: 920px;
+    }
+
+    button {
+        background-color: #00B7E9;
+        /* bleu */
+        border-radius: 30px;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        width: 130px;
+        height: 70px;
+        display: block;
+        font-family: 'Open Sans Bold';
+        
+    }
+}
+
+@media screen and (min-width: 750px){
+    .menu2 {
+        display: none;
+    }
+   
 }

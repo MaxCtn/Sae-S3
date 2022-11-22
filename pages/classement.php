@@ -5,27 +5,65 @@ function start_classement() {
     ?><!DOCTYPE html>
     <html>
         <head>
-            <title>BackToBachelor - Accueil</title>  
+            <title>BackToBachelor - Classement</title>  
             <script src="./javascript.js"></script>
-            <link rel="stylesheet" href="../css/styleAccueil.css">
+            <link rel="stylesheet" href="../css/styleClassement.css">
             <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         </head>
         <body>
-            <header>
-                <h1 class="titre">Nom </h1>
-                <h1> du jeux</h1>
-            </header>
-            <div class="menu">
-                <div class="presentation">
-                    <h2>
-                        Présentation du BUT
-                    </h2>
-                    <div id="video"><iframe width="850" height="500" src="https://www.youtube.com/embed/XT-J08QxA68" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                </div>
+        <header>
+            <div class="entete_info">
+                <div class="rubrique_menu"><a href="../index.php"><img id="return" src="../images/maison.png"></a></div>
+                <div class="rubrique_menu"><h1 class="classement_titre">Classement</h1></div>
             </div>
-        
-
-
+        </header>
+        <div class="menu">
+            <table id="classement_tab">
+                <tr id="premiere_ligne">
+                    <th>#</th>
+                    <th>Pseudo</th>
+                    <th>Temps</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                </tr>
+                <tr>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                    <td>.</td>
+                </tr>
+            </table>
+        </div>
         </body>
     </html>
 <?php } ?>
