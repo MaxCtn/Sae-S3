@@ -1,12 +1,12 @@
 <?php function start_choix_spe() { ?>
     <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <title>BackToBachelor - Choix spécialitée</title>
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleChoix.css">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     </head>
     <body>
         <header>
@@ -17,7 +17,7 @@
             <div id="popup">
                 <div class="affiche">
                     <div class="enteteChoix">
-                        <h3 id="titre_choix"></h3>
+                        <h3 id="titre_choix">.</h3>
                         <button class="bouton_popup" onclick="closeScreen(popup)">X</button>
                     </div>
                     <div class="corpsChoix">
@@ -27,13 +27,11 @@
                         Phasellus pellentesque mollis dolor. 
                         Mauris lacinia elementum nisl id luctus. 
                         Mauris sollicitudin eleifend tellus, ac convallis risus gravida id.
-                        </br>
-                        </br>
                         Sed eu tellus non leo finibus sodales et placerat odio. Donec commodo nulla quis pharetra semper. 
                         Sed eget risus sit amet ex mollis pharetra. Donec sed ante magna. In fringilla a quam non gravida. 
                         Fusce sit amet metus porttitor, congue est ultrices, vestibulum quam. Cras maximus aliquet nibh ac consequat.
                         </p>
-                        <a id="jeux" href="./jeux.php"><button id="valideChoix">Valider mon choix</button></a>
+                        <a id="jeux" class="valideChoix" href="./jeux.php">Valider mon choix</a>
                     </div>
                 </div>
             </div>
@@ -57,16 +55,16 @@
 
             <div class="ensembleBouton2">
                 <div class="bouton">
-                    <button id="reseaux" onclick="setScreen(this.id)">Réseaux</button>
-                    <button id="web" onclick="setScreen(this.id)">Web</button>
+                    <button id="reseauxMobile" onclick="setScreen(this.id)">Réseaux</button>
+                    <button id="webMobile" onclick="setScreen(this.id)">Web</button>
                 </div>
                 <div class="bouton">
-                    <button id="bd" onclick="setScreen(this.id)">Base de données</button>
-                    <button id="algo" onclick="setScreen(this.id)">Programmation</button>
+                    <button id="bdMobile" onclick="setScreen(this.id)">Base de données</button>
+                    <button id="algoMobile" onclick="setScreen(this.id)">Programmation</button>
                 </div>
                 <div class="bouton">
-                    <button id="systeme" onclick="setScreen(this.id)">Système</button>
-                    <button id="jsp" onclick="setScreen(this.id)">Je ne sais pas</button>
+                    <button id="systemeMobile" onclick="setScreen(this.id)">Système</button>
+                    <button id="jspMobile" onclick="setScreen(this.id)">Je ne sais pas</button>
                 </div>
             </div>
         </div>

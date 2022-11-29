@@ -90,7 +90,7 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                     </div>
                     <div class="soumettre">
                         
-                        <button id="soumettre" onclick="resultatValidage(this.id)">Valider</button>
+                        <button id="soumettre" onclick="cliqueValiderOuContinuer(this.id)">Valider</button>
                     </div>
 
                    <!--- <button id="test" onclick="ouvrirFermerBot()">indice </button> --->
@@ -120,14 +120,6 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                 </div>
             </div>
         </div>
-
-
-
-
-                    
-
-
-
 
 
                 </div>

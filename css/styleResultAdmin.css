@@ -21,24 +21,10 @@ h1{
     font-size: 50px;
 }
 
-h1:hover{
-    text-shadow: white 1px 0 10px;
-}
-
-
-.video{
-    padding: 15px;
-
-}
-
-.videoCSS{
-    width: 840px; 
-    height: 490px;
-}
-
-.videoCSSResp{
-    width: 100%;
-    height: 200px;
+.contact_titre {
+    justify-content: center;
+    max-height: 64px;
+    width: 400px;
 }
 
 h2{
@@ -74,36 +60,10 @@ header{
     font-family: 'Open Sans Regular';
 }
 
-.titre{
-    color: #FBBA00;
-}
-
 .menu{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.presentation{
-    display: flex;
-    background-color: lightgrey;
-    color: black;
-    justify-content: center;
     flex-direction: column;
-    margin: 40px;
-    padding: 20px;
-    height: fit-content;
-    width: fit-content;
-    margin-top: 5%;
-    font-family: 'Open Sans Regular';
-}
-
-.boutton_droite{
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    padding: 20px;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 button {
@@ -119,11 +79,9 @@ button {
     height: 100px;
     display: block;
     font-family: 'Open Sans Bold';
-    transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
-}
+    transition: box-shadow 0.3s ease-in;
 
-.boutton_droite > a {
-    margin: 5%;
+    
 }
 
 #valideChoix{
@@ -142,116 +100,18 @@ button {
 }
 
 a{
-    background-color: #00B7E9;
-    /* bleu */
-    border-radius: 30px;
-    border: none;
-    color: white;
-    text-align: center;
     text-decoration: none;
-    font-size: 25px;
-    width: 250px;
-    height: 100px;
-    display: block;
-    font-family: 'Open Sans Bold';
-    transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
-    align-items: center;
 }
 
-a:hover {
-    width: 260px;
-    height: 110px;
+button:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    transition: box-shadow 0.3s ease-in, width 0.5s, height 10.5s;
+    transition: box-shadow 0.3s ease-in;
 }
 
-a:active {
+button:active {
     background-color: #3e638e;
     box-shadow: 0 5px rgb(102, 102, 102);
     transform: translateY(4px);
-}
-
-.transi {
-    animation-duration: 1.5s;
-    animation-name: slidein;
-}
-
-.transi2{
-    animation-duration: 2s;
-    animation-name: slidein;
-}
-
-.transi3{
-    animation-duration: 2.5s;
-    animation-name: slidein;
-}
-
-.transi4{
-    animation-duration: 3s;
-    animation-name: slidein;
-}
-  
-@keyframes slidein {
-    from {
-        margin-left: 100%;
-        width: 300%;
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 250px;
-    }
-}
-
-.vignets {
-    
-    animation: fadein 2s;
-    -moz-animation: fadein 2s; /* Firefox */
-    -webkit-animation: fadein 2s; /* Safari et Chrome */
-    -o-animation: fadein 2s; /* Opera */
-}
-@keyframes fadein {
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-moz-keyframes fadein { /* sur Firefox */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-webkit-keyframes fadein { /* sur Safari et Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
-}
-@-o-keyframes fadein { /* sur Opera */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.videoAnim{
-    transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
-}
-
-.videoAnim:hover{
-    width: 850px;
-    height: 500px;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
 }
 
 /* Page Contact */
@@ -273,7 +133,6 @@ a:active {
 
 #mail{
     padding: 10px;
-    padding-right: 30%;
     margin-bottom: 10px;
     border: none;
 }
@@ -304,10 +163,10 @@ a:active {
     color: black;
     justify-content: center;
     flex-direction: column;
-    margin: 40px;
+    margin: 5%;
     padding: 20px;
     height: fit-content;
-    width: 50%;
+    width: 90%;
     margin-top: 10%;
     font-family: 'Open Sans Regular';
 }
@@ -324,10 +183,68 @@ a:active {
     padding: 10px;
     justify-content: left;
 }
+/* admin */
+#choix {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#id_question {
+    color: red;
+}
+#toutesLesQuestions {
+    display: flex;
+    justify-content: center;
+}
+
+#choix {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#id_question {
+    color: red;
+}
+#toutesLesQuestions {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#question {
+    display: flex;
+    justify-content: center;
+
+}
+
 
 /*responsive*/
 
 @media screen and (max-width: 750px){
+
+    #prenom{
+        width: 75%;
+    }
+
+    #nom{
+        width: 75%;
+    }
+
+    .nom_prenom{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #p_mail{
+        width: 75%;
+    }
+
+    .presentation_form{
+        margin: 0%;
+        width:100%;
+    }
 
     h1{
         font-size: 180%;
@@ -341,24 +258,9 @@ a:active {
         justify-content: center;
     }
     .menu2 {
+        display: flex;
         flex-direction: column;
         justify-content: center;
-    }
-    #video{
-        display: flex;
-        justify-content: center;
-        padding: 0px;
-    }
-    .presentation {
-        margin: 0%;
-        width: auto;
-    }
-    .boutton_droite{
-        margin: 10px;
-        padding: 10px;
-        /*justify-content:space-between;*/
-        flex-direction: row;
-        max-width: 920px;
     }
 
     button {
@@ -375,6 +277,24 @@ a:active {
         display: block;
         font-family: 'Open Sans Bold';
         
+    }
+
+    #nom{
+        margin-bottom: 5%;
+    }
+
+    .rubrique_menu {
+        width: 15%;
+
+    }
+    #return {
+        width: 70%;
+    }
+    .contact_titre {
+        width: 500%;
+        display: flex;
+        justify-content: center;
+        font-size: 160%;
     }
 }
 
