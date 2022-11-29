@@ -36,10 +36,7 @@ h1:hover{
     height: 490px;
 }
 
-.videoCSSResp{
-    width: 100%;
-    height: 200px;
-}
+
 
 h2{
     display: flex;
@@ -71,7 +68,6 @@ header{
 *{
     margin: 0px;
     padding: 0px;
-    font-family: 'Open Sans Regular';
 }
 
 .titre{
@@ -142,30 +138,35 @@ button {
 }
 
 a{
+   text-decoration: none;
+   color: white;
+}
+
+.lien{
+    display: flex;
+    justify-content: center;
     background-color: #00B7E9;
     /* bleu */
     border-radius: 30px;
     border: none;
     color: white;
     text-align: center;
-    text-decoration: none;
     font-size: 25px;
     width: 250px;
     height: 100px;
-    display: block;
     font-family: 'Open Sans Bold';
     transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
     align-items: center;
 }
 
-a:hover {
+.lien:hover{
     width: 260px;
     height: 110px;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     transition: box-shadow 0.3s ease-in, width 0.5s, height 10.5s;
 }
 
-a:active {
+.lien:active{
     background-color: #3e638e;
     box-shadow: 0 5px rgb(102, 102, 102);
     transform: translateY(4px);
@@ -254,79 +255,6 @@ a:active {
     transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
 }
 
-/* Page Contact */
-
-.nom_prenom{
-    padding-bottom: 10px;
-}
-
-#nom{
-    margin-right: 30px;
-    padding: 10px;
-    border:none;
-}
-
-#prenom{
-    padding: 10px;
-    border: none;
-}
-
-#mail{
-    padding: 10px;
-    padding-right: 30%;
-    margin-bottom: 10px;
-    border: none;
-}
-
-.valide_form{
-    display: flex;
-    justify-content: center;
-}
-
-#p_mail{
-    border: none;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 30%;
-    width: 95%;
-}
-
-.titre_mail{
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    padding: 10px;
-}
-
-.presentation_form{
-    display: flex;
-    background-color: lightgrey;
-    color: black;
-    justify-content: center;
-    flex-direction: column;
-    margin: 40px;
-    padding: 20px;
-    height: fit-content;
-    width: 50%;
-    margin-top: 10%;
-    font-family: 'Open Sans Regular';
-}
-
-#confirmeForm{
-    display: none;
-    background-color: #0071B9;
-    color: white;
-    position:absolute;
-    top:20%;
-    left:17%;
-    z-index:2;
-    overflow:auto;
-    padding: 10px;
-    justify-content: left;
-}
-
-/*responsive*/
-
 @media screen and (max-width: 750px){
 
     h1{
@@ -344,7 +272,7 @@ a:active {
         flex-direction: column;
         justify-content: center;
     }
-    #video{
+    .video{
         display: flex;
         justify-content: center;
         padding: 0px;
@@ -361,21 +289,27 @@ a:active {
         max-width: 920px;
     }
 
-    button {
+    .lien{
+        display: flex;
+        justify-content: center;
         background-color: #00B7E9;
         /* bleu */
         border-radius: 30px;
         border: none;
         color: white;
         text-align: center;
-        text-decoration: none;
         font-size: 15px;
         width: 130px;
         height: 70px;
-        display: block;
         font-family: 'Open Sans Bold';
-        
+        transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
+        align-items: center;
     }
+}
+.videoCSSResp{
+    width: 99%; 
+    height: 490px;
+
 }
 
 @media screen and (min-width: 750px){

@@ -158,19 +158,21 @@ button:active {
     top:92%;
     left:0;
     width:500px;
-    border-radius:10 px;
+    border-radius:10px;
 }
 
 #chatBot{
-    background-color: grey;
-    height:0px;
+    background: linear-gradient(to bottom, #00b7e9 ,#FBBA00);
+    padding-left: 1em;
+    padding-top: 0.5em;
+    font-family: 'Open Sans Bold';
+    font-size: 1em;
 }
 
 #barreNavBot{
-    background-color: #303030;
+    background: linear-gradient(to bottom, #0071B9, #00b7e9);
     display:flex;
     justify-content: space-between;
-    
 }
 
 /*#ouvrirBot{
@@ -181,12 +183,14 @@ button:active {
 
 #titreBot{
     color:white;
-    margin-left: 10px;
-    font-family:impact;
+    margin-top: 0.5em;
+    margin-left: 1em;
+    font-family: 'Open Sans Bold';
+    font-size: 2em;
 }
 
 .logoBouttonBot{
-    width:20%;
+    width:15%;
     height: auto;
 }
 

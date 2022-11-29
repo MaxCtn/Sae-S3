@@ -49,13 +49,103 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
         <title>BackToBachelor - Jeux</title>  
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleJeux.css">
+        <link rel="stylesheet" href="../css/stylePlan.css">
         <meta charset="UTF-8">
     </head>
     <body>
         <div class="affichage">
             <div class="affichage_gauche">
-                <div class="carte">
-                    <img src="../images/plan.png">
+            <div id = "plan">
+                    <a id = "lienFreepik" href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a>
+                    <!--2e étage-->
+                    <table>
+                        <tr>
+                            <th class="classes" scope="section7" id="case_2E_2_1" colspan="3"></th>
+                            <th class="classes" scope="section8" id="case_2E_2_2" colspan="2"></th>
+                            <th class="classes" scope="section8" id="case_2E_2_3" colspan="2"></th>
+                            <th class="classes" scope="section9" id="case_2E_2_4" colspan="2"></th>
+                            <th class="classes"                  id="case_2E_2_5"></th>
+                        </tr>
+                        <tr>
+                            <th colspan="10" class="couloir" id="couloir2E"></th>
+                        </tr>
+                        <tr>
+                            <th class="classes" scope="section7" id="case_2E_1_1"></th>
+                            <th class="classes" scope="section7" id="case_2E_1_2"></th>
+                            <th class="classes" scope="section7" id="case_2E_1_3"></th>
+                            <th class="classes" scope="section8" id="case_2E_1_4"></th>
+                            <th class="classes" scope="section8" id="case_2E_1_5"></th>
+                            <th class="classes" scope="section8" id="case_2E_1_6"></th>
+                            <th class="classes" scope="section9" id="case_2E_1_7"></th>
+                            <th class="classes" scope="section9" id="case_2E_1_8"></th>
+                            <th class="classes" scope="section9" id="case_2E_1_9"></th>
+                            <th class="classes" scope="section9" id="case_2E_1_10"></th>
+                        </tr>
+                    </table>
+
+                    <!--1er étage-->
+                    <table>
+                        <tr>
+                            <th class="classes" scope="section6" id="case_1E_2_1" colspan="2"></th>
+                            <th class="classes" scope="section5" id="case_1E_2_2" colspan="2"></th>
+                            <th class="classes" scope="section5" id="case_1E_2_3" colspan="2"></th>
+                            <th class="classes" scope="section4" id="case_1E_2_4" colspan="2"></th>
+                            <th class="classes" scope="section4" id="case_1E_2_5"></th>
+                        </tr>
+                        <tr>
+                            <th colspan="10" class="couloir" id="couloir1E"></th>
+                        </tr>
+                        <tr>
+                            <th class="classes" scope="section6" id="case_1E_1_1"></th>
+                            <th class="classes" scope="section6" id="case_1E_1_2"></th>
+                            <th class="classes" scope="section6" id="case_1E_1_3"></th>
+                            <th class="classes" scope="section5" id="case_1E_1_4"></th>
+                            <th class="classes" scope="section5" id="case_1E_1_5"></th>
+                            <th class="classes" scope="section5" id="case_1E_1_6"></th>
+                            <th class="classes" scope="section5" id="case_1E_1_7"></th>
+                            <th class="classes" scope="section4" id="case_1E_1_8"></th>
+                            <th class="classes" scope="section4" id="case_1E_1_9"></th>
+                        </tr>
+                    </table>
+                    
+                    <!--RDC-->
+                    <table>
+                        <tr>
+                            <th class="classes" scope="section1" id="case_RDC_3_1" colspan="3"></th>
+                            <th class="classes" scope="section2" id="case_RDC_3_2" colspan="3"></th>
+                            <th class="classes" scope="section2" id="case_RDC_3_3"></th>
+                            <th class="classes" scope="section3" id="case_RDC_3_4"></th>
+                            <th class="classes" scope="section3" id="case_RDC_3_5"></th>
+                            <th class="classes" scope="section3" id="case_RDC_3_6"></th>
+                        </tr>
+                        <tr>
+                            <th colspan="10" class="couloir" id="couloirRDC"></th>
+                        </tr>
+                        <tr>
+                            <th class="classes" scope="section1" id="case_RDC_2_1"></th>
+                            <th class="classes" scope="section1" id="case_RDC_2_2"></th>
+                            <th class="classes"                  id="case_RDC_2_3"></th>
+                            <th class="classes"                  id="case_RDC_2_4"></th>
+                            <th class="classes" scope="section2" id="case_RDC_2_5"></th>
+                            <th class="classes" scope="section2" id="case_RDC_2_6"></th>
+                            <th class="classes" scope="section2" id="case_RDC_2_7"></th>
+                            <th class="classes" scope="section3" id="case_RDC_2_8"></th>
+                            <th class="classes" scope="section3" id="case_RDC_2_9"></th>
+                            <th class="classes" scope="section3" id="case_RDC_2_10"></th>
+                        </tr>
+                        <tr>
+                            <th class="classes" scope="section1" id="case_RDC_1_1"></th>
+                            <th class="classes" scope="section1" id="case_RDC_1_2"></th>
+                            <th class="classes" scope="section1" id="case_RDC_1_3"></th>
+                            <th class="classes" scope="section2" id="case_RDC_1_4"></th>
+                            <th class="classes" scope="section2" id="case_RDC_1_5"></th>
+                            <th class="classes" scope="section2" id="case_RDC_1_6"></th>
+                            <th class="classes" scope="section2" id="case_RDC_1_7"></th>
+                            <th class="classes" scope="section3" id="case_RDC_1_8"></th>
+                            <th class="classes" scope="section3" id="case_RDC_1_9"></th>
+                            <th class="classes" scope="section3" id="case_RDC_1_10"></th>
+                        </tr>
+                    </table>
                 </div>
                 <div class="bot">
 

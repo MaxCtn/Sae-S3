@@ -134,9 +134,23 @@ function attribueQuestions() { //fonction renvoyant la liste des questions
 
 
 
-function cliqueSurValider(bonRep) { //fonction permettant de valider la réponse sélectionnée
+function cliqueSurValider(bonRep, indiceRep) { //fonction permettant de valider la réponse sélectionnée
+    
+    // on aura besoin de changer la couleur du plan
+    let plan = document.querySelector('#plan');
+    
     var stringRep = valideReponse();
     if(stringRep == bonRep){
+
+        //coloration du plan
+        if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
+            let section = 'th[scope="section' + indiceRep + '"]';
+            plan.querySelectorAll(section).forEach(
+                function (currentValue) {
+                currentValue.style.backgroundColor = 'green';
+                }
+            );
+        }
 
         if (document.getElementById('rep1').innerHTML == bonRep) {
             document.getElementById('rep1').style.backgroundColor = 'green';
@@ -153,6 +167,17 @@ function cliqueSurValider(bonRep) { //fonction permettant de valider la réponse
         }
     }
     else {
+
+        //coloration du plan
+        if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
+            let section = 'th[scope="section' + indiceRep + '"]';
+            plan.querySelectorAll(section).forEach(
+                function (currentValue) {
+                currentValue.style.backgroundColor = 'red';
+                }
+            );
+        }
+
         document.getElementById('rep2').style.backgroundColor = 'red';
         document.getElementById('rep1').style.backgroundColor = 'red';
         document.getElementById('rep3').style.backgroundColor = 'red';
@@ -163,6 +188,16 @@ function cliqueSurValider(bonRep) { //fonction permettant de valider la réponse
             }
                 
         }
+    }
+    
+    //coloration de la case sur laquelle est le joueur
+    if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
+        let section = 'th[scope="section' + (indiceRep+1) + '"]';
+        plan.querySelectorAll(section).forEach(
+            function (currentValue) {
+            currentValue.style.backgroundColor = '#00B7E975';
+        }
+        );
     }
         
     document.getElementById('soumettre').innerHTML ="Continuer";
@@ -216,7 +251,7 @@ function cliqueValiderOuContinuer(idBoiteRep){ //fonction qui charge les questio
     }
 
     if (document.getElementById('soumettre').innerHTML == "Valider") {
-        cliqueSurValider(bonRep);
+        cliqueSurValider(bonRep, indiceRep);
     } 
     else {
         reinitialiseBoutons(aides,questions,indiceRep);        //remet a zero, change question()

@@ -1,0 +1,391 @@
+/*ce fichier contient le css permettant de dessiner le plan du batiment
+Les étages et salles étant différents les uns des autres nous avons decider de faire les faires au "cas par cas"*/
+
+#plan{
+    margin-left: 2%;
+}
+
+.couloir{
+    padding: 1em;
+    border-left: 2px solid;
+    border-right: 2px solid;
+}
+
+#couloir2E{
+    background: linear-gradient(to right, #FBBA0075,#00b7e900);
+}
+#couloir1E{
+    background: linear-gradient(to right, #0071B975,#00b7e900);
+}
+#couloirRDC{
+    background: linear-gradient(to right, #00b7e975,#00b7e900);
+}
+
+/*definition des section a colorié lors de la reussite d'une question*/
+th[scope="section1"]{
+    background-color: #00b7e955;
+}
+th[scope="section2"]{
+    background-color: white;
+}
+th[scope="section3"]{
+    background-color: white;
+}                            
+
+/*1ere ligne (parties basses des salles sous le couloir RDC) */
+#case_RDC_1_1{
+    padding-left: 3em;
+    padding-top: 2.5em;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    border-right: 1px solid;
+}
+#case_RDC_1_2{
+    padding-left: 2em;
+    padding-top: 2.5em;
+    border-bottom: 2px solid;
+}
+#case_RDC_1_3{
+    padding-left: 3em;
+    padding-top: 2.5em;
+    border-bottom: 2px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+}
+#case_RDC_1_4{
+    padding-left: 3em;
+    padding-top: 2.5em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+}
+#case_RDC_1_5{
+    padding-left: 2em;
+    padding-top: 2.5em;
+    border-bottom: 2px solid;
+    border-right: 1px solid;
+}
+#case_RDC_1_6{
+    padding-left: 2.5em;
+    padding-top: 2.5em;
+    border-bottom: 2px solid;
+    border-right: 1px solid;
+}
+#case_RDC_1_7{
+    padding-left: 2.5em;
+    padding-top: 2.5em;
+    border-bottom: 2px solid;
+    border-right: 1px solid;
+}
+#case_RDC_1_8{
+    padding-left: 2.5em;
+    padding-top: 2.5em;
+    border-bottom: 2px solid;
+    border-right: 1px solid;
+}
+#case_RDC_1_9{
+    padding-left: 4em;
+    padding-top: 2.5em;
+    border-bottom: 2px solid;
+    border-right: 1px solid;
+}
+#case_RDC_1_10{
+    padding-left: 3em;
+    padding-top: 2.5em;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+}
+/*2ere ligne (parties hautes des salles sous le couloir RDC) */
+#case_RDC_2_1{
+    padding-top: 1.5em;
+    border-left: 2px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+}
+#case_RDC_2_2{
+    padding-top: 1.5em;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_RDC_2_3{
+    padding-top: 1.5em;
+}
+#case_RDC_2_4{
+    padding-top: 1.5em;
+}
+#case_RDC_2_5{
+    padding-top: 1.5em;
+    border-top: 1px solid;
+    border-left: 1px solid;
+}
+#case_RDC_2_6{
+    padding-top: 1.5em;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_RDC_2_7{
+    padding-top: 1.5em;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_RDC_2_8{
+    padding-top: 1.5em;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_RDC_2_9{
+    padding-top: 1.5em;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_RDC_2_10{
+    padding-top: 1.5em;
+    border-top: 1px solid;
+    border-right: 2px solid;
+}
+/*3ere ligne (salles au dessus du couloir RDC) */
+#case_RDC_3_1{
+    padding-top: 4em;
+    border: 1px solid;
+    border-left: 2px solid;
+    border-top: 2px solid;
+}
+#case_RDC_3_2{
+    padding-top: 4em;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+}
+#case_RDC_3_3{
+    padding-top: 4em;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+}
+#case_RDC_3_4{
+    padding-top: 4em;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+}
+#case_RDC_3_5{
+    padding-top: 4em;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+}
+#case_RDC_3_6{
+    padding-top: 4em;
+    border-right: 2px solid;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+}
+
+/*Premier étage*/
+/*4e ligne (salles sous le couloir du 1er étage)*/
+#case_1E_1_1{
+    padding-left: 3em;
+    padding-top: 4em;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_1E_1_2{
+    padding-left: 2.6em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_1E_1_3{
+    padding-left: 2.6em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_1E_1_4{
+    padding-left: 2.5em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+}
+#case_1E_1_5{
+    padding-left: 3em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_1E_1_6{
+    padding-left: 2em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+}
+#case_1E_1_7{
+    padding-left: 3.5em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_1E_1_8{
+    padding-left: 5.5em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_1E_1_9{
+    padding-left: 3em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 2px solid;
+}
+/*5e ligne (salles au dessus du couloir du 1er étage)*/
+#case_1E_2_1{
+    padding-top: 4em;
+    border-left: 2px solid;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-right: 1px solid;
+}
+#case_1E_2_2{
+    padding-top: 4em;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-right: 1px solid;
+}
+#case_1E_2_3{
+    padding-top: 4em;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-right: 1px solid;
+}
+#case_1E_2_4{
+    padding-top: 4em;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-right: 1px solid;
+}
+#case_1E_2_5{
+    padding-top: 4em;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-right: 2px solid;
+}
+
+/*2e étage*/
+/*6e ligne (salles sous le couloir du 2e étage)*/
+#case_2E_1_1{
+    padding-left: 3em;
+    padding-top: 4em;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_2E_1_2{
+    padding-left: 2.5em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_2E_1_3{
+    padding-left: 2.5em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_2E_1_4{
+    padding-left: 4.1em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_2E_1_5{
+    padding-left: 1.5em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+}
+#case_2E_1_6{
+    padding-left: 3.6em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_2E_1_7{
+    padding-left: 2em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+}
+#case_2E_1_8{
+    padding-left: 3.1em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 1px solid;
+}
+#case_2E_1_9{
+    padding-left: 2.2em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+}
+#case_2E_1_10{
+    padding-left: 3em;
+    padding-top: 4em;
+    border-bottom: 2px solid;
+    border-top: 1px solid;
+    border-right: 2px solid;
+}
+/*7e ligne (salles au dessus du couloir du 2e étage)*/
+#case_2E_2_1{
+    padding-top: 4em;
+    border-left: 2px solid;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-right: 1px solid;
+}
+#case_2E_2_2{
+    padding-top: 4em;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-right: 1px solid;
+}
+#case_2E_2_3{
+    padding-top: 4em;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-right: 1px solid;
+}
+#case_2E_2_4{
+    padding-top: 4em;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-right: 1px solid;
+}
+#case_2E_2_5{
+    padding-top: 4em;
+    border-bottom: 1px solid;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    background-image: url("../images/couronne.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 3.3em;
+
+}
+
+
+#lienFreepik{
+    visibility: hidden;
+}
