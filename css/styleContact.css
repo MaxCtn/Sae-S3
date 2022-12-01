@@ -84,7 +84,7 @@ button {
     
 }
 
-#valideChoix{
+.valideChoix{
     display: flex;
     justify-content: center;
     background-color: white;
@@ -118,20 +118,21 @@ button:active {
 
 .nom_prenom{
     padding-bottom: 10px;
+    padding-left: 1.5%;
 }
 
-#nom{
-    margin-right: 30px;
+.nom{
+    margin-right: 5%;
     padding: 10px;
     border:none;
 }
 
-#prenom{
+.prenom{
     padding: 10px;
     border: none;
 }
 
-#mail{
+.mail{
     padding: 10px;
     margin-bottom: 10px;
     border: none;
@@ -142,11 +143,11 @@ button:active {
     justify-content: center;
 }
 
-#p_mail{
+.p_mail{
     border: none;
     padding-left: 10px;
     padding-top: 10px;
-    padding-bottom: 30%;
+    padding-bottom: 10%;
     width: 95%;
 }
 
@@ -171,7 +172,7 @@ button:active {
     font-family: 'Open Sans Regular';
 }
 
-#confirmeForm{
+.confirmeForm{
     display: none;
     background-color: #0071B9;
     color: white;
@@ -183,6 +184,46 @@ button:active {
     padding: 10px;
     justify-content: left;
 }
+
+.vignets {
+    
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari et Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* sur Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* sur Safari et Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* sur Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 /* admin */
 
 
@@ -191,20 +232,21 @@ button:active {
 
 @media screen and (max-width: 750px){
 
-    #prenom{
+    .prenom{
         width: 75%;
     }
 
-    #nom{
+    .nom{
         width: 75%;
     }
 
     .nom_prenom{
         display: flex;
         flex-direction: column;
+        padding-left: 2%;
     }
 
-    #p_mail{
+    .p_mail{
         width: 75%;
     }
 
@@ -246,7 +288,7 @@ button:active {
         
     }
 
-    #nom{
+    .nom{
         margin-bottom: 5%;
     }
 

@@ -44,7 +44,7 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
 
 <?php function startJeux() { ?>
     <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
     <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
         <title>BackToBachelor - Jeux</title>  
@@ -94,7 +94,7 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                             <th class="section4" id="case_1E_2_5"></th>
                         </tr>
                         <tr>
-                            <th colspan="10" class="couloir" id="couloir1E"></th>
+                            <th colspan="9" class="couloir" id="couloir1E"></th>
                         </tr>
                         <tr>
                             <th class="section6" id="case_1E_1_1"></th>
@@ -164,12 +164,10 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                 </div>
                 <div class="corps_question">
                     <div class="question">
-                        <h2 id="questionPosee"><?php  echo 'clic sur oui';// trouveQuestion(0); ?></h2>
+                        <h2 id="questionPosee">clic sur oui</h2>
                     </div>
                     <div class="reponse">
-                        <div class="reponseLigne">
-                            <?php $nombre =0; ?>
-                            
+                        <div class="reponseLigne"> 
                             <button id="rep1" style="background-color: #00B7E9; width: 350px;" onclick="gestionReponseSelectionne(this.id)">non</button>
                             
                             <button id="rep2" style="background-color: #00B7E9; width: 350px;" onclick="gestionReponseSelectionne(this.id)">non</button>
@@ -184,26 +182,20 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                         <button id="soumettre" onclick="cliqueValiderOuContinuer(this.id)">Valider</button>
                     </div>
 
-                   <!--- <button id="test" onclick="ouvrirFermerBot()">indice </button> --->
-
-
                     
 
 
 
                     <div id="boiteCarteAideBot">
             <div>
-                <!--<img id="AHA" src="image/bizarre.png"> --->
             </div>
             <div id="aideBot">
                 <div id="barreNavBot">
                     <p id="titreBot">Help Bot</p>
                     <p id="tempsRestant"></p>
-                   <!--- <button id="ouvrirBot" onclick = "ouvrirBot()"> --->
-                    <img id="logoBouttonBotHaut" class="logoBouttonBot" src="../images/bot.png"  onclick = "ouvrirBot()">
-                    <!-- <button id="fermerBot" onclick = "fermerBot()"> --->
-                    <img id="logoBouttonBotBas" class="logoBouttonBot" src="../images/flechehaut.png" 
-                    onclick = "fermerBot()"></button>
+                    <img alt="logoBouttonBotHaut" id="logoBouttonBotHaut" class="logoBouttonBot" src="../images/bot.png"  onclick = "ouvrirBot()">
+                    <img alt="logoBouttonBotBas" id="logoBouttonBotBas" class="logoBouttonBot" src="../images/flechehaut.png" 
+                    onclick = "fermerBot()">
             
                 </div>
                 <div id="chatBot">

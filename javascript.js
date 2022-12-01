@@ -67,6 +67,7 @@ function setVideoScreen(){
         document.getElementById('PopupSys').style.display='block';
     }
     document.getElementById('popup_video').style.display='block';
+    document.getElementById('popup_video').style.animation='fadein 1s';
 }
 
 

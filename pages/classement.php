@@ -5,7 +5,6 @@ function start_classement() {
     ?><!DOCTYPE html>
     <html lang="fr">
         <head>
-            <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
             <title>BackToBachelor - Classement</title>  
             <script src="./javascript.js"></script>
             <link rel="stylesheet" href="../css/styleClassement.css">
