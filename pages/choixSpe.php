@@ -14,11 +14,12 @@
             <a href="../index.php"><h1> du jeux</h1></a>
         </header>
         <div class="menu">
+            <div id="specialite" style="display:none">rien</div>
             <div id="popup">
                 <div class="affiche">
                     <div class="enteteChoix">
                         <h3 id="titre_choix">.</h3>
-                        <button class="bouton_popup" onclick="closeScreen(popup)">X</button>
+                        <button class="bouton_popup" onclick="closeScreen()">X</button>
                     </div>
                     <div class="corpsChoix">
                         <p id="p_choix">
@@ -31,6 +32,23 @@
                         Sed eget risus sit amet ex mollis pharetra. Donec sed ante magna. In fringilla a quam non gravida. 
                         Fusce sit amet metus porttitor, congue est ultrices, vestibulum quam. Cras maximus aliquet nibh ac consequat.
                         </p>
+                        <button id="continueChoix" onclick="setVideoScreen()">Continuer</button>
+                    </div>
+                </div>
+            </div>
+            <div id="popup_video">
+                <div class="affiche">
+                    <div class="enteteChoix">
+                        <h3 id="titre_choixVideo">.</h3>
+                        <button class="bouton_popup" onclick="closeScreen()">X</button>
+                    </div>
+                    <div class="corpsChoix">
+                        <div id="PopupProg"><iframe id="videoPopupProg" src="https://www.youtube.com/embed/TCTRjsMLU7c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupRes"></div>
+                        <div id="PopupWeb"><iframe id="videoPopupWeb" src="https://www.youtube.com/embed/l5TgRtdrhPM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupBd"></div>
+                        <div id="PopupSys"><iframe id="videoPopupSys" src="https://www.youtube.com/embed/R_uLXqsfeME" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupJsp"><iframe id="videoPopupJsp" src="https://www.youtube.com/embed/nVdeTaxIPpc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <a id="jeux" class="valideChoix" href="./jeux.php">Valider mon choix</a>
                     </div>
                 </div>
@@ -39,19 +57,20 @@
                 <h2>Vers quel domaine pensez-vous vous diriger ?</h2>
             </div>
             <div class="ensembleBouton">
-                <div class="bouton">
-                    <button id="reseaux" onclick="setScreen(this.id)">Réseaux</button>
-                    <button id="web" onclick="setScreen(this.id)">Web</button>
+                <div class="bouton transi">
+                    <button id="reseaux" class="lien" onclick="setScreen(this.id)">Réseaux</button>
+                    <button id="web" class="lien" onclick="setScreen(this.id)">Web</button>
                 </div>
-                <div class="bouton">
-                    <button id="bd" onclick="setScreen(this.id)">Base de données</button>
-                    <button id="algo" onclick="setScreen(this.id)">Programmation</button>
+                <div class="bouton transi2">
+                    <button id="bd" class="lien" onclick="setScreen(this.id)">Base de données</button>
+                    <button id="algo" class="lien" onclick="setScreen(this.id)">Programmation</button>
                 </div>
-                <div class="bouton">
-                    <button id="systeme" onclick="setScreen(this.id)">Système</button>
-                    <button id="jsp" onclick="setScreen(this.id)">Je ne sais pas</button>
+                <div class="bouton transi3">
+                    <button id="systeme" class="lien" onclick="setScreen(this.id)">Système</button>
+                    <button id="jsp" class="lien" onclick="setScreen(this.id)">Je ne sais pas</button>
                 </div>
             </div>
+
 
             <div class="ensembleBouton2">
                 <div class="bouton">

@@ -3,6 +3,7 @@
     <html>
         <head>
             <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->
+            <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
             <title>BackToBachelor - A propos</title>  
             <script src="../javascript.js"></script>
             <link rel="stylesheet" href="../css/styleInfo.css">

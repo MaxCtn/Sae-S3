@@ -22,13 +22,13 @@ Les étages et salles étant différents les uns des autres nous avons decider d
 }
 
 /*definition des section a colorié lors de la reussite d'une question*/
-th[scope="section1"]{
+th[class="section1"]{
     background-color: #00b7e955;
 }
-th[scope="section2"]{
+th[class="section2"]{
     background-color: white;
 }
-th[scope="section3"]{
+th[class="section3"]{
     background-color: white;
 }                            
 
