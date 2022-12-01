@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face{
     font-family: 'Open Sans Regular';
     src: url('../OpenSans/OpenSans-Regular.ttf') format('truetype');
@@ -214,4 +215,325 @@ button:active {
     overflow:auto;
     padding: 10px;
     justify-content: left;
+=======
+@font-face{
+    font-family: 'Open Sans Regular';
+    src: url('../OpenSans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url('../OpenSans/OpenSans-Bold.ttf') format('truetype');
+}
+
+body{
+    background-size: cover;
+    font-family: 'Open Sans';
+}
+
+h1{
+    display: flex;
+    padding: 5px;
+    font-family: 'Open Sans Bold';
+    font-size: 50px;
+}
+
+h1:hover{
+    text-shadow: white 1px 0 10px;
+}
+
+
+.video{
+    padding: 15px;
+
+}
+
+.videoCSS{
+    width: 840px; 
+    height: 490px;
+}
+
+
+
+h2{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #0071B9;
+    color: black;
+    padding: 10px;
+    font-family: 'Open Sans Bold';
+}
+
+.entete_info{
+    width: 100%;
+    height: 100%;
+}
+
+.rubrique_menu{
+    display: inline-block;
+    width: 35%;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.titre{
+    color: #FBBA00;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.presentation{
+    display: flex;
+    background-color: lightgrey;
+    color: black;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px;
+    padding: 20px;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 5%;
+    font-family: 'Open Sans Regular';
+}
+
+.boutton_droite{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+button {
+    background-color: #00B7E9;
+    /* bleu */
+    border-radius: 30px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    width: 250px;
+    height: 100px;
+    display: block;
+    font-family: 'Open Sans Bold';
+    transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
+}
+
+.boutton_droite > a {
+    margin: 5%;
+}
+
+#valideChoix{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0px;
+    color: black;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    font-family: 'Open Sans Regular';
+    margin: 5%;
+}
+
+a{
+   text-decoration: none;
+   color: white;
+}
+
+.lien{
+    display: flex;
+    justify-content: center;
+    background-color: #00B7E9;
+    /* bleu */
+    border-radius: 30px;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    width: 250px;
+    height: 100px;
+    font-family: 'Open Sans Bold';
+    transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
+    align-items: center;
+}
+
+.lien:hover{
+    width: 260px;
+    height: 110px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.3s ease-in, width 0.5s, height 10.5s;
+}
+
+.lien:active{
+    background-color: #3e638e;
+    box-shadow: 0 5px rgb(102, 102, 102);
+    transform: translateY(4px);
+}
+
+.transi {
+    animation-duration: 1.5s;
+    animation-name: slidein;
+}
+
+.transi2{
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+
+.transi3{
+    animation-duration: 2.5s;
+    animation-name: slidein;
+}
+
+.transi4{
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+  
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 250px;
+    }
+}
+
+.vignets {
+    
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari et Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* sur Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* sur Safari et Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* sur Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.videoAnim{
+    transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
+}
+
+.videoAnim:hover{
+    width: 850px;
+    height: 500px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
+}
+
+@media screen and (max-width: 750px){
+
+    h1{
+        font-size: 180%;
+    }
+    h2 {
+        font-size: 130%;
+    }
+    .menu{
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .menu2 {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .video{
+        display: flex;
+        justify-content: center;
+        padding: 0px;
+    }
+    .presentation {
+        margin: 0%;
+        width: auto;
+    }
+    .boutton_droite{
+        margin: 10px;
+        padding: 10px;
+        /*justify-content:space-between;*/
+        flex-direction: row;
+        max-width: 920px;
+    }
+
+    .lien{
+        display: flex;
+        justify-content: center;
+        background-color: #00B7E9;
+        /* bleu */
+        border-radius: 30px;
+        border: none;
+        color: white;
+        text-align: center;
+        font-size: 15px;
+        width: 130px;
+        height: 70px;
+        font-family: 'Open Sans Bold';
+        transition: box-shadow 0.3s ease-in, width 0.5s, height 0.5s;
+        align-items: center;
+    }
+}
+.videoCSSResp{
+    width: 99%; 
+    height: 490px;
+
+}
+
+@media screen and (min-width: 750px){
+    .menu2 {
+        display: none;
+    }
+   
+>>>>>>> WorkDir
 }

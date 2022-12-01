@@ -14,6 +14,16 @@
     padding: 0px;
 }
 
+
+button {
+        transition: box-shadow 0.3s ease-in;
+}
+
+button:hover {
+    transition: box-shadow 0.3s ease-in;
+}
+
+
 body{
     font-family: 'Open Sans Bold';
     height: 50%;
@@ -77,6 +87,7 @@ header{
     display:flex;
     justify-content: center;
     font-size: 30px;
+    width: 800px;
 }
 
 .reponse{
@@ -148,6 +159,7 @@ button:active {
     top:92%;
     left:0;
     width:500px;
+<<<<<<< HEAD
     border-radius:10 px;
 }
 
@@ -177,6 +189,36 @@ button:active {
 
 .logoBouttonBot{
     width:20%;
+=======
+    border-radius:10px;
+}
+
+#chatBot{
+    background: linear-gradient(to bottom, #00b7e9 ,#FBBA00);
+    padding-left: 1em;
+    padding-top: 0.5em;
+    font-family: 'Open Sans Bold';
+    font-size: 1em;
+}
+
+#barreNavBot{
+    background: linear-gradient(to bottom, #0071B9, #00b7e9);
+    display:flex;
+    justify-content: space-between;
+}
+
+
+#titreBot{
+    color:white;
+    margin-top: 0.5em;
+    margin-left: 1em;
+    font-family: 'Open Sans Bold';
+    font-size: 2em;
+}
+
+.logoBouttonBot{
+    width:15%;
+>>>>>>> WorkDir
     height: auto;
 }
 
@@ -200,4 +242,8 @@ button:active {
 #AHA{
    height:auto;
    width:2000%;  
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> WorkDir

@@ -14,6 +14,14 @@ h1{
     font-family: 'Open Sans Bold';
     font-size: 25px;
 }
+header {
+    transition: box-shadow 0.3s ease-out;
+
+}
+header:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.3s ease-in;
+}
 
 h2{
     display: flex;
@@ -74,6 +82,7 @@ header{
     flex-direction: column;
     margin: 10px;
     justify-content: space-around;
+
 }
 
 .ensembleBouton{
@@ -103,6 +112,18 @@ header{
     border-color: black;
     border-width:3px;
     background-color:#f0f0f0;
+    animation: slidePopUpIn 1s ease forwards/*, slidePopUpOut 5s ease forwards*/;
+}
+
+@keyframes slidePopUpIn{
+    0%{opacity: 0;}
+    70%{ transform: translateX(15%);}
+    100%{ transform: translateX(3%); opacity: 1;}
+}
+
+@keyframes slidePopUpOut{
+    10%{ transform: translateX(-10%);}
+    100%{ transform: translateX(100%); opacity: 0; display: none;}
 }
 
 .affiche{
@@ -134,7 +155,6 @@ header{
     border:none;
     background-color:#f0f0f0;
     color: black;
-    border-radius: none;
     width: 50px;
     height: 50px;
     border-radius: 0px;
@@ -152,7 +172,22 @@ header{
     transform: translateY(4px);
 }
 
-#valideChoix{
+.valideChoix{
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0px;
+    color: black;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    font-family: 'Open Sans Regular';
+    margin: 5%;
+}
+
+#continueChoix{
     display: flex;
     justify-content: center;
     background-color: lightgray;
@@ -194,7 +229,6 @@ button {
     display: block;
     text-align: center;
     font-family: 'Open Sans Bold';
-    
 }
 
 .boutton_droite > a {
@@ -207,6 +241,18 @@ a{
 
 button:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.3s ease-in;
+
+}
+
+.lien{
+    transition: width 0.5s, height 0.5s;
+}
+
+.lien:hover{
+    width: 360px;
+    height: 110px;
+    transition: width 0.5s, height 10.5s;
 }
 
 button:active {
@@ -218,4 +264,180 @@ button:active {
 body{
     background-size: cover;
     font-family: 'Open Sans';
+}
+
+
+
+#popup_video{
+    position:absolute;
+    top:20%;
+    left:17%;
+    z-index:2;
+    display:none;
+    width:65%;
+    height:60%;
+    overflow:auto;
+    border-style:solid;
+    border-color: black;
+    border-width:3px;
+    background-color:#f0f0f0;
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* sur Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* sur Safari et Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* sur Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.transi {
+    animation-duration: 2s;
+    animation-name: fadein;
+}
+
+.transi2{
+    animation-duration: 3s;
+    animation-name: fadein;
+}
+
+.transi3{
+    animation-duration: 4s;
+    animation-name: fadein;
+}
+
+#PopupProg{
+    display: none;
+}
+
+#PopupRes{
+    display: none;
+}
+
+#PopupSys{
+    display: none;
+}
+
+#PopupBd{
+    display: none;
+}
+
+#PopupWeb{
+    display: none;
+}
+
+#PopupJsp{
+    display: none;
+}
+
+.videoPopUp{
+    width: 560px;
+    height: 315px;
+}
+
+
+
+/*responsive*/
+
+@media screen and (max-width: 750px){
+    .ensembleBouton {
+        display: none
+    }
+    button {
+        background-color: #00B7E9;
+        /* bleu */
+        border-radius: 30px;
+        border: none;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        width: 200px;
+        height: 100px;
+        display: block;
+        font-family: 'Open Sans Bold';
+        
+    }
+
+    
+    .ensembleBouton2{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .bouton{
+        flex-direction: row;
+        margin: 0px;
+        justify-content: center;
+    }
+    header{
+        display: flex;
+        flex-direction: row;
+        margin-right: 0%;
+        border-radius: 0px 0px 0px 0px;
+    }
+    h2{
+        font-size: 120%;
+    }
+    .bouton > button {
+        margin: 20px;
+        margin-bottom: 40px;
+        padding: 0px;
+        font-size: 80%;
+        width: 80%;
+    }
+    #popup {
+        left: 10%;
+        width: 80%;
+    }
+    .corpsChoix > p {
+        font-size: 120%;
+    }
+    #jeux {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    #valideChoix{
+        width: 100%;
+    }
+    #popup_video{
+        left: 0%;
+        width: 100%;
+    
+    }
+    .videoPopUp{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 751px){ 
+    .ensembleBouton2{
+        display: none;
+    }
 }
