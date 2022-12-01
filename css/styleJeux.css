@@ -87,6 +87,7 @@ header{
     display:flex;
     justify-content: center;
     font-size: 30px;
+    width: 800px;
 }
 
 .reponse{
@@ -175,11 +176,6 @@ button:active {
     justify-content: space-between;
 }
 
-/*#ouvrirBot{
-    border : none;
-    background-color: #303030;
-    border-top-right-radius: 100 px;
-}*/
 
 #titreBot{
     color:white;

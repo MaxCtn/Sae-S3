@@ -68,6 +68,8 @@ function setVideoScreen(){
     }
     document.getElementById('popup_video').style.display='block';
     document.getElementById('popup_video').style.animation='fadein 1s';
+   
+
 }
 
 

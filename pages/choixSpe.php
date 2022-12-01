@@ -43,12 +43,12 @@
                         <button class="bouton_popup" onclick="closeScreen()">X</button>
                     </div>
                     <div class="corpsChoix">
-                    <div id="PopupProg"><iframe id="videoPopupProg" src="https://www.youtube.com/embed/TCTRjsMLU7c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupRes"><iframe id="videoPopupRes" src="https://www.youtube.com/embed/mj56SSiuQC0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupWeb"><iframe id="videoPopupWeb" src="https://www.youtube.com/embed/l5TgRtdrhPM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupBd"><iframe id="videoPopupBd" src="https://www.youtube.com/embed/bh7k6QMtkbQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupSys"><iframe id="videoPopupSys" src="https://www.youtube.com/embed/R_uLXqsfeME" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupJsp"><iframe id="videoPopupJsp" src="https://www.youtube.com/embed/nVdeTaxIPpc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div id="PopupProg"><iframe class="videoPopUp" id="videoPopupProg" src="https://www.youtube.com/embed/TCTRjsMLU7c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupRes"><iframe class="videoPopUp" id="videoPopupRes" src="https://www.youtube.com/embed/mj56SSiuQC0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupWeb"><iframe class="videoPopUp" id="videoPopupWeb" src="https://www.youtube.com/embed/l5TgRtdrhPM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupBd"><iframe class="videoPopUp" id="videoPopupBd" src="https://www.youtube.com/embed/bh7k6QMtkbQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupSys"><iframe class="videoPopUp" id="videoPopupSys" src="https://www.youtube.com/embed/R_uLXqsfeME" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupJsp"><iframe class="videoPopUp" id="videoPopupJsp" src="https://www.youtube.com/embed/nVdeTaxIPpc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <a id="jeux" class="valideChoix" href="./jeux.php">Valider mon choix</a>
                     </div>
                 </div>

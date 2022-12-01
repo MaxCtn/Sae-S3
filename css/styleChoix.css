@@ -266,6 +266,8 @@ body{
     font-family: 'Open Sans';
 }
 
+
+
 #popup_video{
     position:absolute;
     top:20%;
@@ -353,35 +355,12 @@ body{
     display: none;
 }
 
-#videoPopupProg{
+.videoPopUp{
     width: 560px;
     height: 315px;
 }
 
-#videoPopupRes{
-    width: 560px;
-    height: 315px;
-}
 
-#videoPopupSys{
-    width: 560px;
-    height: 315px;
-}
-
-#videoPopupBd{
-    width: 560px;
-    height: 315px;
-}
-
-#videoPopupWeb{
-    width: 560px;
-    height: 315px;
-}
-
-#videoPopupJsp{
-    width: 560px;
-    height: 315px;
-}
 
 /*responsive*/
 
@@ -448,7 +427,14 @@ body{
     #valideChoix{
         width: 100%;
     }
+    #popup_video{
+        left: 0%;
+        width: 100%;
     
+    }
+    .videoPopUp{
+        width: 100%;
+    }
 }
 @media screen and (min-width: 751px){ 
     .ensembleBouton2{
