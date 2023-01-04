@@ -43,13 +43,17 @@
                         <button class="bouton_popup" onclick="closeScreen()">X</button>
                     </div>
                     <div class="corpsChoix">
-                    <div id="PopupProg"><iframe class="videoPopUp" id="videoPopupProg" src="https://www.youtube.com/embed/TCTRjsMLU7c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <!-- a verifier -->    
+                    <div id="PopupProg"><iframe class="videoPopUp" id="videoPopupProg" src="https://www.youtube.com/embed/HSUTiFZB_-Y" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <div id="PopupRes"><iframe class="videoPopUp" id="videoPopupRes" src="https://www.youtube.com/embed/mj56SSiuQC0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <div id="PopupWeb"><iframe class="videoPopUp" id="videoPopupWeb" src="https://www.youtube.com/embed/l5TgRtdrhPM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <div id="PopupBd"><iframe class="videoPopUp" id="videoPopupBd" src="https://www.youtube.com/embed/bh7k6QMtkbQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <div id="PopupSys"><iframe class="videoPopUp" id="videoPopupSys" src="https://www.youtube.com/embed/R_uLXqsfeME" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <div id="PopupJsp"><iframe class="videoPopUp" id="videoPopupJsp" src="https://www.youtube.com/embed/nVdeTaxIPpc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <a id="jeux" class="valideChoix" href="./jeux.php">Valider mon choix</a>
+                        <form method="post" action="jeux.php"> 
+                        <input id="speChoisie"type="text" name="spe" value="nonDefinie" style="display:none">
+                        <input type="submit" id="jeux" class="valideChoix" value = "Valider mon choix"> 
+                        </form>
                     </div>
                 </div>
             </div>
@@ -63,7 +67,7 @@
                 </div>
                 <div class="bouton transi2">
                     <button id="bd" class="lien" onclick="setScreen(this.id)">Base de données</button>
-                    <button id="algo" class="lien" onclick="setScreen(this.id)">Programmation</button>
+                    <button id="programmation" class="lien" onclick="setScreen(this.id)">Programmation</button>
                 </div>
                 <div class="bouton transi3">
                     <button id="systeme" class="lien" onclick="setScreen(this.id)">Système</button>

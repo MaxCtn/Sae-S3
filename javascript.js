@@ -1,4 +1,5 @@
-function setScreen(spe){ // fonction ouvrant l'overlay et affichant des paragraphes et titres selon le choix réalisé par l'utilisateur
+/** fonction ouvrant l'overlay et affichant des paragraphes et titres selon le choix réalisé par l'utilisateur*/ 
+function setScreen(spe){ 
     document.getElementById('popup_video').style.display='none';
     if(spe == 'web' || spe == 'webMobile'){
         document.getElementById('titre_choix').innerHTML = "Qu'est ce que le web ?";
@@ -12,8 +13,8 @@ function setScreen(spe){ // fonction ouvrant l'overlay et affichant des paragrap
         document.getElementById('titre_choix').innerHTML = "Que sont les bases de données ?";
         document.getElementById('p_choix').innerHTML = "Les bases de données servent à stocker des données que l'on peut ensuite récupérer et/ou manipuler. Par exemple, vous pourrez concevoir une base de données qui vous servira à établir des statistiques.";
     }
-    if(spe == 'algo'|| spe == 'algoMobile'){
-        document.getElementById('titre_choix').innerHTML = "Qu'est ce que la programmation ?";
+    if(spe == 'programmation'|| spe == 'programmation'){
+        document.getElementById('titre_choix').innerHTML = "Qu'est ce que la programmation ? : https://youtu.be/HSUTiFZB_-Y";
         document.getElementById('p_choix').innerHTML = "La programmation consiste à créer des algorithmes, suites d'instructions ayant un but. Vous utiliserez de nombreux langages (C++, Python, Java) qui vous permettront de raliser de nombreux projets.";
     }
     if(spe == 'jsp'|| spe == 'jspMobile'){
@@ -29,51 +30,64 @@ function setScreen(spe){ // fonction ouvrant l'overlay et affichant des paragrap
     document.getElementById('specialite').innerHTML = spe;
 }
 
+/** //fonction affichant la vidéo correspondant à la spécialité choisie*/
+function setVideoScreen(){ 
+    
+    var speList = ['web','programmation','bd','systeme','reseaux'];
 
-function setVideoScreen(){
-    //tirage au sort du thème si la personne ne sait pas quoi prendre
-    max = 4;
-    min = 0;
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    speRandom = Math.floor(Math.random() * (max - min)) + min;
-
-    var speList = ['PopupRes','PopupWeb','PopupBd','PopupSys','PopupProg'];
     var spe = document.getElementById('specialite').innerHTML;
     document.getElementById('popup').style.display='none';
+
+    /**tirage au sort du thème si la personne ne sait pas quoi prendre*/
+    if(spe == 'jsp'|| spe == 'jspMobile'){  
+      
+        max = 4;
+        min = 0;
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        speRandom = Math.floor(Math.random() * (max - min)) + min;
+        spe = speList[speRandom];
+    }
 
     if(spe == 'web' || spe == 'webMobile'){
         document.getElementById('titre_choixVideo').innerHTML = "Qu'est ce que le web ?";
         document.getElementById('PopupWeb').style.display='block';
+        document.getElementById('speChoisie').value='web';
+
     }
-    if(spe == 'reseaux'|| spe == 'reseauxMobile'){
+    else if(spe == 'reseaux'|| spe == 'reseauxMobile'){
         document.getElementById('titre_choixVideo').innerHTML = "Que sont les réseaux ?";
-        document.getElementById('PopupRes').style.display='block';
+        document.getElementById('PopupRes').style.display='block'; 
+        document.getElementById('speChoisie').value='reseaux';
+
     }
-    if(spe == 'bd'|| spe == 'bdMobile'){
+    else if(spe == 'bd'|| spe == 'bdMobile'){
         document.getElementById('titre_choixVideo').innerHTML = "Que sont les bases de données ?";
-        document.getElementById('PopupBd').style.display='block';
+        document.getElementById('PopupBd').style.display='block';     
+        document.getElementById('speChoisie').value='bd';
+
     }
-    if(spe == 'algo'|| spe == 'algoMobile'){
-        document.getElementById('titre_choixVideo').innerHTML = "Qu'est ce que la programmation ?";
+    else if(spe == 'programmation'|| spe == 'programmationMobile'){
+        document.getElementById('titre_choixVideo').innerHTML = "Qu'est ce que la programmation ? : https://youtu.be/HSUTiFZB_-Y";
         document.getElementById('PopupProg').style.display='block';
+        document.getElementById('speChoisie').value='programmation';
     }
-    if(spe == 'jsp'|| spe == 'jspMobile'){
-        document.getElementById('titre_choixVideo').innerHTML = "En quoi consiste le but Informatique ?";
-        document.getElementById(speList[speRandom]).style.display='block';
-    }
-    if(spe == 'systeme'|| spe == 'systemeMobile'){
+    
+    else if(spe == 'systeme'|| spe == 'systemeMobile'){
         document.getElementById('titre_choixVideo').innerHTML = "Qu'est ce que l'étude des systèmes ?";
-        document.getElementById('PopupSys').style.display='block';
+        document.getElementById('PopupSys').style.display='block';     
+        document.getElementById('speChoisie').value='systeme';
+
     }
+    /**permet d'afficher le pop up de vidéo avec une animation */
     document.getElementById('popup_video').style.display='block';
     document.getElementById('popup_video').style.animation='fadein 1s';
    
 
 }
 
-
-function closeScreen(){ // fonction fermant l'overlay (page choix spe)
+/** fonction fermant les trois pop ups avec une animation*/ 
+function closeScreen(){ 
     document.getElementById('PopupWeb').style.display='none';
     document.getElementById('PopupRes').style.display='none';
     document.getElementById('PopupBd').style.display='none';
@@ -89,25 +103,32 @@ function closeScreen(){ // fonction fermant l'overlay (page choix spe)
 }
 
 
-
-function formConfirme(){ // fonction ouvrant l'overlay (page formulaire)
+/**fonction ouvrant l'overlay de la page formulaire */ 
+function formConfirme(){ 
     alert("pas bon")
     document.getElementById('confirmeForm').style.display='flex';
     
 }
 
-
-
-//permet à l'admin d'accèder au formulaire supprimer
+/** fonction permettant à l'administrateur d'accèder au formulaire supprimer*/
 function afficherSupprimer() {
     document.getElementById("formInserer").style.display= "none";
     document.getElementById("formSupprimer").style.display= "initial";
+    document.getElementById("formModifier").style.display= "none";
+
 
 }
-//permet à l'admin d'accèder au formulaire insérer
+/** fonction permettant à l'administrateur d'accèder au formulaire inserer*/
 function afficherInserer() {
     document.getElementById("formSupprimer").style.display= "none";
-
     document.getElementById("formInserer").style.display= "initial";
+    document.getElementById("formModifier").style.display= "none";
+
+
+}
+function afficherModifier() {
+    document.getElementById("formSupprimer").style.display= "none";
+    document.getElementById("formInserer").style.display= "none";
+    document.getElementById("formModifier").style.display= "initial";
 
 }

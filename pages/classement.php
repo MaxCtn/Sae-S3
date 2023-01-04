@@ -1,5 +1,48 @@
+<?php
+function AjouteGagnant($pseudo, $score)
+{
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+
+    $queryReponse = mysqli_prepare($dbLink, 'INSERT Into GAGNANT(NOM_GAGNANT, SCORE) Values (?, ?);');
+    mysqli_stmt_bind_param($queryReponse, "ss", $pseudo, $score);
+    mysqli_execute($queryReponse);
+    mysqli_stmt_close($queryReponse);
+}
+?>
+
+<?php
+function recupGagnant() {
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net","286642","ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink , 'quizzbutinfoaix_bd')or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+
+    $query = 'SELECT * FROM GAGNANT ORDER BY SCORE DESC';
+    $result = mysqli_query($dbLink, $query);
+    if (!$result)
+    {
+    echo 'Impossible d\'exécuter la requête ', $query, ' : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if (mysqli_num_rows($result) != 0)
+        {
+            $listeGagnant=array();
+            while ($row = mysqli_fetch_assoc($result))
+            {
+               
+                    $listeGagnant[] = $row['NOM_GAGNANT'];
+                    $listeGagnant[] = $row['SCORE'];
+            }
+            return $listeGagnant;
+           
+        } 
+    } 
+}
+?>
+
+
 <?php 
-function start_classement() { 
+function start_classement($e,$nb) { 
 
 
     ?><!DOCTYPE html>
@@ -24,31 +67,31 @@ function start_classement() {
                     <th>#</th>
                     <th>Pseudo</th>
                     <th>Temps</th>
-                    <th>Date</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><?php if($nb >= 1) {echo $e[0];}  ?></td>
+                    <td>.</td>
+                    <td><?php if($nb >= 1) {echo $e[1];} ?></td>
                 </tr>
                 <tr>
                     <td>.</td>
+                    <td><?php if($nb >= 2) { echo $e[2]; }?></td>
                     <td>.</td>
-                    <td>.</td>
-                    <td>.</td>
+                    <td><?php if($nb >= 2) { echo $e[3]; } ?></td>
                 </tr>
                 <tr>
                     <td>.</td>
+                    <td><?php if($nb >= 3) { echo $e[4]; }?></td>
                     <td>.</td>
-                    <td>.</td>
-                    <td>.</td>
+                    <td><?php if($nb >= 3) { echo $e[5]; }?></td>
                 </tr>
                 <tr>
+                <td>.</td>
+                    <td><?php if($nb >= 4) { echo $e[6]; }?></td>
                     <td>.</td>
-                    <td>.</td>
-                    <td>.</td>
-                    <td>.</td>
-                </tr>
-                <tr>
-                    <td>.</td>
-                    <td>.</td>
-                    <td>.</td>
-                    <td>.</td>
+                    <td><?php if($nb >= 4) { echo $e[7]; }?></td>
                 </tr>
                 <tr>
                     <td>.</td>
@@ -68,7 +111,18 @@ function start_classement() {
     </html>
 <?php } ?>
 
-<?php start_classement();
+<?php 
+
+if (isset($_POST['pseudo'])) {
+    $pseudo=$_POST['pseudo'];
+    $score=$_POST['score'];
+    AjouteGagnant($pseudo,$score);
+
+}
+
+$e = recupGagnant();
+$nb= sizeof($e)/2;
+start_classement($e,$nb);
             
  
 

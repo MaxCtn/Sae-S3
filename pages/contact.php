@@ -21,21 +21,18 @@
                     <div class="titre_mail">
                         Formulaire :
                     </div>
-                    <form name="form">
+                    <form name="form" action="mailto:toureillfrancois@gmail.com" method="post" enctype="text/plain">
                         <div class="info_mail">
                             <div class="nom_prenom">
-                                <input class="nom" type="text" placeholder="Nom">
-                                <input class="prenom" type="text" placeholder="Prenom">
-                            </div>
-                            <div class="mail">
-                                <input class="mail" type="email" placeholder="Adresse E-Mail">
+                                <input class="nom" name="nom" type="text" placeholder="Nom">
+                                <input class="prenom" name="prenom" type="text" placeholder="Prenom">
                             </div>
                         </div>
                         <div class="p_mail">
-                            <textarea class="p_mail" placeholder="Qu'avez-vous pensés du jeu ?"></textarea>
+                            <textarea class="p_mail" name="texte" placeholder="Qu'avez-vous pensés du jeu ?"></textarea>
                         </div>
                         <div class="valide_form">
-                            <button class="valideChoix" onclick="formConfirme()">Valider</button>
+                            <input type="submit"  class="valideChoix" value="Valider">
                         </div>
                     </form>
                 </div>

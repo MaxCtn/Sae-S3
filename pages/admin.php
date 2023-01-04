@@ -17,7 +17,6 @@
                     <div class="rubrique_menu"><h1 class="contact_titre">Nous contacter</h1></div>
                 </div>
             </header>
-            <div id="confirmeForm">Votre formulaire à bien été envoyé</div>
             <div class="menu">
                 <div class="presentation_form">
                     <div class="titre_mail">

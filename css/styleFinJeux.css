@@ -1,0 +1,236 @@
+@font-face{
+    font-family: 'Open Sans Regular';
+    src: url('../OpenSans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Open Sans Bold';
+    src: url('../OpenSans/OpenSans-Bold.ttf') format('truetype');
+}
+
+html{
+    height: 550px;
+}
+
+body{
+    height:100%;
+}
+
+h1{
+    padding: 5px;
+    font-family: 'Open Sans Bold';
+    font-size: 25px;
+}
+header {
+    transition: box-shadow 0.3s ease-out;
+
+}
+header:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    transition: box-shadow 0.3s ease-in;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 20px;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Open Sans Bold';
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #0071B9;
+    color: black;
+    padding: 10px;
+    margin-left: 80%;
+    font-family: 'Open Sans';
+    border-radius: 0px 0px 0px 30px;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans Regular';
+}
+
+.titre{
+    color: #FBBA00;
+}
+
+.planPage{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.vide{
+    width: 30%
+}
+
+.menuVictoire{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+    height: 100%;
+}
+
+.titreFin{
+    display: flex;
+    justify-content: center;
+    font-family: 'Open Sans Bold';
+    font-size: 50px;
+    padding: 10px;
+}
+
+.pseudoText{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Open Sans Bold';
+    font-size: 25px;
+    padding: 10px;
+}
+
+.pseudoInput{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.pseudo{
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: #00B7E9;
+    font-size: 20px;
+    padding: 5px;
+    padding-right: 0%;
+    border-color: black;
+    border-width: 2px;
+}
+
+.validation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30%;
+    padding: 10px;
+
+}
+
+.divBoutonValid{
+    display: flex;
+    justify-content: center;
+}
+
+.bouton_validation{
+    display: flex;
+    justify-content: center;
+    background-color: #0071B9;
+    color: #FBBA00;
+    width: 150px;
+    height: 55px;
+    border-radius: 30px;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Open Sans Regular';
+    align-items: center;
+}
+
+.bouton_validation:hover{
+    width: 160px;
+    height: 65px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bouton_validation:active{
+    background-color: #3e638e;
+    box-shadow: 0 5px rgb(102, 102, 102);
+    transform: translateY(4px);
+}
+
+/*responsive*/
+
+@media screen and (max-width: 750px){
+    .vide{
+        width: 0%;
+    }
+
+    .menuVictoire{
+        width: 100%;
+    }
+
+    header{
+        margin-left: 0%;
+        border-radius: 0px 0px 0px 0px;
+    }
+    
+}
+@media screen and (min-width: 751px){ 
+    .ensembleBouton2{
+        display: none;
+    }
+}
+  
+.bg {
+animation:slide 3s ease-in-out infinite alternate;
+background-image: linear-gradient(-60deg, #00B7E9 35%, #FBBA00 35%, white 70% );
+bottom:0;
+left:-50%;
+opacity:.5;
+position:fixed;
+right:-50%;
+top:0;
+z-index:-1;
+}
+
+.bg2 {
+animation-direction:alternate-reverse;
+animation-duration:4s;
+}
+
+.bg3 {
+animation-duration:5s;
+}
+
+.content {
+background-color:rgba(255,255,255,.8);
+border-radius:.25em;
+box-shadow:0 0 .25em rgba(0,0,0,.25);
+box-sizing:border-box;
+left:50%;
+padding:10vmin;
+position:fixed;
+text-align:center;
+top:50%;
+transform:translate(-50%, -50%);
+}
+
+h1 {
+font-family:monospace;
+}
+
+@keyframes slide {
+0% {
+    transform:translateX(-25%);
+}
+100% {
+    transform:translateX(25%);
+}
+}
