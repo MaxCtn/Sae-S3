@@ -73,27 +73,27 @@ class Quizz { /**la classe Quizz comporte, 4 listes de questions(2 de thème gé
 }
 
 /**création d'objets Questions provenant de la base de données  */
-const ques1 = new Question('Quelle est l’objectif d’une saé?','Mettre en pratique les connaissances liées à une compétence',
+const ques1 = new Question('Quel est l’objectif d’une saé?','Mettre en pratique les connaissances liées à une compétence',
 'bon','Savoir réaliser un projet en autonomie complète','mauvais','Acquérir un grand nombre de connaissance théorique',
-'mauvais','Donner les connaissances nécessaires a la création d une entreprise','mauvais','c est un projet collaboratif','Une saé est un projet, généralement centré sur une seul compétence et permet la mise en pratique des connaissances théoriques précédemment apprises');
+'mauvais','Donner les connaissances nécessaires à la création d\'une entreprise','mauvais','c\'est un projet collaboratif','Une saé est un projet, généralement centré sur une seule compétence et permet la mise en pratique des connaissances théoriques précédemment apprises');
 
 const ques2 = new Question('Dans le But, une ressource correspond à ','une matière','bon','des références','mauvais',
 'un cours magistral ',
-'mauvais','une documentation','mauvais','Elle fait l objet de partiels','Une ressource correspond tout simplement à une matière sur lequel il y aura des partiels');
+'mauvais','une documentation','mauvais','Elle fait l\'objet de partiels','Une ressource correspond tout simplement à une matière sur laquelle il y aura des partiels');
 
 const ques3 = new Question('Un ORE peut s\'apparenter à ','une aide aux devoir','mauvais','intervenir auprès des premières années',
 'mauvais','un exercice de prise de parole à l\'oral','mauvais','un cours supplémentaire facultatif ou non ',
 'bon','on s\'en sert notamment pour s\'entraîner avant un partiel','Une ORE est un cours qui peut être obligatoire ou non selon les notes de l\'intéressé');
 
-const ques4 = new Question('Afin de passer en seconde année, vous devez avoir a minima : ','10/20 dans chaque compétence',
+const ques4 = new Question('Afin de passer en seconde année, vous devez avoir à minima : ','10/20 dans chaque compétence',
 'mauvais','8/20 dans chaque compétence',
 'mauvais','une moitié des compétences à 8/20 et le reste à 10/20','mauvais','deux compétences à 8/20 et le reste à 10/20 ',
-'bon','Il existe en effet une tolérance sur une partie des compétences','Pour passer en seconde année, il faut 2 compétences a minima 8 et les 4 autres a 10, si vous êtes dans cette situation et que vous n\'avez pas la moyenne dans toutes les compétences, vous serez obligez, pendant le premier semestre de la seconde année de rattraper les compétences ou vous n\'avez pas eu la moyenne.');
+'bon','Il existe en effet une tolérance sur une partie des compétences','Pour passer en seconde année, il faut 2 compétences a minima 8 et les 4 autres à 10, si vous êtes dans cette situation et que vous n\'avez pas la moyenne dans toutes les compétences, vous serez obligé, pendant le premier semestre de la seconde année de rattraper les compétences ou vous n\'avez pas eu la moyenne.');
  
 const ques5 = new Question('Quel est la principale évolution entre le dut et le but?','Le DUT dure un ans de plus','mauvais',
 'Le BUT comprends moins de travaux de groupe',
 'mauvais','Le BUT dure un ans de plus et comprends plus de travaux de groupe','bon',
-'Aucune évolution seul le nom change ','mauvais','Le BUT vous permet d\'atteindre BAC +3','Le BUT s\'adapte au norme européenne, il ne dure donc plus 2 ans mais 3 ans en fusionnant le DUT avec une licence professionnelle.');
+'Aucune évolution seul le nom change ','mauvais','Le BUT vous permet d\'atteindre BAC +3','Le BUT s\'adapte aux normes européennes, il ne dure donc plus 2 ans mais 3 ans en fusionnant le DUT avec une licence professionnelle.');
 
 const ques6 = new Question('Quand peut-on demander une année en alternance ',
 'Possibilité de demander dès l\'inscription en première année','mauvais',
@@ -119,7 +119,7 @@ const ques9 = new Question('Qu\'est ce qu\'un cm ?'
 'Cours magique','mauvais'
 ,'Cours moyen','mauvais'
 ,'Cours moral','mauvais',
-'Un CM est un cours rassemblant toute une promotion','Un cm est un cours magistral. C\'est cours qui rassemble toute la promotion et qui permet d\'engendrer de nombreuse connaissances théoriques');
+'Un cm est un cours rassemblant toute une promotion','Un cm est un cours magistral. C\'est un cours qui rassemble toute la promotion et qui permet d\'engendrer de nombreuse connaissances théoriques');
 
 const ques10 = new Question('Qu\'est ce qu\'un tutorat'
 ,'un cours obligatoire fait par des profs','mauvais',
@@ -142,14 +142,14 @@ const ques12 = new Question('Quelle est le surnom qu\'on donne aux système d\'e
 'OD','mauvais'
 ,'OG','mauvais'
 ,'OS','bon',
-'Un système d\'exploitation de l\'anglais operating system','On appelle ça un OS, ca vient de l\'anglais Operating System');
+'Un système d\'exploitation de l\'anglais "operating system"','On appelle ça un OS, ca vient de l\'anglais "Operating System"');
 
 const ques13 = new Question('A quoi sert le dual boot ?'
 ,'A avoir deux systèmes d\'exploitation sur le même pc','bon',
 'A avoir deux terminaux sur le même ordinateur','mauvais'
-,'A pouvoir lancer deux système d\'exploitation en même temps','mauvais'
+,'A pouvoir lancer deux systèmes d\'exploitation en même temps','mauvais'
 ,'Cela ne sert à rien','mauvais',
-'Ca peut servir notamment pour des développeurs travaillant sur plusieurs systèmes d\'exploitations','Un dual boot sert a avoir deux systèmes d\'exploitation sur un même PC. Cela permet donc, par exemple, de "scinder" son pc en deux et d\'avoir une partie perso et une partie professionnel');
+'Ca peut servir notamment pour des développeurs travaillant sur plusieurs systèmes d\'exploitations','Un dual boot sert à avoir deux systèmes d\'exploitation sur un même PC. Cela permet donc, par exemple, de "scinder" son pc en deux et d\'avoir une partie perso et une partie professionnel');
 
 
 
@@ -170,9 +170,9 @@ const ques23 = new Question('Dans un algorithme, que fait on en premier?','On re
 'mauvais','on effectue des tests','mauvais',
 'On déclare ce qu\'on va utiliser dans le corps de l\'algorithme','bon',
 'On initialise sans déclarer','mauvais',
-'Au début d\'un programme, on ne va pas retourner un résultat','Au début d\'un algorithme, on déclare une partie de ce qu\'on va utiliser dans l\'algorithme pour éviter le besoin de créer des variables partout dans le code sans raison ( bien que dans certaine situation, la création de variable au sein du code soit plus qu\'utile)');
+'Au début d\'un programme, on ne va pas retourner un résultat','Au début d\'un algorithme, on déclare une partie de ce qu\'on va utiliser dans l\'algorithme pour éviter le besoin de créer des variables partout dans le code sans raison ( bien que dans certaines situations, la création de variable au sein du code soit plus qu\'utile)');
 
-const ques24 = new Question('Dans cette ligne de code en C++, quel est le nom de la variable ?int x = 48;','int',
+const ques24 = new Question('Dans cette ligne de code en C++, quel est le nom de la variable ? int x = 48;','int',
 'mauvais',
 'x','bon',
 '48','mauvais',
@@ -184,23 +184,23 @@ const ques25 = new Question('Quel est le nom du type de variable prenant comme v
 ,'int','bon',
 'char','mauvais',
 'string','mauvais',
-'La réponse est "entier" en anglais','le nom du type int viens de Integer signifiant entier en anglais');
+'La réponse est "entier" en anglais','le nom du type int viens de "Integer" signifiant entier en anglais');
 
 const ques26 = new Question('Laquelle de ces propositions ne permet pas de faire une boucle infinie',
 'while(true)', 'mauvais'
 ,'for(;;)','mauvais',
 'while(0)','bon',
 'while(1)','mauvais',
-'1 correspond à vrai en C++','while(true) et while(1) désignent une boucle "tant que" et for(;;) désigne une boucle "jusqu\'à", ces trois boucles n\'ont pas de conditions de sortie, elles sont donc infini.');
+'1 correspond à vrai en C++','while(true) et while(1) désignent une boucle "tant que" et for(;;) désignent une boucle "jusqu\'à", ces trois boucles n\'ont pas de conditions de sortie, elles sont donc infinie.');
 
 
 const ques30 = new Question('Qu\'est ce qu\'un réseau ?','Ensemble d\'équipements reliés entre eux',
 'bon','Ensemble de périphériques reliés à un ordinateur','mauvais',
 'Ensemble d\'équipements non reliés entre eux','mauvais',
-'Ensemble de fichiers reliés entre eux','mauvais','Pour donner un exemple, une maison peut être un réseau','Un réseau est un ensemble d\'équipement relié entre eux, il en existe à tous les niveaux, les équipements d\'une maison peuvent être un réseau, internet est un réseau etc');
+'Ensemble de fichiers reliés entre eux','mauvais','Pour donner un exemple, une maison peut être un réseau','Un réseau est un ensemble d\'équipements reliés entre eux, il en existe à tous les niveaux, les équipements d\'une maison peuvent être un réseau, internet est un réseau etc');
 
 const ques31 = new Question('Lequel n\'est pas un type de réseau ?','LAN','mauvais','SAN','bon','WAN',
-'mauvais','MAN','mauvais','LAN et WAN sont les deux principaux types de réseaux existants','AN dans ces différents acronymes signifie AREA NETWORK, ansi L veut dire LOCAL, M veut dire METROPOLITAN, W veut dire WIDE et S ne veut rien dire ');
+'mauvais','MAN','mauvais','LAN et WAN sont les deux principaux types de réseaux existants','AN dans ces différents acronymes signifie AREA NETWORK, ainsi L veut dire LOCAL, M veut dire METROPOLITAN, W veut dire WIDE et S ne veut rien dire ');
 
 const ques32 = new Question('Quel mode de diffusion n\'existe pas ?',
 'Monodiffusion','mauvais','Diffusion','mauvais','Unidiffusion',
@@ -208,15 +208,15 @@ const ques32 = new Question('Quel mode de diffusion n\'existe pas ?',
 
 const ques33 = new Question('Lequel n\'est pas un type de réseau ( net )',
 'Internet','mauvais','Externet','bon','Intranet',
-'mauvais','Extranet','mauvais','Internet est un vrai type de réseau','Ici, le type de réseau qui n\'existe pas est l\'externet. Internet est le plus grand réseau du monde interconnectant des LAN et des WAN, l\'intranet est un réseau d\'une organisation laissant l\'accès possible uniquement a ces membres et l\'extranet est un réseau d\'une organisation qui laisse un accès potentiellement à ses collaborateurs');
+'mauvais','Extranet','mauvais','Internet est un vrai type de réseau','Ici, le type de réseau qui n\'existe pas est l\'externet. Internet est le plus grand réseau du monde interconnectant des LAN et des WAN, l\'intranet est un réseau d\'une organisation laissant l\'accès possible uniquement à ses membres et l\'extranet est un réseau d\'une organisation qui laisse un accès potentiellement à ses collaborateurs');
 
-const ques34 = new Question('Combien existe t il de modèle en couche ?',
-'1','mauvais','2','bon','3','mauvais','4','mauvais','Il y en a pas beaucoup','En effet, existe deux, le modèle OSI et le modèle TCP/IP');
+const ques34 = new Question('Combien existe-t-il de modèle en couche ?',
+'1','mauvais','2','bon','3','mauvais','4','mauvais','Il y en a pas beaucoup','En effet, il en existe deux, le modèle OSI et le modèle TCP/IP');
 
 const ques35 = new Question('Lequel n\'est pas un support réseau ?',
 'Câble avec fil métallique','mauvais','Fibre optique','mauvais',
 'Transmission sans fil','mauvais','Serveur','bon',
-'Un support réseau est un moyen de transporter une information, de manière physique ou non','En effet un support réseau permet la transmission d\'information, un serveur n\'a donc rien à voir avec ce concepte');
+'Un support réseau est un moyen de transporter une information, de manière physique ou non','En effet un support réseau permet la transmission d\'information, un serveur n\'a donc rien à voir avec ce concept');
 
 
 
@@ -232,7 +232,7 @@ const ques37 = new Question('Quel balise permet l\'implémentation d\'une image 
 'image','mauvais'
 ,'picture','mauvais'
 ,'photo','mauvais',
-'image est un mot transparent en anglais','La balise permettant d\'implémenter des images dans un site web est img, les autres balises n\'existent pas');
+'Image est un mot transparent en anglais','La balise permettant d\'implémenter des images dans un site web est img, les autres balises n\'existent pas');
 
 const ques38 = new Question('Quels sont les deux principaux langages de programmation permettant la création de sites web ?'
 ,'Java et python','mauvais',
@@ -253,7 +253,7 @@ const ques40 = new Question('Quel langage permet l\'implémentation de mécanism
 'Java','mauvais'
 ,'HTML','mauvais'
 ,'CSS','mauvais',
-'Html et css permettent la création d\'un site statique','Le "#" permet d\'indiquer que ce qui est écrit apres est un id d\'une balise html');
+'Html et css permettent la création d\'un site statique','Le "#" permet d\'indiquer que ce qui est écrit après est un id d\'une balise html');
 
 const ques41 = new Question('Quel balise permet la création d\'un texte basique ?'
 ,'texte','mauvais',
@@ -262,19 +262,19 @@ const ques41 = new Question('Quel balise permet la création d\'un texte basique
 ,'t','mauvais',
 'On appelle souvent ça un paragraphe','Le "." permet d\'indiquer que ce qui est ecrit apres est une classe ');
 
-const ques42 = new Question('En CSS, quel sélécteur permet de spécifier un id ?'
+const ques42 = new Question('En CSS, quel sélecteur permet de spécifier un id ?'
 ,'#','bon',
 '.','mauvais'
 ,'/','mauvais'
-,'Il n\'y a pas besoin de sélécteur pour un id','mauvais','Il y a besoin d\'un signe bien particulier pour un id',
+,'Il n\'y a pas besoin de sélecteur pour un id','mauvais','Il y a besoin d\'un signe bien particulier pour un id',
 'Le "#" permet d\'indiquer que ce qui est écrit apres est un id d\'une balise html');
 
-const ques43 = new Question('En CSS, quel sélécteur permet de spécifier une classe ?'
+const ques43 = new Question('En CSS, quel sélecteur permet de spécifier une classe ?'
 ,'#','mauvais',
 '.','bon'
 ,'/','mauvais'
-,'Il n\'y a pas besoin de sélécteur pour une classe','mauvais','Il y a besoin d\'un signe bien particulier pour une classe',
-'Le "." permet d\'indiquer que ce qui est ecrit apres est une classe ');
+,'Il n\'y a pas besoin de sélecteur pour une classe','mauvais','Il y a besoin d\'un signe bien particulier pour une classe',
+'Le "." permet d\'indiquer que ce qui est ecrit après est une classe ');
 
 const ques44 = new Question('Quel balise n\'est pas une balise unique (balise orpheline) ?'
 ,'br','mauvais',
@@ -283,42 +283,41 @@ const ques44 = new Question('Quel balise n\'est pas une balise unique (balise or
 ,'img','mauvais',
 'L\'intrus a rapport avec le texte','La balise span est ici l\'intrus, elle sert a appliquer des contraintes au texte qu\'elle entoure');
 
-const ques45 = new Question('De quel langage de programmation vientcette ligne de code: "document.getElementById("texte");" ?'
+const ques45 = new Question('De quel langage de programmation vient cette ligne de code: "document.getElementById("texte");" ?'
 ,'HTML','mauvais',
 'CSS','mauvais'
 ,'PHP','mauvais'
 ,'Javascript','bon',
-'Elle ne vient pas d\'un langage balisée mais permet d\'intéragir sur celui-ci','En effet cette ligne permet dans le langage javascript de séléctionner une balise ayant l\'id "texte"');
+'Elle ne vient pas d\'un langage balisé mais permet d\'intéragir sur celui-ci','En effet cette ligne permet dans le langage javascript de séléctionner une balise ayant l\'id "texte"');
 
-const ques46 = new Question('De quel langage de programmation vientcette ligne de code: "head{ color : red; }" ?'
+const ques46 = new Question('De quel langage de programmation vient cette ligne de code: "head{ color : red; }" ?'
 ,'HTML','mauvais',
 'CSS','bon'
 ,'PHP','mauvais'
 ,'Javascript','mauvais',
-'Elle ne vient pas d\'un langage balisée mais permet d\'intéragir sur celui-ci','Cette ligne de code permet dans le langage CSS de changer la couleur du texte en rouge');
+'Elle ne vient pas d\'un langage balisé mais permet d\'intéragir sur celui-ci','Cette ligne de code permet dans le langage CSS de changer la couleur du texte en rouge');
 
 
-
-const ques47 = new Question('Quel est le langage qui nous permet d\'administrer une base de donnée ?'
+const ques47 = new Question('Quel est le langage qui nous permet d\'administrer une base de données ?'
 ,'SQL','bon',
 'Python','mauvais'
 ,'Java','mauvais'
 ,'CSS','mauvais',
-'Python et CSS n\'ont rien à voir avec l\'administration d\'une base de donnée','En effet, le langage de programmation permettant l\'administration d\'une base de donnée est le SQL');
+'Python et CSS n\'ont rien à voir avec l\'administration d\'une base de données','En effet, le langage de programmation permettant l\'administration d\'une base de donnée est le SQL');
 
-const ques48 = new Question('A quoi sert une base de donnée ?'
-,'Elle permet la stockage de variable temporaire d\'un programme','mauvais',
+const ques48 = new Question('A quoi sert une base de données ?'
+,'Elle permet le stockage de variable temporaire d\'un programme','mauvais',
 'C\'est les données basiques d\'un projet informatique','mauvais'
-,'Elle sert à stocker des données de manière structuré','bon'
+,'Elle sert à stocker des données de manière structurée','bon'
 ,'Cela ne sert à rien','mauvais',
-'Une base de donnée est utilisé pour stocker des informations','Une base de donnée est un outil extrêmement important pour un projet informatique car il permet de stocker des données de manière structurée');
+'Une base de données est utilisée pour stocker des informations','Une base de données est un outil extrêmement important pour un projet informatique car il permet de stocker des données de manière structurée');
 
-const ques49 = new Question('Quel est la syntaxe pour une requête SQL basique ?'
+const ques49 = new Question('Quelle est la syntaxe pour une requête SQL basique ?'
 ,'WHO / FROM / SELECT','mauvais',
 'OF / SELECT / VIEW','mauvais'
 ,'SELECT / FROM / WHERE','bon'
 ,'WHEN / OF / SELECT','mauvais',
-'On pointe l\'attribut qu\'on veut, puis on dit d\'où il vient et enfin on ajoute une condition','Une requête basique SQL est "SELECT/FROM/WHERE" you SELECT nous permet de sélectionner l\'attribut qui nous intéresse, FROM nous permet de dire dans quel table est contenu notre attribut et WHERE qui permet de d\'appliquer une condition à ce qu\'on veut.  ');
+'On pointe l\'attribut qu\'on veut, puis on dit d\'où il vient et enfin on ajoute une condition','Une requête basique SQL est "SELECT/FROM/WHERE" où SELECT nous permet de sélectionner l\'attribut qui nous intéresse, FROM nous permet de dire dans quelle table est contenu notre attribut et WHERE qui permet d\'appliquer une condition à ce qu\'on veut.  ');
 
 const ques50 = new Question('Quelle commande impose une condition'
 ,'Select','mauvais',
@@ -340,9 +339,6 @@ const ques52 = new Question('Que veut dire SQL ?'
 ,'Structured Query language','bon'
 ,'Structured Quantity language','mauvais',
 'Le SQL permet d\'ajouter, de structurer et de modifier des données','La réponse était "Structured Query Language"');
-
-
-
 
     
 var listeQuestionsSpeUn;
@@ -451,6 +447,7 @@ function valideReponse(){
 function changeAideQuestion(aides, indiceRep){ 
     let aideQuestion = aides[indiceRep];
     document.getElementById('chatBot').innerHTML = aideQuestion;
+    document.getElementById('chatBotMobile').innerHTML = aideQuestion;
 }
 
 
@@ -489,7 +486,7 @@ function cliqueSurValider(reponseJuste, indiceRep) {
             fermerBot();    
         }
         if(document.getElementById('specialite').innerHTML=="bd"){
-            document.getElementById('titre_choixVideo').innerHTML = "La base de donnée : niveau supérieur";
+            document.getElementById('titre_choixVideo').innerHTML = "La base de données : niveau supérieur";
             document.getElementById('PopupBd').style.display = 'block';
             fermerBot();    
         }
@@ -694,10 +691,16 @@ function cliqueValiderOuContinuer(idBoiteRep){
 let chat = false;
 /**Fonction fermant le bot */
 function fermerBot() {
-        document.getElementById("logoBouttonBotHaut").style.display = "initial";
-        document.getElementById("logoBouttonBotBas").style.display = "none";
+        document.getElementById("logoBoutonBotHaut").style.display = "initial";
+        document.getElementById("logoBoutonBotBas").style.display = "none";
         document.getElementById("chatBot").style.height -= 100 + "px";
         document.getElementById("aideBot").style.top = 92 + "%";
+
+        document.getElementById("logoBoutonBotHautMobile").style.display = "initial";
+        document.getElementById("logoBoutonBotBasMobile").style.display = "none";
+        document.getElementById("chatBotMobile").style.height -= 100 + "px";
+        document.getElementById("aideBotMobile").style.top = 92 + "%";
+
         chat = false;
 }
 
@@ -706,10 +709,19 @@ function fermerBot() {
 function ouvrirBot() {
     setTimeout(function(){
         chat = true;
-        document.getElementById("logoBouttonBotHaut").style.display = "none";
-        document.getElementById("logoBouttonBotBas").style.display = "initial"; 
+        document.getElementById("logoBoutonBotHaut").style.display = "none";
+        document.getElementById("logoBoutonBotBas").style.display = "initial"; 
         document.getElementById("chatBot").style.height += 100 + "px";
         document.getElementById("aideBot").style.top = 81 + "%";
+
+        document.getElementById("logoBoutonBotHautMobile").style.display = "none";
+        document.getElementById("logoBoutonBotBasMobile").style.display = "initial"; 
+        document.getElementById("chatBotMobile").style.height += 100 + "px";
+        document.getElementById("aideBotMobile").style.top = 81 + "%";
+
+
+
+
     }, 5000);
     
 }
@@ -784,9 +796,9 @@ function valideReponseMobile(){
 function cliqueSurValiderMobile(reponseJuste, indiceRep) {
     
     /**on aura besoin de changer la couleur du plan */ 
-    let plan = document.querySelector('#plan');
+    let planMobile = document.querySelector('#planMobile');
     
-    var stringRep = valideReponse();
+    var stringRep = valideReponseMobile();
 
     if(indiceRep == 5){
         //a changer for et dictionnaires
@@ -807,7 +819,7 @@ function cliqueSurValiderMobile(reponseJuste, indiceRep) {
             fermerBot();    
         }
         if(document.getElementById('specialiteMobile').innerHTML=="bd"){
-            document.getElementById('titre_choixVideo').innerHTML = "La base de donnée : niveau supérieur";
+            document.getElementById('titre_choixVideo').innerHTML = "La base de données : niveau supérieur";
             document.getElementById('PopupBd').style.display = 'block';
             fermerBot();    
         }
@@ -820,7 +832,6 @@ function cliqueSurValiderMobile(reponseJuste, indiceRep) {
             //document.getElementById('titre_choixVideotitre_choixVideo').innerHTML = "Qu'est ce que la programmation ? : https://youtu.be/HSUTiFZB_-Y";
    
     }
-   
 
     if(indiceRep == 10){
         //a changer
@@ -837,7 +848,7 @@ function cliqueSurValiderMobile(reponseJuste, indiceRep) {
         //coloration du plan
         if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
             let section = 'th[class="section' + indiceRep + '"]';
-            plan.querySelectorAll(section).forEach(
+            planMobile.querySelectorAll(section).forEach(
                 function (currentValue) {
                 currentValue.style.backgroundColor = 'green';
                 }
@@ -864,7 +875,7 @@ function cliqueSurValiderMobile(reponseJuste, indiceRep) {
         //coloration du plan
         if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
             let section = 'th[class="section' + indiceRep + '"]';
-            plan.querySelectorAll(section).forEach(
+            planMobile.querySelectorAll(section).forEach(
                 function (currentValue) {
                 currentValue.style.backgroundColor = 'red';
                 }
@@ -886,7 +897,7 @@ function cliqueSurValiderMobile(reponseJuste, indiceRep) {
     //coloration de la case sur laquelle est le joueur
     if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
         let section = 'th[class="section' + (indiceRep+1) + '"]';
-        plan.querySelectorAll(section).forEach(
+        planMobile.querySelectorAll(section).forEach(
             function (currentValue) {
             currentValue.style.backgroundColor = '#00B7E975';
         }
@@ -927,8 +938,6 @@ function cliqueValiderOuContinuerMobile(idBoiteRep){
 
     //a faire en fonction
     listeNomSpe=["web","programmation","reseaux","bd","systeme"];
-    
-   
 
     for(let i=0;i<5;++i) {
         if(document.getElementById("specialiteMobile").innerHTML==listeNomSpe[i]) {
@@ -1003,4 +1012,13 @@ function cliqueValiderOuContinuerMobile(idBoiteRep){
 
         }
     }  
+}
+
+function afficherCarte() {
+    if(document.getElementById('planMobile').style.display != 'initial') {
+        document.getElementById('planMobile').style.display = 'initial';
+    }
+    else {
+        document.getElementById('planMobile').style.display = 'none';
+    }
 }

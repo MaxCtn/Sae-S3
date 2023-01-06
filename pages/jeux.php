@@ -76,7 +76,7 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
         <div class="affichage">
             <div class="affichage_gauche">
                 <div id = "plan">
-                    <a id = "lienFreepik" href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a>
+                    <!-- <a id = "lienFreepik" href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a> -->
                     <!--2e étage-->
                     <table>
                         <tr>
@@ -220,8 +220,8 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                         <div id="barreNavBot">
                             <p id="titreBot">Help Bot</p>
                             <p id="tempsRestant"></p>
-                            <img alt="logoBouttonBotHaut" id="logoBouttonBotHaut" class="logoBouttonBot" src="../images/bot.png"  onclick = "ouvrirBot()">
-                            <img alt="logoBouttonBotBas" id="logoBouttonBotBas" class="logoBouttonBot" src="../images/flechehaut.png" 
+                            <img alt="logoBoutonBotHaut" id="logoBoutonBotHaut" class="logoBoutonBot" src="../images/bot.png"  onclick = "ouvrirBot()">
+                            <img alt="logoBoutonBotBas" id="logoBoutonBotBas" class="logoBoutonBot" src="../images/flechehaut.png" 
                             onclick = "fermerBot()">
                     
                         </div>
@@ -233,103 +233,10 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
             </div>
         </div>
 
-
-
         
         <div class="affichageMobile">
             <div class="affichage_gauche">
-                <div id = "planMobile" style="display:none">
-                    <a id = "lienFreepik" href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a>
-                    <!--2e étage-->
-                    <table>
-                        <tr>
-                            <th class="section7" id="case_2E_2_1" colspan="3"></th>
-                            <th class="section8" id="case_2E_2_2" colspan="2"></th>
-                            <th class="section8" id="case_2E_2_3" colspan="2"></th>
-                            <th class="section9" id="case_2E_2_4" colspan="2"></th>
-                            <th                  id="case_2E_2_5"></th>
-                        </tr>
-                        <tr>
-                            <th colspan="10" class="couloir" id="couloir2E"></th>
-                        </tr>
-                        <tr>
-                            <th class="section7" id="case_2E_1_1"></th>
-                            <th class="section7" id="case_2E_1_2"></th>
-                            <th class="section7" id="case_2E_1_3"></th>
-                            <th class="section8" id="case_2E_1_4"></th>
-                            <th class="section8" id="case_2E_1_5"></th>
-                            <th class="section8" id="case_2E_1_6"></th>
-                            <th class="section9" id="case_2E_1_7"></th>
-                            <th class="section9" id="case_2E_1_8"></th>
-                            <th class="section9" id="case_2E_1_9"></th>
-                            <th class="section9" id="case_2E_1_10"></th>
-                        </tr>
-                    </table>
-
-                    <!--1er étage-->
-                    <table>
-                        <tr>
-                            <th class="section6" id="case_1E_2_1" colspan="2"></th>
-                            <th class="section5" id="case_1E_2_2" colspan="2"></th>
-                            <th class="section5" id="case_1E_2_3" colspan="2"></th>
-                            <th class="section4" id="case_1E_2_4" colspan="2"></th>
-                            <th class="section4" id="case_1E_2_5"></th>
-                        </tr>
-                        <tr>
-                            <th colspan="9" class="couloir" id="couloir1E"></th>
-                        </tr>
-                        <tr>
-                            <th class="section6" id="case_1E_1_1"></th>
-                            <th class="section6" id="case_1E_1_2"></th>
-                            <th class="section6" id="case_1E_1_3"></th>
-                            <th class="section5" id="case_1E_1_4"></th>
-                            <th class="section5" id="case_1E_1_5"></th>
-                            <th class="section5" id="case_1E_1_6"></th>
-                            <th class="section5" id="case_1E_1_7"></th>
-                            <th class="section4" id="case_1E_1_8"></th>
-                            <th class="section4" id="case_1E_1_9"></th>
-                        </tr>
-                    </table>
-                    
-                    <!--RDC-->
-                    <table>
-                        <tr>
-                            <th class="section1" id="case_RDC_3_1" colspan="3"></th>
-                            <th class="section2" id="case_RDC_3_2" colspan="3"></th>
-                            <th class="section2" id="case_RDC_3_3"></th>
-                            <th class="section3" id="case_RDC_3_4"></th>
-                            <th class="section3" id="case_RDC_3_5"></th>
-                            <th class="section3" id="case_RDC_3_6"></th>
-                        </tr>
-                        <tr>
-                            <th colspan="10" class="couloir" id="couloirRDC"></th>
-                        </tr>
-                        <tr>
-                            <th class="section1" id="case_RDC_2_1"></th>
-                            <th class="section1" id="case_RDC_2_2"></th>
-                            <th                  id="case_RDC_2_3"></th>
-                            <th                  id="case_RDC_2_4"></th>
-                            <th class="section2" id="case_RDC_2_5"></th>
-                            <th class="section2" id="case_RDC_2_6"></th>
-                            <th class="section2" id="case_RDC_2_7"></th>
-                            <th class="section3" id="case_RDC_2_8"></th>
-                            <th class="section3" id="case_RDC_2_9"></th>
-                            <th class="section3" id="case_RDC_2_10"></th>
-                        </tr>
-                        <tr>
-                            <th class="section1" id="case_RDC_1_1"></th>
-                            <th class="section1" id="case_RDC_1_2"></th>
-                            <th class="section1" id="case_RDC_1_3"></th>
-                            <th class="section2" id="case_RDC_1_4"></th>
-                            <th class="section2" id="case_RDC_1_5"></th>
-                            <th class="section2" id="case_RDC_1_6"></th>
-                            <th class="section2" id="case_RDC_1_7"></th>
-                            <th class="section3" id="case_RDC_1_8"></th>
-                            <th class="section3" id="case_RDC_1_9"></th>
-                            <th class="section3" id="case_RDC_1_10"></th>
-                        </tr>
-                    </table>
-                </div>
+                
                 <div class="bot">
 
                 </div>
@@ -347,7 +254,101 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                 </div>
                 <div class="num_question">
                         <h3 id ="numMobile">0</h3>
-                    </div>
+                        <img alt="logoCarte" id="carte" class="logoCarte" src="../images/carte.png" 
+                            onclick = "afficherCarte()">
+                </div>
+                <div id = "planMobile">
+                    <!--<a id = "lienFreepik" href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a> -->
+                    <!--2e étage-->
+                    <table>
+                        <tr>
+                            <th class="section7" id="case_2E_2_1Mobile" colspan="3"></th>
+                            <th class="section8" id="case_2E_2_2Mobile" colspan="2"></th>
+                            <th class="section8" id="case_2E_2_3Mobile" colspan="2"></th>
+                            <th class="section9" id="case_2E_2_4Mobile" colspan="2"></th>
+                            <th                  id="case_2E_2_5Mobile"></th>
+                        </tr>
+                        <tr>
+                            <th colspan="10" class="couloir" id="couloir2EMobile"></th>
+                        </tr>
+                        <tr>
+                            <th class="section7" id="case_2E_1_1Mobile"></th>
+                            <th class="section7" id="case_2E_1_2Mobile"></th>
+                            <th class="section7" id="case_2E_1_3Mobile"></th>
+                            <th class="section8" id="case_2E_1_4Mobile"></th>
+                            <th class="section8" id="case_2E_1_5Mobile"></th>
+                            <th class="section8" id="case_2E_1_6Mobile"></th>
+                            <th class="section9" id="case_2E_1_7Mobile"></th>
+                            <th class="section9" id="case_2E_1_8Mobile"></th>
+                            <th class="section9" id="case_2E_1_9Mobile"></th>
+                            <th class="section9" id="case_2E_1_10Mobile"></th>
+                        </tr>
+                    </table>
+
+                    <!--1er étage-->
+                    <table>
+                        <tr>
+                            <th class="section6" id="case_1E_2_1Mobile" colspan="2"></th>
+                            <th class="section5" id="case_1E_2_2Mobile" colspan="2"></th>
+                            <th class="section5" id="case_1E_2_3Mobile" colspan="2"></th>
+                            <th class="section4" id="case_1E_2_4Mobile" colspan="2"></th>
+                            <th class="section4" id="case_1E_2_5Mobile"></th>
+                        </tr>
+                        <tr>
+                            <th colspan="9" class="couloir" id="couloir1EMobile"></th>
+                        </tr>
+                        <tr>
+                            <th class="section6" id="case_1E_1_1Mobile"></th>
+                            <th class="section6" id="case_1E_1_2Mobile"></th>
+                            <th class="section6" id="case_1E_1_3Mobile"></th>
+                            <th class="section5" id="case_1E_1_4Mobile"></th>
+                            <th class="section5" id="case_1E_1_5Mobile"></th>
+                            <th class="section5" id="case_1E_1_6Mobile"></th>
+                            <th class="section5" id="case_1E_1_7Mobile"></th>
+                            <th class="section4" id="case_1E_1_8Mobile"></th>
+                            <th class="section4" id="case_1E_1_9Mobile"></th>
+                        </tr>
+                    </table>
+                    
+                    <!--RDC-->
+                    <table>
+                        <tr>
+                            <th class="section1" id="case_RDC_3_1Mobile" colspan="3"></th>
+                            <th class="section2" id="case_RDC_3_2Mobile" colspan="3"></th>
+                            <th class="section2" id="case_RDC_3_3Mobile"></th>
+                            <th class="section3" id="case_RDC_3_4Mobile"></th>
+                            <th class="section3" id="case_RDC_3_5Mobile"></th>
+                            <th class="section3" id="case_RDC_3_6Mobile"></th>
+                        </tr>
+                        <tr>
+                            <th colspan="10" class="couloir" id="couloirRDCMobile"></th>
+                        </tr>
+                        <tr>
+                            <th class="section1" id="case_RDC_2_1Mobile"></th>
+                            <th class="section1" id="case_RDC_2_2Mobile"></th>
+                            <th                  id="case_RDC_2_3Mobile"></th>
+                            <th                  id="case_RDC_2_4Mobile"></th>
+                            <th class="section2" id="case_RDC_2_5Mobile"></th>
+                            <th class="section2" id="case_RDC_2_6Mobile"></th>
+                            <th class="section2" id="case_RDC_2_7Mobile"></th>
+                            <th class="section3" id="case_RDC_2_8Mobile"></th>
+                            <th class="section3" id="case_RDC_2_9Mobile"></th>
+                            <th class="section3" id="case_RDC_2_10Mobile"></th>
+                        </tr>
+                        <tr>
+                            <th class="section1" id="case_RDC_1_1Mobile"></th>
+                            <th class="section1" id="case_RDC_1_2Mobile"></th>
+                            <th class="section1" id="case_RDC_1_3Mobile"></th>
+                            <th class="section2" id="case_RDC_1_4Mobile"></th>
+                            <th class="section2" id="case_RDC_1_5Mobile"></th>
+                            <th class="section2" id="case_RDC_1_6Mobile"></th>
+                            <th class="section2" id="case_RDC_1_7Mobile"></th>
+                            <th class="section3" id="case_RDC_1_8Mobile"></th>
+                            <th class="section3" id="case_RDC_1_9Mobile"></th>
+                            <th class="section3" id="case_RDC_1_10Mobile"></th>
+                        </tr>
+                    </table>
+                </div>
                 <div id="corps_questionMobile">
                     <div id="blockQuizzMobile">
                         <div class="question">
@@ -374,17 +375,17 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                 </div>
                 
 
-                <div id="boiteCarteAideBot">
-                    <div id="aideBot">
-                        <div id="barreNavBot">
-                            <p id="titreBot">Help Bot</p>
-                            <p id="tempsRestant"></p>
-                            <img alt="logoBouttonBotHaut" id="logoBouttonBotHaut" class="logoBouttonBot" src="../images/bot.png"  onclick = "ouvrirBot()">
-                            <img alt="logoBouttonBotBas" id="logoBouttonBotBas" class="logoBouttonBot" src="../images/flechehaut.png" 
+                <div id="boiteCarteAideBotMobile">
+                    <div id="aideBotMobile">
+                        <div id="barreNavBotMobile">
+                            <p id="titreBotMobile">Help Bot</p>
+                            <p id="tempsRestantMobile"></p>
+                            <img alt="logoBoutonBotHaut" id="logoBoutonBotHautMobile" class="logoBoutonBot" src="../images/bot.png"  onclick = "ouvrirBot()">
+                            <img alt="logoBoutonBotBas" id="logoBoutonBotBasMobile" class="logoBoutonBot" src="../images/flechehaut.png" 
                             onclick = "fermerBot()">
                     
                         </div>
-                        <div id="chatBot">
+                        <div id="chatBotMobile">
 
                         </div>
                     </div>
@@ -398,19 +399,9 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
 
             </div>
         </div>
-
-
-
-
-
-
-
         
     </body>
-</html>
-<?php } ?>
-
-
+</html><?php } ?>
 <?php
 $spe = $_POST["spe"];
 startJeux($spe); ?>

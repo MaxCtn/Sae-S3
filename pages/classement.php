@@ -69,42 +69,16 @@ function start_classement($e,$nb) {
                     <th>Temps</th>
                     <th>Score</th>
                 </tr>
+                
+                <?php $x = 0 ?>
+                <?php while($nb > $x/2) { ?>
                 <tr>
                     <td></td>
-                    <td><?php if($nb >= 1) {echo $e[0];}  ?></td>
+                    <td><?php echo $e[$x]; $x = $x + 1; ?></td>
                     <td>.</td>
-                    <td><?php if($nb >= 1) {echo $e[1];} ?></td>
+                    <td><?php echo $e[$x]; $x = $x + 1;?></td>
                 </tr>
-                <tr>
-                    <td>.</td>
-                    <td><?php if($nb >= 2) { echo $e[2]; }?></td>
-                    <td>.</td>
-                    <td><?php if($nb >= 2) { echo $e[3]; } ?></td>
-                </tr>
-                <tr>
-                    <td>.</td>
-                    <td><?php if($nb >= 3) { echo $e[4]; }?></td>
-                    <td>.</td>
-                    <td><?php if($nb >= 3) { echo $e[5]; }?></td>
-                </tr>
-                <tr>
-                <td>.</td>
-                    <td><?php if($nb >= 4) { echo $e[6]; }?></td>
-                    <td>.</td>
-                    <td><?php if($nb >= 4) { echo $e[7]; }?></td>
-                </tr>
-                <tr>
-                    <td>.</td>
-                    <td>.</td>
-                    <td>.</td>
-                    <td>.</td>
-                </tr>
-                <tr>
-                    <td>.</td>
-                    <td>.</td>
-                    <td>.</td>
-                    <td>.</td>
-                </tr>
+                <?php } ?>
             </table>
         </div>
         </body>
