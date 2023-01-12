@@ -1,11 +1,11 @@
 <?php
-function AjouteGagnant($pseudo, $score)
+function AjouteGagnant($pseudo, $score,$spe)
 {
     $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
     mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
-    $queryReponse = mysqli_prepare($dbLink, 'INSERT Into GAGNANT(NOM_GAGNANT, SCORE) Values (?, ?);');
-    mysqli_stmt_bind_param($queryReponse, "ss", $pseudo, $score);
+    $queryReponse = mysqli_prepare($dbLink, 'INSERT Into GAGNANT(NOM_GAGNANT, SCORE,SPECIALITE) Values (?, ?, ?);');
+    mysqli_stmt_bind_param($queryReponse, "sss", $pseudo, $score, $spe);
     mysqli_execute($queryReponse);
     mysqli_stmt_close($queryReponse);
 }
@@ -31,7 +31,9 @@ function recupGagnant() {
             {
                
                     $listeGagnant[] = $row['NOM_GAGNANT'];
+                    $listeGagnant[] = $row['SPECIALITE'];
                     $listeGagnant[] = $row['SCORE'];
+
             }
             return $listeGagnant;
            
@@ -43,9 +45,8 @@ function recupGagnant() {
 
 <?php 
 function start_classement($e,$nb) { 
-
-
-    ?><!DOCTYPE html>
+    ?>
+<!DOCTYPE html>
     <html lang="fr">
         <head>
             <title>BackToBachelor - Classement</title>  
@@ -66,16 +67,16 @@ function start_classement($e,$nb) {
                 <tr id="premiere_ligne">
                     <th>#</th>
                     <th>Pseudo</th>
-                    <th>Temps</th>
+                    <th>Spécialité</th>
                     <th>Score</th>
                 </tr>
                 
                 <?php $x = 0 ?>
-                <?php while($nb > $x/2) { ?>
+                <?php while($nb > $x/3) { ?>
                 <tr>
                     <td></td>
                     <td><?php echo $e[$x]; $x = $x + 1; ?></td>
-                    <td>.</td>
+                    <td><?php echo $e[$x]; $x = $x + 1; ?></td>
                     <td><?php echo $e[$x]; $x = $x + 1;?></td>
                 </tr>
                 <?php } ?>
@@ -90,14 +91,15 @@ function start_classement($e,$nb) {
 if (isset($_POST['pseudo'])) {
     $pseudo=$_POST['pseudo'];
     $score=$_POST['score'];
-    AjouteGagnant($pseudo,$score);
+    $spe = $_POST["spe"];
+    AjouteGagnant($pseudo,$score,$spe);
 
 }
-
+/*si il n'y a aucun gagnant*/
+if(recupGagnant() == 0){
+    AjouteGagnant("test",0,"programmation");
+}
 $e = recupGagnant();
-$nb= sizeof($e)/2;
+$nb= sizeof($e)/3;
 start_classement($e,$nb);
-            
- 
-
 ?>

@@ -1,6 +1,6 @@
 <?php function resultatAdmin() { ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->
         <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
@@ -8,12 +8,12 @@
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleResultAdmin.css">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     </head>
     <body>
         <header>
             <div class="entete_info">
-                <div class="rubrique_menu"><a href="../index.php"><img id="return" src="../images/maison.png"></a></div>
+                <div class="rubrique_menu"><a href="../index.php"><img alt="return" id="return" src="../images/maison.png"></a></div>
                 <div class="rubrique_menu"><h1 class="contact_titre">Nous contacter</h1></div>
             </div>
         </header>
@@ -24,13 +24,12 @@
                 </div>
 
                 <div id = "choix">
-                    <button id="supprimer" onclick="afficherSupprimer()">supprimer?</button>
+                    <button id="supprimer" onclick="afficherSupprimer()">Supprimer?</button>
                     <br/>
                     <button id="modifier" onclick="afficherModifier()">Modifier?</button>
 
                     <button id="inserer" onclick="afficherInserer()">Insérer?</button>
                 </div>
-                <br/>
                 <form id ="formSupprimer" action="supprimer.php" method="POST" style="display:none" >
                         <input id="idQuestion" name="idQuestion" type="text" placeholder="IdQuestion">
                 <div class="valide_form">
@@ -79,31 +78,11 @@
 
               
             </div>
-            <?php //AjouteQuestion("libtest","theme","1","ind","exp","rep","1","rep","0","rep","0","rep","0");?>
             <div id="toutesLesQuestions"><?php afficheQuestions();  ?> </div>
-        </div>
-
-               
-        <div class="menu2">
-            <div class="presentation_form">
-                <div class="titre_mail">
-                    Formulaire :
-                </div>
-                <div class="info_mail">
-                    <div class="nom_prenom">
-                        <input id="id" type="text" placeholder="Id">
-                        <input id="motDePasse" type="text" placeholder="Mot de Passe">
-                    </div>
-                </div>
-                <div class="valide_form">
-                    <button id="valideChoix" onclick="formConfirme()">Valider</button>
-                </div>
-            </div>
         </div>
     </body>
 </html>
 <?php } ?>
-
 
 <?php function startContact() { 
     $action = $_POST['action'];
@@ -112,37 +91,20 @@
     if($action == 'valider' || $action == 'Retourner vers Interface Admin') 
 
  { 
-    if($Identifiant == 'Patricia' & $Motdepasse == 'motdepasse') {
+    if($Identifiant == 'Patricia' & $Motdepasse == trouveMotDePasse()) {
 
         resultatAdmin();
-
-        /*$message = 'Voici vos identifiants d\'inscription :' . PHP_EOL;
-        
-        
-        $message2 = 'ID : ' . $Identifiant . PHP_EOL;
-
-        $message3 = 'mot de passe : ' . $Motdepasse . PHP_EOL;*/
-
-   // mail($Email, $subject, $message);
     }
     else {
         header("Location: https://quizzbutinfoaix.alwaysdata.net/pages/admin.php");
         exit;
-
     }
-
-    
  }
 }
 ?>
 
-
-
-<?php startContact(); ?>
-
-
-
 <?php
+/* fonction affichant toutes les questions */
 function afficheQuestions() {
     $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net","286642","ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
     mysqli_select_db($dbLink , 'quizzbutinfoaix_bd')or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
@@ -160,9 +122,9 @@ function afficheQuestions() {
             while ($row = mysqli_fetch_assoc($result))
             {
                 ?>
-                <div id = "question"> 
+                <div class = "question"> 
                     <?php echo $row['LIBELLE'];echo ' : '; ?>
-                    <div id = "id_question"> <?php echo $row['ID_QUESTION'];?> </div>
+                    <div class = "id_question"> <?php echo $row['ID_QUESTION'];?> </div>
                 </div>
                 <?php
             }
@@ -170,3 +132,24 @@ function afficheQuestions() {
     } 
 }
 ?>
+
+<?php function trouveMotDePasse() {
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net","286642","ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink , 'quizzbutinfoaix_bd')or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+
+ 
+    // créer une requête préparée
+    if ($stmt = mysqli_prepare($dbLink, "SELECT MDP FROM MOTDEPASSE WHERE ID_MDP=1")) {
+        // exécuter la requête
+        mysqli_stmt_execute($stmt);
+        // associer la colonne du jeu de résultats à une variable
+        mysqli_stmt_bind_result($stmt, $MDP);
+        // récupérer la valeur
+        mysqli_stmt_fetch($stmt);
+        return $MDP;
+        mysqli_stmt_close($stmt);
+    }
+}
+?>
+
+<?php startContact(); ?>

@@ -204,7 +204,7 @@ button:active {
     justify-content: space-around;
 }
 
-#id_question {
+.id_question {
     color: red;
 }
 #toutesLesQuestions {
@@ -213,14 +213,14 @@ button:active {
     flex-direction: column;
 }
 
-#question {
+.question {
     display: flex;
     justify-content: center;
 
 }
 
 
-/*responsive*/
+/*responsive*
 
 @media screen and (max-width: 750px){
 
@@ -265,7 +265,6 @@ button:active {
 
     button {
         background-color: #00B7E9;
-        /* bleu */
         border-radius: 30px;
         border: none;
         color: white;
@@ -304,3 +303,4 @@ button:active {
     }
    
 }
+*/

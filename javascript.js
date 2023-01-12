@@ -13,8 +13,8 @@ function setScreen(spe){
         document.getElementById('titre_choix').innerHTML = "Que sont les bases de données ?";
         document.getElementById('p_choix').innerHTML = "Les bases de données servent à stocker des données que l'on peut ensuite récupérer et/ou manipuler. Par exemple, vous pourrez concevoir une base de données qui vous servira à établir des statistiques.";
     }
-    if(spe == 'programmation'|| spe == 'programmation'){
-        document.getElementById('titre_choix').innerHTML = "Qu'est ce que la programmation ? : https://youtu.be/HSUTiFZB_-Y";
+    if(spe == 'programmation'|| spe == 'programmationMobile'){
+        document.getElementById('titre_choix').innerHTML = "Qu'est ce que la programmation ?";
         document.getElementById('p_choix').innerHTML = "La programmation consiste à créer des algorithmes, suites d'instructions ayant un but. Vous utiliserez de nombreux langages (C++, Python, Java) qui vous permettront de raliser de nombreux projets.";
     }
     if(spe == 'jsp'|| spe == 'jspMobile'){
@@ -40,7 +40,6 @@ function setVideoScreen(){
 
     /**tirage au sort du thème si la personne ne sait pas quoi prendre*/
     if(spe == 'jsp'|| spe == 'jspMobile'){  
-      
         max = 4;
         min = 0;
         min = Math.ceil(min);
@@ -68,7 +67,7 @@ function setVideoScreen(){
 
     }
     else if(spe == 'programmation'|| spe == 'programmationMobile'){
-        document.getElementById('titre_choixVideo').innerHTML = "Qu'est ce que la programmation ? : https://youtu.be/HSUTiFZB_-Y";
+        document.getElementById('titre_choixVideo').innerHTML = "Qu'est ce que la programmation ?";
         document.getElementById('PopupProg').style.display='block';
         document.getElementById('speChoisie').value='programmation';
     }
@@ -82,17 +81,14 @@ function setVideoScreen(){
     /**permet d'afficher le pop up de vidéo avec une animation */
     document.getElementById('popup_video').style.display='block';
     document.getElementById('popup_video').style.animation='fadein 1s';
-   
-
 }
 
-/** fonction fermant les trois pop ups avec une animation*/ 
+/** fonction fermant les pop ups avec une animation*/ 
 function closeScreen(){ 
     document.getElementById('PopupWeb').style.display='none';
     document.getElementById('PopupRes').style.display='none';
     document.getElementById('PopupBd').style.display='none';
     document.getElementById('PopupProg').style.display='none';
-    document.getElementById('PopupJsp').style.display='none';
     document.getElementById('PopupSys').style.display='none';
     document.getElementById('popup').style.animation='slidePopUpOut 1s ease forwards';
     setTimeout(() => {document.getElementById('popup').style.display='none'; 
@@ -101,7 +97,6 @@ function closeScreen(){
     setTimeout(() => {document.getElementById('popup_video').style.display='none';
     document.getElementById('popup_video').style.animation='none'}, 1000);
 }
-
 
 /**fonction ouvrant l'overlay de la page formulaire */ 
 function formConfirme(){ 
@@ -115,16 +110,12 @@ function afficherSupprimer() {
     document.getElementById("formInserer").style.display= "none";
     document.getElementById("formSupprimer").style.display= "initial";
     document.getElementById("formModifier").style.display= "none";
-
-
 }
 /** fonction permettant à l'administrateur d'accèder au formulaire inserer*/
 function afficherInserer() {
     document.getElementById("formSupprimer").style.display= "none";
     document.getElementById("formInserer").style.display= "initial";
     document.getElementById("formModifier").style.display= "none";
-
-
 }
 function afficherModifier() {
     document.getElementById("formSupprimer").style.display= "none";

@@ -1,5 +1,5 @@
 <?php function start_choix_spe() { ?>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
     <head>
         <title>BackToBachelor - Choix spécialitée</title>
@@ -11,7 +11,7 @@
     <body>
         <header>
             <a href="../index.php"><h1 class="titre">Nom </h1></a>
-            <a href="../index.php"><h1> du jeux</h1></a>
+            <a href="../index.php"><h1> du jeu</h1></a>
         </header>
         <div class="menu">
             <div id="specialite" style="display:none">rien</div>
@@ -44,15 +44,14 @@
                     </div>
                     <div class="corpsChoix">
                     <!-- a verifier -->    
-                    <div id="PopupProg"><iframe class="videoPopUp" id="videoPopupProg" src="https://www.youtube.com/embed/HSUTiFZB_-Y" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupRes"><iframe class="videoPopUp" id="videoPopupRes" src="https://www.youtube.com/embed/mj56SSiuQC0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupWeb"><iframe class="videoPopUp" id="videoPopupWeb" src="https://www.youtube.com/embed/l5TgRtdrhPM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupBd"><iframe class="videoPopUp" id="videoPopupBd" src="https://www.youtube.com/embed/bh7k6QMtkbQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupSys"><iframe class="videoPopUp" id="videoPopupSys" src="https://www.youtube.com/embed/R_uLXqsfeME" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupJsp"><iframe class="videoPopUp" id="videoPopupJsp" src="https://www.youtube.com/embed/nVdeTaxIPpc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupProg"><iframe class="videoPopUp" id="videoPopupProg" src="https://www.youtube.com/embed/qSrZPiGcDIQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupRes"><iframe class="videoPopUp" id="videoPopupRes" src="https://www.youtube.com/embed/NDeYCBWGQdE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupWeb"><iframe class="videoPopUp" id="videoPopupWeb" src="https://www.youtube.com/embed/F3qDGKu4Gms" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupBd"><iframe class="videoPopUp" id="videoPopupBd" src="https://www.youtube.com/embed/vlCe-vFKiZg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupSys"><iframe class="videoPopUp" id="videoPopupSys" src="https://www.youtube.com/embed/1mrZ1jhB8Qc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <form method="post" action="jeux.php"> 
-                        <input id="speChoisie"type="text" name="spe" value="nonDefinie" style="display:none">
-                        <input type="submit" id="jeux" class="valideChoix" value = "Valider mon choix"> 
+                            <input id="speChoisie" type="text" name="spe" value="nonDefinie" style="display:none">
+                            <input type="submit" id="jeux" class="valideChoix" value = "Valider mon choix"> 
                         </form>
                     </div>
                 </div>
@@ -70,7 +69,7 @@
                     <button id="programmation" class="lien" onclick="setScreen(this.id)">Programmation</button>
                 </div>
                 <div class="bouton transi3">
-                    <button id="systeme" class="lien" onclick="setScreen(this.id)">Système</button>
+                    <button id="systeme" class="lien" onclick="setScreen(this.id)">Système/Crypto</button>
                     <button id="jsp" class="lien" onclick="setScreen(this.id)">Je ne sais pas</button>
                 </div>
             </div>
@@ -83,15 +82,14 @@
                 </div>
                 <div class="bouton">
                     <button id="bdMobile" onclick="setScreen(this.id)">Base de données</button>
-                    <button id="algoMobile" onclick="setScreen(this.id)">Programmation</button>
+                    <button id="programmationMobile" onclick="setScreen(this.id)">Programmation</button>
                 </div>
                 <div class="bouton">
-                    <button id="systemeMobile" onclick="setScreen(this.id)">Système</button>
+                    <button id="systemeMobile" onclick="setScreen(this.id)">Système/Crypto</button>
                     <button id="jspMobile" onclick="setScreen(this.id)">Je ne sais pas</button>
                 </div>
             </div>
         </div>
     </body>
 </html>
-
 <?php } start_choix_spe(); ?>
