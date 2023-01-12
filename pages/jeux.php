@@ -9,7 +9,9 @@ else{
 
 startJeux($spe); ?>
 
-<?php function startJeux($spe) { ?>
+<?php 
+/*fonction démarrant la page de jeu*/
+function startJeux($spe) { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -42,7 +44,7 @@ startJeux($spe); ?>
         <div class="affichage">
             <div class="affichage_gauche">
                 <div id = "plan">
-                    <!-- <a id = "lienFreepik" href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a> -->
+                    <!-- source de l'image de couronne <a id = "lienFreepik" href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a> -->
                     <!--2e étage-->
                     <table>
                         <tr>
@@ -419,7 +421,8 @@ function reponses($id,$i){
 }
 ?>
 
-<?php /* Ici nous utilisons les mêmes types de fonctions qui permettent de récupérer 
+<?php 
+/* Ici nous utilisons les mêmes types de fonctions qui permettent de récupérer 
 et afficher les questions et réponses selon les spécialités*/
 ?>
 

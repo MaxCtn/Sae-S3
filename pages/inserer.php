@@ -1,9 +1,11 @@
-<?php function resultatAdmin() { ?>
+<?php 
+/*fonction démarrant la page de gestion de l'administrateur*/
+function resultatAdmin() { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->
-        <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
+        <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" />
         <title>BackToBachelor - Nous Contacter</title>  
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleResultAdmin.css">
@@ -148,7 +150,7 @@ function afficheQuestions() {
 }
 ?>
 
-<?php
+<?php /* fonction insérant une des réponses associée à une question */
 function AjouteReponse($IdQuestion, $Rep, $BonRep)
 {
     $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
@@ -162,19 +164,22 @@ function AjouteReponse($IdQuestion, $Rep, $BonRep)
 ?>
 
 <?php
-$libelle = $_POST["libelle"];
-$theme = $_POST["theme"];
-$difficulte = $_POST["difficulte"];
-$indice = $_POST["indice"];
-$explication = $_POST["explication"];
-$reponse1 = $_POST["reponse1"];
-$bonneRep1 = $_POST["bonneRep1"];
-$reponse2 = $_POST["reponse2"];
-$bonneRep2 = $_POST["bonneRep2"];
-$reponse3 = $_POST["reponse3"];
-$bonneRep3 = $_POST["bonneRep3"];
-$reponse4 = $_POST["reponse4"];
-$bonneRep4 = $_POST["bonneRep4"];
-AjouteQuestion($libelle, $theme, $difficulte, $indice, $explication, $reponse1, $bonneRep1, $reponse2, $bonneRep2, $reponse3, $bonneRep3, $reponse4, $bonneRep4);
-resultatAdmin();
+/* il faut avoir posté le formulaire d'insertion, même avec des variables vides pour éviter d'arriver sur cette page sans être administrateur*/
+if(isset($_POST["libelle"])) {
+    $libelle = $_POST["libelle"];
+    $theme = $_POST["theme"];
+    $difficulte = $_POST["difficulte"];
+    $indice = $_POST["indice"];
+    $explication = $_POST["explication"];
+    $reponse1 = $_POST["reponse1"];
+    $bonneRep1 = $_POST["bonneRep1"];
+    $reponse2 = $_POST["reponse2"];
+    $bonneRep2 = $_POST["bonneRep2"];
+    $reponse3 = $_POST["reponse3"];
+    $bonneRep3 = $_POST["bonneRep3"];
+    $reponse4 = $_POST["reponse4"];
+    $bonneRep4 = $_POST["bonneRep4"];
+    AjouteQuestion($libelle, $theme, $difficulte, $indice, $explication, $reponse1, $bonneRep1, $reponse2, $bonneRep2, $reponse3, $bonneRep3, $reponse4, $bonneRep4);
+    resultatAdmin();
+}
 ?>

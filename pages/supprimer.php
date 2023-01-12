@@ -1,4 +1,6 @@
-<?php function resultatAdmin() { ?>
+<?php 
+/*fonction démarrant la page de gestion de l'administrateur*/
+function resultatAdmin() { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -117,6 +119,7 @@ function afficheQuestions() {
 
 
 <?php
+/* il faut avoir posté le formulaire de suppression, même avec des variables vides pour éviter d'arriver sur cette page sans être administrateur*/
 function supprimeQuestion($ID_QUESTION) {
     $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net","286642","ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
     mysqli_select_db($dbLink , 'quizzbutinfoaix_bd')or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
@@ -134,8 +137,9 @@ function supprimeQuestion($ID_QUESTION) {
 ?>
 
 <?php
-    $Id = $_POST["idQuestion"];
-    supprimeQuestion($Id);
-    resultatAdmin();
-    
+    if(isset($_POST["idQuestion"])){
+        $Id = $_POST["idQuestion"];
+        supprimeQuestion($Id);
+        resultatAdmin();
+    }
 ?>

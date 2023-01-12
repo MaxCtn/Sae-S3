@@ -1,4 +1,5 @@
 <?php 
+/*fonction démarrant la page index*/
 function start_index() { 
     ?>
 <!DOCTYPE html>

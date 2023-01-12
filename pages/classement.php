@@ -1,4 +1,5 @@
 <?php
+/*fonction permettant d'ajouter un gagnant dans la base de données*/
 function AjouteGagnant($pseudo, $score,$spe)
 {
     $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
@@ -12,6 +13,7 @@ function AjouteGagnant($pseudo, $score,$spe)
 ?>
 
 <?php
+/*fonction permettant de renvoyer la liste des gagnants dans la base de données*/
 function recupGagnant() {
     $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net","286642","ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
     mysqli_select_db($dbLink , 'quizzbutinfoaix_bd')or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
@@ -44,12 +46,14 @@ function recupGagnant() {
 
 
 <?php 
+/*fonction démarrant la page classement*/
 function start_classement($e,$nb) { 
     ?>
 <!DOCTYPE html>
     <html lang="fr">
         <head>
             <title>BackToBachelor - Classement</title>  
+            <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
             <script src="./javascript.js"></script>
             <link rel="stylesheet" href="../css/styleClassement.css">
             <meta charset="UTF-8">
@@ -95,7 +99,7 @@ if (isset($_POST['pseudo'])) {
     AjouteGagnant($pseudo,$score,$spe);
 
 }
-/*si il n'y a aucun gagnant*/
+/*si il n'y a aucun gagnant, on évite l'erreur en gardant toujours au moins un gagnant*/
 if(recupGagnant() == 0){
     AjouteGagnant("test",0,"programmation");
 }

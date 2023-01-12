@@ -1,9 +1,12 @@
-<?php function startInfo() { ?>
+<?php 
+/*fonction démarrant la page A propos*/
+function startInfo() { ?>
     <!DOCTYPE html>
     <html lang="fr">
         <head>
             <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->
             <title>BackToBachelor - A propos</title>  
+            <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
             <script src="../javascript.js"></script>
             <link rel="stylesheet" href="../css/styleInfo.css">
             <meta charset="UTF-8">

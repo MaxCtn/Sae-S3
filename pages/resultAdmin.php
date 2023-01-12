@@ -1,4 +1,6 @@
-<?php function resultatAdmin() { ?>
+<?php 
+/*fonction démarrant la page de gestion de l'administrateur*/
+function resultatAdmin() { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -84,7 +86,10 @@
 </html>
 <?php } ?>
 
-<?php function startContact() { 
+
+<?php 
+/* fonction permettant de lancer la page de gestion d'administrateur si l'identifiant et le mot de passe entrés sont corrects */
+function startContact() { 
     $action = $_POST['action'];
     $Identifiant = $_POST['id'];
     $Motdepasse = $_POST['motDePasse'];
@@ -133,7 +138,9 @@ function afficheQuestions() {
 }
 ?>
 
-<?php function trouveMotDePasse() {
+<?php 
+/* fonction récupérant le mot de passe de l'administrateur dans la base de données */
+function trouveMotDePasse() {
     $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net","286642","ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
     mysqli_select_db($dbLink , 'quizzbutinfoaix_bd')or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
@@ -152,4 +159,8 @@ function afficheQuestions() {
 }
 ?>
 
-<?php startContact(); ?>
+<?php 
+if(isset($_POST['action']) && isset($_POST['id']) && isset($_POST['motDePasse'])) {
+    startContact();
+}
+?>

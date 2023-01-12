@@ -1,8 +1,11 @@
-<?php function start_choix_spe() { ?>
+<?php 
+/*fonction démarrant la page de choix des spécialités*/
+function start_choix_spe() { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <title>BackToBachelor - Choix spécialitée</title>
+        <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleChoix.css">
         <meta charset="UTF-8">

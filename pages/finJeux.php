@@ -1,8 +1,11 @@
-<?php function start_fin($score,$spe) { ?>
+<?php 
+/*fonction démarrant la page fin du jeu*/
+function start_fin($score,$spe) { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <title>BackToBachelor - Fin du Quizz</title>
+        <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleFinJeux.css">
         <meta charset="UTF-8">

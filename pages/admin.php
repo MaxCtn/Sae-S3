@@ -1,4 +1,6 @@
-<?php function startCoAdmin() { ?>
+<?php 
+/*fonction démarrant la page dans laquelle l'administrateur se connecte*/
+function startCoAdmin() { ?>
     <!DOCTYPE html>
     <html>
         <head>

@@ -1,9 +1,12 @@
-<?php function startContact() { ?>
+<?php 
+/*fonction démarrant la page contact */
+function startContact() { ?>
 <!DOCTYPE html>
     <html lang="fr">
         <head>
             <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->
-            <title>BackToBachelor - Nous Contacter</title>  
+            <title>BackToBachelor - Nous Contacter</title>
+            <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
             <script src="../javascript.js"></script>
             <link rel="stylesheet" href="../css/styleContact.css">
             <meta charset="UTF-8">

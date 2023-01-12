@@ -1,4 +1,6 @@
-<?php function resultatAdmin() { ?>
+<?php 
+/*fonction démarrant la page de gestion de l'administrateur*/
+function resultatAdmin() { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -274,20 +276,24 @@ function afficheQuestions() {
 ?>
 
 <?php
-$id = $_POST["id"];
-$libelle = $_POST["libelle"];
-$theme = $_POST["theme"];
-$difficulte = $_POST["difficulte"];
-$indice = $_POST["indice"];
-$explication = $_POST["explication"];
-$reponse1 = $_POST["reponse1"];
-$bonneRep1 = $_POST["bonneRep1"];
-$reponse2 = $_POST["reponse2"];
-$bonneRep2 = $_POST["bonneRep2"];
-$reponse3 = $_POST["reponse3"];
-$bonneRep3 = $_POST["bonneRep3"];
-$reponse4 = $_POST["reponse4"];
-$bonneRep4 = $_POST["bonneRep4"];
-VerifArguments($id, $libelle, $theme, $difficulte, $indice, $explication, $reponse1, $bonneRep1, $reponse2, $bonneRep2, $reponse3, $bonneRep3, $reponse4, $bonneRep4);
-resultatAdmin();
+/* il faut avoir posté le formulaire de modification, même avec des variables vides pour éviter d'arriver sur cette page sans être administrateur*/
+if(isset($_POST["id"])) {
+    $id = $_POST["id"];
+    $libelle = $_POST["libelle"];
+    $theme = $_POST["theme"];
+    $difficulte = $_POST["difficulte"];
+    $indice = $_POST["indice"];
+    $explication = $_POST["explication"];
+    $reponse1 = $_POST["reponse1"];
+    $bonneRep1 = $_POST["bonneRep1"];
+    $reponse2 = $_POST["reponse2"];
+    $bonneRep2 = $_POST["bonneRep2"];
+    $reponse3 = $_POST["reponse3"];
+    $bonneRep3 = $_POST["bonneRep3"];
+    $reponse4 = $_POST["reponse4"];
+    $bonneRep4 = $_POST["bonneRep4"];
+    VerifArguments($id, $libelle, $theme, $difficulte, $indice, $explication, $reponse1, $bonneRep1, $reponse2, $bonneRep2, $reponse3, $bonneRep3, $reponse4, $bonneRep4);
+    resultatAdmin();
+}
+
 ?>
