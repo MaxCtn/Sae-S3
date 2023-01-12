@@ -1,5 +1,5 @@
 <?php function startContact() { ?>
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="fr">
         <head>
             <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->

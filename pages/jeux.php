@@ -1,46 +1,13 @@
-<?php function trouveQuestion($ID_QUESTION) {
-  $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net","286642","ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-  mysqli_select_db($dbLink , 'quizzbutinfoaix_bd')or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+<?php
+if(isset($_POST['spe'])){
+    $spe = $_POST["spe"];
+}
+/*si la spécialité n'a pas été choisie(url direct vers jeux.php -> programmation comme spécialité par défaut)*/
+else{
+    $spe = "programmation";
+}
 
- 
-// créer une requête préparée
-if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM QUESTION WHERE ID_QUESTION > ?")) {
-    // associer la variable à la requête
-    mysqli_stmt_bind_param($stmt, "i", $ID_QUESTION);
-    // exécuter la requête
-    mysqli_stmt_execute($stmt);
-    // associer la colonne du jeu de résultats à une variable
-    mysqli_stmt_bind_result($stmt, $LIBELLE);
-    // récupérer la valeur
-    mysqli_stmt_fetch($stmt);
-    return $LIBELLE;
-    mysqli_stmt_close($stmt);
-}}
- ?>
-
-<?php function trouveReponse($ID_QUESTION) {
-  $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net","286642","ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-  mysqli_select_db($dbLink , 'quizzbutinfoaix_bd')or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
-
- 
-// créer une requête préparée
-if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > ?")) {
-    // associer la variable à la requête
-    mysqli_stmt_bind_param($stmt, "i", $ID_QUESTION);
-    // exécuter la requête
-    mysqli_stmt_execute($stmt);
-
-
-    // associer la colonne du jeu de résultats à une variable
-    mysqli_stmt_bind_result($stmt, $LIBELLE);
-    // récupérer la valeur
-    mysqli_stmt_fetch($stmt);
-    return $LIBELLE;
-
-
-    mysqli_stmt_close($stmt);
-}}
- ?>
+startJeux($spe); ?>
 
 <?php function startJeux($spe) { ?>
 <!DOCTYPE html>
@@ -63,12 +30,11 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                     <button class="bouton_popup" onclick="closeScreenJeux()">X</button>
                 </div>
                 <div class="corpsChoix">
-                    <div id="PopupProg"><iframe id="videoPopupProg" src="https://www.youtube.com/embed/j_9F1EtBn3Q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div id="PopupRes"><iframe id="videoPopupRes" src="https://www.youtube.com/embed/70NeraPLWK0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div id="PopupWeb"><iframe id="videoPopupWeb" src="https://www.youtube.com/embed/XwCeoVFbVT4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div id="PopupBd"><iframe id="videoPopupBd" src="https://www.youtube.com/embed/j-441JVj5c8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div id="PopupProg"><iframe id="videoPopupProg" src="https://www.youtube.com/embed/Pu_ezhrOhrw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div id="PopupRes"><iframe id="videoPopupRes" src="https://www.youtube.com/embed/R_FrLDrPbis" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div id="PopupWeb"><iframe id="videoPopupWeb" src="https://www.youtube.com/embed/SVuBQ5sImxM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div id="PopupBd"><iframe id="videoPopupBd" src="https://www.youtube.com/embed/YN_EONlvjjs" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     <div id="PopupSys"><iframe id="videoPopupSys" src="https://www.youtube.com/embed/8NuYZ0MfimA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div id="PopupJsp"><iframe id="videoPopupJsp" src="https://www.youtube.com/embed/nVdeTaxIPpc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     <div id="jeux" class="valideChoix" onclick="closeScreenJeux()">OK</div>
                 </div>
             </div>
@@ -175,6 +141,7 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
             <div id="blockFinQuizz">
                 <form id="formFinQuizz" method ="post" action="finJeux.php">
                     <input id="score" name="score" type="number" value="0">
+                    <input id="speChoisie" style="display:none" type="text" name="spe" value=<?php echo($spe);?>>
                     <input id="versFin" type="submit">
                 </form>
             </div>
@@ -186,13 +153,13 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                     </div>
                     <header>
                         <h1 class="titre">Nom</h1>
-                        <h1>du jeux</h1>
+                        <h1>du jeu</h1>
                     </header>
                 </div>
                 <div id="corps_question">
                     <div id="blockQuizz">
                         <div class="question">
-                            <h2 id="questionPosee">cliquez sur Valider</h2>
+                            <h2 id="questionPosee">clique sur oui</h2>
                         </div>
                         <div class="reponse">
                             <div class="reponseLigne"> 
@@ -208,7 +175,7 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                             
                             <button id="soumettre" onclick="cliqueValiderOuContinuer(this.id)">Valider</button>
                         </div>
-                        <div id="specialite"><?php 
+                        <div id="specialite" style="display:none"><?php 
                         echo $spe; ?></div> 
                     </div>
                 </div>
@@ -248,7 +215,7 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                    
                     <header>
                         <h1 class="titre">Nom</h1>
-                        <h1>du jeux</h1>
+                        <h1>du jeu</h1>
                     </header>
                    
                 </div>
@@ -352,7 +319,7 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                 <div id="corps_questionMobile">
                     <div id="blockQuizzMobile">
                         <div class="question">
-                            <h2 id="questionPoseeMobile">clic sur oui</h2>
+                            <h2 id="questionPoseeMobile">clique sur oui</h2>
                         </div>
                         <div class="reponse">
                             <div class="reponseLigne"> 
@@ -393,15 +360,574 @@ if ($stmt = mysqli_prepare($dbLink, "SELECT LIBELLE FROM REPONSE WHERE ID_REP > 
                 <div id="blockFinQuizzMobile">
                 <form id="formFinQuizzMobile" method ="post" action="finJeux.php">
                     <input id="scoreMobile" name="score" type="number" value="0">
+                    <input id="speChoisieMobile" style="display:none" type="text" name="spe" value=<?php echo($spe);?>>
                     <input id="versFinMobile" type="submit">
                 </form>
             </div>
 
             </div>
         </div>
-        
+        <div id = "recuperationQuestions">
+            <div id="questionsGeneralesUn"><h3>Questions Generales 1</h3><?php questionsGeneralesUn();?></div>
+            <div id="questionsSpecialiteUn"><h3>Questions Specialite 1</h3><?php questionsSpeUn($spe);?></div>
+
+
+            <div id="questionsGeneralesDeuxUn"><h3>Questions Generales 2</h3><?php questionsGenerales2();?></div>
+            <div id="questionsSpecialitedeux"><h3>Questions Specialite 2</h3><?php questionsSpeDeux($spe);?></div>
+        </div>
     </body>
 </html><?php } ?>
+
+
+
+<?php 
+/*fonction récupérant et affichant les réponses */
+function reponses($id,$i){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+
+    for ($j=0; $j < 4; $j++) { 
+        $rep = null;
+        $queryLib = mysqli_prepare($dbLink, 'SELECT LIBELLE From REPONSE Where ID_QUESTION = ? LIMIT 1 OFFSET ?;');
+        mysqli_stmt_bind_param($queryLib, "ss", $id, $j);
+        mysqli_execute($queryLib);
+        mysqli_stmt_bind_result($queryLib, $rep);
+        mysqli_stmt_fetch($queryLib);
+        ?>
+        <p id=<?php echo "rep" .$i .$j;?>> <?php echo $rep;?> </p>
+        <?php
+        mysqli_stmt_close($queryLib);
+
+        $bon = null;
+        $queryRep = mysqli_prepare($dbLink, 'SELECT BONNE_REP From REPONSE Where ID_QUESTION = ? LIMIT 1 OFFSET ?;');
+        mysqli_stmt_bind_param($queryRep, "ss", $id, $j);
+        mysqli_execute($queryRep);
+        mysqli_stmt_bind_result($queryRep, $bon);
+        mysqli_stmt_fetch($queryRep);
+        ?>
+        <p id=<?php echo "bonOuMauvais" .$i .$j ?>> <?php if($bon==1){
+            echo "bon";
+        }
+        else {
+            echo "mauvais";
+        }
+        ?> </p>
+        <?php
+        mysqli_stmt_close($queryRep);
+
+    }
+}
+?>
+
+<?php /* Ici nous utilisons les mêmes types de fonctions qui permettent de récupérer 
+et afficher les questions et réponses selon les spécialités*/
+?>
+
+<?php 
+function questionsGeneralesUn(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='General' AND DIFFICULTE = 1 ORDER BY Rand() LIMIT 3;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 0;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "question" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
 <?php
-$spe = $_POST["spe"];
-startJeux($spe); ?>
+function questionsGenerales2(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='General' AND DIFFICULTE = 2 ORDER BY Rand() LIMIT 3;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 5;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionGeneralDeux" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+function questionsProgrammationUn(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='Programmation' AND DIFFICULTE = 1 ORDER BY Rand() LIMIT 2;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 3;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionSpeUn" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+function questionsProgrammation2(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='Programmation' AND DIFFICULTE = 2 ORDER BY Rand() LIMIT 2;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 8;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionquestionSpeDeux" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+function questionsBDUn(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='BD' AND DIFFICULTE = 1 ORDER BY Rand() LIMIT 2;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 3;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionsSpeUn" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+function questionsBD2(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='BD' AND DIFFICULTE = 2 ORDER BY Rand() LIMIT 2;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 8;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionsSpeDeux" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+function questionsWebUn(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='Web' AND DIFFICULTE = 1 ORDER BY Rand() LIMIT 2;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 3;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionsSpeUn" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+function questionsWeb2(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='Web' AND DIFFICULTE = 2 ORDER BY Rand() LIMIT 2;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 8;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionsSpeDeux" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+function questionsSystemeUn(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='Systeme' AND DIFFICULTE = 1 ORDER BY Rand() LIMIT 2;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 3;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionSpeUn" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+function questionsSysteme2(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='Systeme' AND DIFFICULTE = 2 ORDER BY Rand() LIMIT 2;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 8;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionSpeDeux" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+function questionsReseauxUn(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='Reseaux' AND DIFFICULTE = 1 ORDER BY Rand() LIMIT 2;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 3;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionSpeUn" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+                        <?php reponses($row["ID_QUESTION"],$i);
+
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+function questionsReseaux2(){
+    $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net", "286642", "ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink, 'quizzbutinfoaix_bd') or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    
+    $queryQuestion = mysqli_query($dbLink, "SELECT * FROM QUESTION WHERE THEME='Reseaux' AND DIFFICULTE = 2 ORDER BY Rand() LIMIT 2;");
+
+    if (!$queryQuestion) {
+        echo 'Impossible d\'exécuter la requête : ', mysqli_error($dbLink);
+    }
+    else
+    {
+        if(mysqli_num_rows($queryQuestion) != 0)
+        {
+            $i = 8;
+            while ($row = mysqli_fetch_assoc($queryQuestion))
+            {
+                $numQuestion = "questionSpeDeux" . $i;   
+                ?>
+
+                    <div class = "questionDifficulte1" id = <?php echo $numQuestion;?>>
+                
+                        <p id = <?php echo "Libelle" . $i;?>> <?php echo $row["LIBELLE"];?> </p>
+                        <p id = <?php echo "Indice" .$i?>> <?php echo $row["INDICE"];?> </p>
+                        <p id = <?php echo "Explication" .$i?>> <?php echo $row["EXPLICATION"];?> </p>
+
+                        <?php
+                            //Reponse et bonneReponse
+                            reponses($row["ID_QUESTION"],$i);
+                        ?>
+                    </div>
+                <?php
+                $i += 1;
+            }
+        }
+    }
+}
+?>
+
+<?php
+/*fonction indiquant quelle fonction de question un deux utiliser, en fonction de la spécialité choisie */
+function questionsSpeUn($spe) {
+    if($spe=="bd" || $spe=="bdMobile") {
+        return questionsBDUn();
+    }
+    else if($spe=="reseaux" || $spe == "reseauxMobile") {
+        return questionsReseauxUn();
+    }
+    else if($spe=="programmation" || $spe == "programmationMobile") {
+        return questionsProgrammationUn();
+    }
+    else if($spe=="web" || $spe == "webMobile") {
+        return questionsWebUn();
+    }
+    else if($spe=="systeme" || $spe == "systemeMobile") {
+        return questionsSystemeUn();
+    }
+}
+?>
+
+
+<?php
+/*fonction indiquant quelle fonction de question niveau deux utiliser, en fonction de la spécialité choisie */
+function questionsSpeDeux($spe) {
+    if($spe=="bd" || $spe=="bdMobile") {
+        return questionsBD2();
+    }
+    else if($spe=="reseaux" || $spe == "reseauxMobile") {
+        return questionsReseaux2();
+    }
+    else if($spe=="programmation" || $spe == "programmationMobile") {
+        return questionsProgrammation2();
+    }
+    else if($spe=="web" || $spe == "webMobile") {
+        return questionsWeb2();
+    }
+    else if($spe=="systeme" || $spe == "systemeMobile") {
+        return questionsSysteme2();
+    }
+}
+?>

@@ -116,6 +116,10 @@ button:active {
 
 /* Page Contact */
 
+.id{
+    padding-bottom: 10px;
+}
+
 .nom_prenom{
     padding-bottom: 10px;
     padding-left: 1.5%;
@@ -252,7 +256,7 @@ button:active {
 
     .presentation_form{
         margin: 0%;
-        width:100%;
+        width:90%;
     }
 
     h1{

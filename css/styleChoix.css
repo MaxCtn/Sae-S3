@@ -351,16 +351,10 @@ body{
     display: none;
 }
 
-#PopupJsp{
-    display: none;
-}
-
 .videoPopUp{
     width: 560px;
     height: 315px;
 }
-
-
 
 /*responsive*/
 
@@ -413,7 +407,7 @@ body{
         width: 80%;
     }
     #popup {
-        left: 10%;
+        left: 5%;
         width: 80%;
     }
     .corpsChoix > p {
@@ -428,7 +422,8 @@ body{
         width: 100%;
     }
     #popup_video{
-        width: 100%;
+        width: 80%;
+        left:8%
     
     }
     .videoPopUp{

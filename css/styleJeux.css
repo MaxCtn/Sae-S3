@@ -130,21 +130,22 @@ button {
 #rep1{
     width:350px;
     background-color: #00B7E9;
+    font-size: 20px;
 }
 #rep2{
     width:350px;
     background-color: #00B7E9;
-
+    font-size: 20px;
 }
 #rep3{
     width:350px;
     background-color: #00B7E9;
-
+    font-size: 20px;
 }
 #rep4{
     width:350px;
     background-color: #00B7E9;
-
+    font-size: 20px;
 }
 
 
@@ -189,7 +190,7 @@ button:active {
     padding-left: 1em;
     padding-top: 0.5em;
     font-family: 'Open Sans Bold';
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 #barreNavBot{
@@ -197,12 +198,6 @@ button:active {
     display:flex;
     justify-content: space-between;
 }
-
-/*#ouvrirBot{
-    border : none;
-    background-color: #303030;
-    border-top-right-radius: 100 px;
-}*/
 
 #titreBot{
     color:white;
@@ -216,9 +211,6 @@ button:active {
     width:15%;
     height: auto;
 }
-
-
-
 
 #logoBoutonBotBas{
    display: none;
@@ -320,10 +312,6 @@ button:active {
     display: none;
 }
 
-#PopupJsp{
-    display: none;
-}
-
 #videoPopupProg{
     width: 560px;
     height: 315px;
@@ -345,11 +333,6 @@ button:active {
 }
 
 #videoPopupWeb{
-    width: 560px;
-    height: 315px;
-}
-
-#videoPopupJsp{
     width: 560px;
     height: 315px;
 }
@@ -396,6 +379,10 @@ a {
     color: #FBBA00;
     width: 250px;
     height: 75px;
+}
+
+#recuperationQuestions {
+    display: none;
 }
 
 
@@ -449,30 +436,34 @@ a {
     #rep3Mobile{
         width:45%;
         height:200%;
-
     }
+
     #rep4Mobile{
         width:45%;
         height:200%;
-
     }
+
     #numMobile{
         font-size: large;
     }
+
     #soumettreMobile{
         background-color: #0071B9;
         color: #FBBA00;
         width: 250px;
         height: 75px;
     }
+
     #blockFinQuizzMobile{
         display: none;
         justify-content: center;
         align-items: center;
     }
+
     #scoreMobile{
         display: none;
     }
+
     #versFinMobile{
         background-color: #0071B9;
         color: #FBBA00;
@@ -491,12 +482,10 @@ a {
         padding-left: 3%;
     }
 
-
     #boiteCarteAideBotMobile{
         margin-right: 40%;
         margin-bottom: 100%;
         justify-content: space-between;
-        
     }
 
     #aideBotMobile{
@@ -534,14 +523,13 @@ a {
         padding-left: 1em;
         padding-top: 0.5em;
         font-family: 'Open Sans Bold';
-        font-size: 1em;
+        font-size: 0.7em;
     }
 
     #popup_video{
         width:100%;
         left:0%
     }
-
 
     #videoPopupProg{
         width: 100%;
@@ -566,13 +554,7 @@ a {
     #videoPopupWeb{
         width: 100%;
         height: 315px;
-    }
-    
-    #videoPopupJsp{
-        width: 100%;
-        height: 315px;
-    }
-    
+    }  
 }
 @media screen and (min-width: 751px){ 
     .affichageMobile{
