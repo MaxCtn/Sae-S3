@@ -16,7 +16,7 @@ function resultatAdmin() { ?>
         <header>
             <div class="entete_info">
                 <div class="rubrique_menu"><a href="../index.php"><img alt="return" id="return" src="../images/maison.png"></a></div>
-                <div class="rubrique_menu"><h1 class="contact_titre">Nous contacter</h1></div>
+                <div class="rubrique_menu"><h1 class="contact_titre">Administrateur</h1></div>
             </div>
         </header>
         <div class="menu">
@@ -27,23 +27,25 @@ function resultatAdmin() { ?>
 
                 <div id = "choix">
                     <button id="supprimer" onclick="afficherSupprimer()">Supprimer?</button>
-                    <br/>
+
                     <button id="modifier" onclick="afficherModifier()">Modifier?</button>
 
                     <button id="inserer" onclick="afficherInserer()">Insérer?</button>
                 </div>
-                <br/>
-                <form id ="formSupprimer" action="supprimer.php" method="POST" style="display:none" >
+
+                <p id = "affichageThemes">Les thèmes possibles sont : General, Programmation, Reseaux, BD, Web et Systeme.</p>
+
+                <form id ="formSupprimer" action="supprimer.php" method="POST">
                         <input id="idQuestion" name="idQuestion" type="text" placeholder="IdQuestion">
                 <div class="valide_form">
                         <input type="submit" name="action" value="valider"/>
                 </div>
                 </form>
 
-                <form id ="formInserer" action="inserer.php" method="POST" style="display:none" >
+                <form id ="formInserer" action="inserer.php" method="POST">
                         <input id="libelle" name="libelle" type="text" placeholder="libelle">
                         <input id="theme" name="theme" type="text" placeholder="theme">
-                        <input id="difficulte" name="difficulte" type="text" placeholder="difficulte">
+                        <input id="difficulte" name="difficulte" type="text" placeholder="difficulte(1 ou 2)">
                         <input id="indice" name="indice" type="text" placeholder="indice">
                         <input id="explication" name="explication" type="text" placeholder="explication">
                         <input id="reponse1" name="reponse1" type="text" placeholder="reponse 1">
@@ -59,11 +61,11 @@ function resultatAdmin() { ?>
                 </div>
                 </form>
 
-                <form id ="formModifier" action="modifier.php" method="POST" style="display:none" >
+                <form id ="formModifier" action="modifier.php" method="POST">
                         <input name="id" type="text" placeholder="id">
                         <input name="libelle" type="text" placeholder="libelle">
                         <input name="theme" type="text" placeholder="theme">
-                        <input name="difficulte" type="text" placeholder="difficulte">
+                        <input name="difficulte" type="text" placeholder="difficulte(1 ou 2)">
                         <input name="indice" type="text" placeholder="indice">
                         <input name="explication" type="text" placeholder="explication">
                         <input name="reponse1" type="text" placeholder="reponse 1">

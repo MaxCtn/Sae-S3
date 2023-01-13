@@ -36,7 +36,7 @@ function startJeux($spe) { ?>
                     <div id="PopupRes"><iframe id="videoPopupRes" src="https://www.youtube.com/embed/R_FrLDrPbis" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     <div id="PopupWeb"><iframe id="videoPopupWeb" src="https://www.youtube.com/embed/SVuBQ5sImxM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     <div id="PopupBd"><iframe id="videoPopupBd" src="https://www.youtube.com/embed/YN_EONlvjjs" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div id="PopupSys"><iframe id="videoPopupSys" src="https://www.youtube.com/embed/8NuYZ0MfimA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div id="PopupSys"><iframe id="videoPopupSys" src="https://www.youtube.com/embed/xD_hwXqluBk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     <div id="jeux" class="valideChoix" onclick="closeScreenJeux()">OK</div>
                 </div>
             </div>
@@ -143,7 +143,7 @@ function startJeux($spe) { ?>
             <div id="blockFinQuizz">
                 <form id="formFinQuizz" method ="post" action="finJeux.php">
                     <input id="score" name="score" type="number" value="0">
-                    <input id="speChoisie" style="display:none" type="text" name="spe" value=<?php echo($spe);?>>
+                    <input id="speChoisie" type="text" name="spe" value=<?php echo($spe);?>>
                     <input id="versFin" type="submit">
                 </form>
             </div>
@@ -154,8 +154,8 @@ function startJeux($spe) { ?>
                         <h3 id ="num">0</h3>
                     </div>
                     <header>
-                        <h1 class="titre">Nom</h1>
-                        <h1>du jeu</h1>
+                        <h1 class="titre">Objectif </h1>
+                        <h1> BUT</h1>
                     </header>
                 </div>
                 <div id="corps_question">
@@ -177,7 +177,7 @@ function startJeux($spe) { ?>
                             
                             <button id="soumettre" onclick="cliqueValiderOuContinuer(this.id)">Valider</button>
                         </div>
-                        <div id="specialite" style="display:none"><?php 
+                        <div id="specialite"><?php 
                         echo $spe; ?></div> 
                     </div>
                 </div>
@@ -338,7 +338,7 @@ function startJeux($spe) { ?>
                             
                             <button id="soumettreMobile" onclick="cliqueValiderOuContinuerMobile(this.id)">Valider</button>
                         </div>
-                        <div id="specialiteMobile" style="display:none"><?php 
+                        <div id="specialiteMobile"><?php 
                         echo $spe; ?></div>
                     </div>
                 </div>
@@ -362,7 +362,7 @@ function startJeux($spe) { ?>
                 <div id="blockFinQuizzMobile">
                 <form id="formFinQuizzMobile" method ="post" action="finJeux.php">
                     <input id="scoreMobile" name="score" type="number" value="0">
-                    <input id="speChoisieMobile" style="display:none" type="text" name="spe" value=<?php echo($spe);?>>
+                    <input id="speChoisieMobile" type="text" name="spe" value=<?php echo($spe);?>>
                     <input id="versFinMobile" type="submit">
                 </form>
             </div>

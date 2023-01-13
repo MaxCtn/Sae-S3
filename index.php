@@ -14,8 +14,8 @@ function start_index() {
         </head>
         <body>
             <header>
-                <h1 class="titre">Nom </h1>
-                <h1> du jeu</h1>
+                <h1 class="titre">Objectif </h1>
+                <h1> BUT</h1>
             </header>
             <div class="menu">
                 <div class="presentation vignets">

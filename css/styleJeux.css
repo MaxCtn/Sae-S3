@@ -14,6 +14,13 @@
     padding: 0px;
 }
 
+#speChoisie{
+    display: none;
+}
+
+#specialite{
+    display: none;
+}
 
 button {
         transition: box-shadow 0.3s ease-in;
@@ -387,6 +394,15 @@ a {
 
 
 @media screen and (max-width: 750px){
+
+    #specialiteMobile{
+        display:none;
+    }
+
+    #speChoisieMobile{
+        display: none;
+    }
+
     .affichage{
         display: none;
     }

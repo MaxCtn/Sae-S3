@@ -92,6 +92,14 @@ a{
     -webkit-animation: fadein 2s; /* Safari et Chrome */
     -o-animation: fadein 2s; /* Opera */
 }
+
+.sources{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+}
+
 @keyframes fadein {
     from {
         opacity:0;

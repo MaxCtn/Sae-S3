@@ -13,11 +13,11 @@ function start_choix_spe() { ?>
     </head>
     <body>
         <header>
-            <a href="../index.php"><h1 class="titre">Nom </h1></a>
-            <a href="../index.php"><h1> du jeu</h1></a>
+            <a href="../index.php"><h1 class="titre">Objectif </h1></a>
+            <a href="../index.php"><h1> BUT</h1></a>
         </header>
         <div class="menu">
-            <div id="specialite" style="display:none">rien</div>
+            <div id="specialite">rien</div>
             <div id="popup">
                 <div class="affiche">
                     <div class="enteteChoix">
@@ -50,10 +50,10 @@ function start_choix_spe() { ?>
                         <div id="PopupProg"><iframe class="videoPopUp" id="videoPopupProg" src="https://www.youtube.com/embed/qSrZPiGcDIQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <div id="PopupRes"><iframe class="videoPopUp" id="videoPopupRes" src="https://www.youtube.com/embed/NDeYCBWGQdE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <div id="PopupWeb"><iframe class="videoPopUp" id="videoPopupWeb" src="https://www.youtube.com/embed/F3qDGKu4Gms" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                        <div id="PopupBd"><iframe class="videoPopUp" id="videoPopupBd" src="https://www.youtube.com/embed/vlCe-vFKiZg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                        <div id="PopupBd"><iframe class="videoPopUp" id="videoPopupBd" src="https://www.youtube.com/embed/d1l7XRS2rHA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <div id="PopupSys"><iframe class="videoPopUp" id="videoPopupSys" src="https://www.youtube.com/embed/1mrZ1jhB8Qc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                         <form method="post" action="jeux.php"> 
-                            <input id="speChoisie" type="text" name="spe" value="nonDefinie" style="display:none">
+                            <input id="speChoisie" type="text" name="spe" value="nonDefinie">
                             <input type="submit" id="jeux" class="valideChoix" value = "Valider mon choix"> 
                         </form>
                     </div>

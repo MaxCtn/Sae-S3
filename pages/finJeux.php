@@ -13,8 +13,8 @@ function start_fin($score,$spe) { ?>
     </head>
     <body>
         <header>
-            <a href="../index.php"><h1 class="titre">Nom </h1></a>
-            <a href="../index.php"><h1> du jeu</h1></a>
+            <a href="../index.php"><h1 class="titre">Objectif </h1></a>
+            <a href="../index.php"><h1> BUT</h1></a>
         </header>
         <div class="planPage">
             <div class="vide">
@@ -29,8 +29,8 @@ function start_fin($score,$spe) { ?>
                 <form class="formStyle" method="post" action="classement.php"> 
                     <div class="pseudoInput">
                         <input class="pseudo" type="text" name="pseudo" placeholder="Pseudo">
-                        <input style="display:none" type="text" name="score" value=<?php echo $score;?>>
-                        <input style="display:none" type="text" name="spe" value=<?php echo $spe;?>>
+                        <input id="score" type="text" name="score" value=<?php echo $score;?>>
+                        <input id="spe" type="text" name="spe" value=<?php echo $spe;?>>
                     </div>
 
                     <div class="validation">
