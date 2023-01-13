@@ -6,11 +6,12 @@ function resultatAdmin() { ?>
     <head>
         <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->
         <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" />
-        <title>BackToBachelor - Nous Contacter</title>  
+        <title>Objectif BUT - Nous Contacter</title>  
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleResultAdmin.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta name="description" content="Page d'administration du jeu Objectif BUT après avoir inséré une question">
     </head>
     <body>
         <header>

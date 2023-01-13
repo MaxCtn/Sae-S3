@@ -49,15 +49,16 @@ function recupGagnant() {
 /*fonction démarrant la page classement*/
 function start_classement($e,$nb) { 
     ?>
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="fr">
         <head>
-            <title>BackToBachelor - Classement</title>  
+            <title>Objectif BUT - Classement</title>  
             <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
             <script src="./javascript.js"></script>
             <link rel="stylesheet" href="../css/styleClassement.css">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+            <meta name="description" content="Page de classement des résultats du jeu Objectif BUT">
         </head>
         <body>
         <header>

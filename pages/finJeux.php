@@ -4,12 +4,13 @@ function start_fin($score,$spe) { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>BackToBachelor - Fin du Quizz</title>
+        <title>Objectif BUT - Fin du Quizz</title>
         <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleFinJeux.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta name="description" content="Page de fin du jeu Objectif BUT dans laquelle le joueur connait son score et peut enregistrer ses données du jeu">
     </head>
     <body>
         <header>

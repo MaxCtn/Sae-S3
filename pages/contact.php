@@ -1,16 +1,17 @@
 <?php 
 /*fonction démarrant la page contact */
 function startContact() { ?>
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="fr">
         <head>
             <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->
-            <title>BackToBachelor - Nous Contacter</title>
+            <title>Objectif BUT - Nous Contacter</title>
             <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
             <script src="../javascript.js"></script>
             <link rel="stylesheet" href="../css/styleContact.css">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+            <meta name="description" content="Page de contact du jeu Objectif BUT">
         </head>
         <body>
             <header>
@@ -64,6 +65,5 @@ function startContact() { ?>
             </div>
         </body>
     </html>
-
 <?php } ?>
 <?php startContact(); ?>

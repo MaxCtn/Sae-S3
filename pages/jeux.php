@@ -16,13 +16,13 @@ function startJeux($spe) { ?>
 <html lang="fr">
     <head>
     <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
-        <title>BackToBachelor - Jeux</title>  
+        <title>Objectif BUT - Jeu</title>  
         <script src="../jeux.js"></script>
         <link rel="stylesheet" href="../css/styleJeux.css">
         <link rel="stylesheet" href="../css/stylePlan.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
+        <meta name="description" content="Page du jeu Objectif BUT après avoir choisi une spécialté">
     </head>
     <body>
         <div id="popup_video">

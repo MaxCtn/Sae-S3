@@ -2,15 +2,16 @@
 /*fonction démarrant la page index*/
 function start_index() { 
     ?>
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="fr">
         <head>
-            <title>BackToBachelor - Accueil</title> 
+            <title>Objectif BUT - Accueil</title> 
             <link rel="icon" type="image/x-icon" href="images/Bachelor.ico" sizes="96x96" /> 
             <script src="./javascript.js"></script>
             <link rel="stylesheet" href="./css/styleAccueil.css">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+            <meta name="description" content="Page d'accueil du jeu Objectif BUT dans laquelle on peut avoir accès à différentes rubriques et visionner une vidéo de présentation">
         </head>
         <body>
             <header>
@@ -48,9 +49,6 @@ function start_index() {
                     <a href="./pages/contact.php"><div class="lien">Nous contacter</div></a>
                 </div> 
             </div>
-        
-
-
         </body>
     </html>
 <?php } ?>

@@ -2,15 +2,16 @@
 /*fonction démarrant la page dans laquelle l'administrateur se connecte*/
 function startCoAdmin() { ?>
     <!DOCTYPE html>
-    <html>
+    <html lang="fr">
         <head>
             <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->
             <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
-            <title>BackToBachelor - Connection Admin</title>  
+            <title>Objectif BUT - Connexion Admin</title>  
             <script src="../javascript.js"></script>
             <link rel="stylesheet" href="../css/styleContact.css">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+            <meta name="description" content="Connexion pour l'administrateur du jeu Objectif BUT">
         </head>
         <body>
             <header>

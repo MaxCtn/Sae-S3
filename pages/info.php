@@ -5,12 +5,13 @@ function startInfo() { ?>
     <html lang="fr">
         <head>
             <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->
-            <title>BackToBachelor - A propos</title>  
+            <title>Objectif BUT - A propos</title>  
             <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
             <script src="../javascript.js"></script>
             <link rel="stylesheet" href="../css/styleInfo.css">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+            <meta name="description" content="Page à propos du jeu Objectif BUT pour en savoir plus sur le projet et pour avoir accès aux sources">
         </head>
         <body>
             <header>

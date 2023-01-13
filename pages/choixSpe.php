@@ -4,12 +4,13 @@ function start_choix_spe() { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <title>BackToBachelor - Choix spécialitée</title>
+        <title>Objectif BUT - Choix d'une spécialité</title>
         <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleChoix.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta name="description" content="Page de choix d'une spécialité pour le jeu Objectif BUT">
     </head>
     <body>
         <header>
