@@ -1,4 +1,22 @@
-/**la classe Question a un enoncé, 4 reponses possibles bonnes ou mauvaises et une aide pour la question*/
+/** Nos variables globales */
+
+var listeQuestionsSpeUn;
+var listeQuestionsSpeDeux;
+
+var listeQuestionsGeneralesUn;
+var listeQuestionsGeneralesDeux;
+
+var quizz;
+var aides;
+var explications;
+var questions;
+
+/** variable permettant l'ouverture et la fermeture de l'onglet du bot d'aide */
+var chat = false;
+
+/* Nos classes */
+
+/** la classe Question a un enoncé, 4 reponses possibles bonnes ou mauvaises et une aide pour la question */
 class Question  { 
     /** @constructor 
     * @param {string} enonce - enonce de la question
@@ -36,7 +54,8 @@ class Question  {
       }
 }
 
-class Quizz { /**la classe Quizz comporte, 4 listes de questions(2 de thème général et 2 de thème choisi comme spécialité)*/
+/** la classe Quizz comporte, 4 listes de questions(2 de thème général et 2 de thème choisi comme spécialité) */
+class Quizz { 
     /** @constructor 
     *   @param {Question[]} questionsGeneraleUn - liste de questions generales niveau 1
     *   @param {Question[]} questionsGeneraleDeux - liste de questions generales niveau 2
@@ -50,34 +69,114 @@ class Quizz { /**la classe Quizz comporte, 4 listes de questions(2 de thème gé
         this.questionsSpeDeux=questionsSpeDeux;
 
     }
+}
+
+/** Nos fonctions */
+
+/** fonction coloriant le bouton contenant la reponse juste */
+function colorieReponseJuste(version,reponseJuste) {
+    if(version == "mobile") {
+        if (document.getElementById('rep1Mobile').innerHTML == reponseJuste) {
+            document.getElementById('rep1Mobile').style.backgroundColor = 'green';
+        }
+         else if (document.getElementById('rep2Mobile').innerHTML == reponseJuste) {
+            document.getElementById('rep2Mobile').style.backgroundColor = 'green';
+        }
+        else if (document.getElementById('rep3Mobile').innerHTML == reponseJuste) {
+            document.getElementById('rep3Mobile').style.backgroundColor = 'green';
+        }
+        else if (document.getElementById('rep4Mobile').innerHTML == reponseJuste) {
+            document.getElementById('rep4Mobile').style.backgroundColor = 'green';                           
+        }
+    } 
+    else if(version == "ordinateur") {
+        if (document.getElementById('rep1').innerHTML == reponseJuste) {
+            document.getElementById('rep1').style.backgroundColor = 'green';
+        }
+         else if (document.getElementById('rep2').innerHTML == reponseJuste) {
+            document.getElementById('rep2').style.backgroundColor = 'green';
+        }
+        else if (document.getElementById('rep3').innerHTML == reponseJuste) {
+            document.getElementById('rep3').style.backgroundColor = 'green';
+        }
+        else if (document.getElementById('rep4').innerHTML == reponseJuste) {
+            document.getElementById('rep4').style.backgroundColor = 'green';                   
+        }
+    }  
     
 }
 
-var listeQuestionsSpeUn;
+/** fonction coloriant le plan selon la nécessité */
+function coloriePlan(plan,coloriage,indiceRep) {
+    if(coloriage == "vert") {
+        let section = 'th[class="section' + indiceRep + '"]';
+        plan.querySelectorAll(section).forEach(
+            function (currentValue) {
+                currentValue.style.backgroundColor = 'green';
+            }
+        );
+    }
+    else if(coloriage == "rouge") {
+        let section = 'th[class="section' + indiceRep + '"]';
+            plan.querySelectorAll(section).forEach(
+                function (currentValue) {
+                currentValue.style.backgroundColor = 'red';
+                }
+            );
+    }
+    else {
+        let section = 'th[class="section' + (indiceRep+1) + '"]';
+        plan.querySelectorAll(section).forEach(
+            function (currentValue) {
+            currentValue.style.backgroundColor = '#00B7E975';
+            }
+        );
+    }
+}
 
-var listeQuestionsSpeDeux;
+/** fonction affichant le pop up du niveau supérieur lorsque le joueur a repondu à la cinquième question */
+function affichagePopupNiveauSuperieur(version) {
+    let specialite='specialite';
+    if(version == 'mobile'){
+        specialite = 'specialiteMobile';
+    }
+    document.getElementById('popup_video').style.display = 'block';
+    if(document.getElementById(specialite).innerHTML == "programmation"){
+        document.getElementById('titre_choixVideo').innerHTML = "La programmation : niveau supérieur";
+        document.getElementById('PopupProg').style.display = 'block';
+        fermerBot();    
+    }
+    if(document.getElementById(specialite).innerHTML == "reseaux"){
+        document.getElementById('titre_choixVideo').innerHTML = "Le réseau : niveau supérieur";
+        document.getElementById('PopupRes').style.display = 'block';
+        fermerBot(); 
+    }
+    if(document.getElementById(specialite).innerHTML == "web"){
+        document.getElementById('titre_choixVideo').innerHTML = "Le web : niveau supérieur";
+        document.getElementById('PopupWeb').style.display = 'block';
+        fermerBot();    
+    }
+    if(document.getElementById(specialite).innerHTML == "bd"){
+        document.getElementById('titre_choixVideo').innerHTML = "Les base de données : niveau supérieur";
+        document.getElementById('PopupBd').style.display = 'block';
+        fermerBot();    
+    }
+    if(document.getElementById(specialite).innerHTML == "systeme"){
+        document.getElementById('titre_choixVideo').innerHTML = "Les systèmes : niveau supérieur";
+        document.getElementById('PopupSys').style.display = 'block';
+        fermerBot();    
+    }
+}
 
-var listeQuestionsGeneralesUn;
-
-var listeQuestionsGeneralesDeux;
-
-var quizz;
-
-var aides;
-
-var explications;
-
-var questions;
-
-function gestionReponseSelectionne(idBoiteRep){ // fonction gestion des la couleur des boutons selectionnés
+/** fonction  gérant la réponse sélectionnée par l'utilisateur avant validation */
+function gestionReponseSelectionne(idBoiteRep){
     var colBout1 = document.getElementById('rep1').style.backgroundColor;
     var colBout2 = document.getElementById('rep2').style.backgroundColor;
     var colBout3 = document.getElementById('rep3').style.backgroundColor;
     var colBout4 = document.getElementById('rep4').style.backgroundColor;
-    var couleurBoutons = [colBout1,colBout2,colBout3,colBout4];
+    var style = document.getElementById(idBoiteRep).style.backgroundColor;
 
-    var s = document.getElementById(idBoiteRep).style.backgroundColor;
-    if(s == "rgb(0, 183, 233)"){
+    if(style == "rgb(0, 183, 233)"){
         if(colBout1 == "rgb(255, 165, 0)")
             document.getElementById('rep1').style.backgroundColor='#00B7E9';
         if(colBout2 == "rgb(255, 165, 0)")
@@ -88,11 +187,10 @@ function gestionReponseSelectionne(idBoiteRep){ // fonction gestion des la coule
             document.getElementById('rep4').style.backgroundColor='#00B7E9';
         document.getElementById(idBoiteRep).style.backgroundColor='#FFA500'; 
     }
-    else if(s == "rgb(255, 165, 0)"){
+    else if(style == "rgb(255, 165, 0)"){
         document.getElementById(idBoiteRep).style.backgroundColor='#00B7E9';
     }
 }
-
 
 /** fonction gérant la réponse validée par l'utilisateur*/
 function valideReponse(){  
@@ -113,26 +211,27 @@ function valideReponse(){
             stringRep = document.getElementById('rep4').innerHTML;
     return stringRep;
 }
-/** fonction permettant de mettre jour l'aide contextuelle après la question précédente*/ 
+
+/** fonction permettant de mettre jour l'aide contextuelle après la question précédente */ 
 function changeAideQuestion(aides, indiceRep){ 
     let aideQuestion = aides[indiceRep];
     document.getElementById('chatBot').innerHTML = aideQuestion;
     document.getElementById('chatBotMobile').innerHTML = aideQuestion;
 }
 
-/** fonction permettant de mettre jour l'explication dans l'aide */ 
+/** fonction permettant de mettre jour l'explication dans le chat du bot */ 
 function changeExplicationQuestion(explications, indiceRep){ 
     let explicationQuestion = explications[indiceRep];
     document.getElementById('chatBot').innerHTML = explicationQuestion;
     document.getElementById('chatBotMobile').innerHTML = explicationQuestion;
 }
 
-/**fonction fermant le pop up de la vidéo après la question 5 */
+/** fonction fermant le pop up de la vidéo après la question 5 */
 function closeScreenJeux() {
     document.getElementById('popup_video').style='none';
 }
 
-/**fonction permettant de mettre à jour la couleur des boutons et le plan selon la réponse validée, on incrémente aussi le score si besoin*/
+/** fonction permettant de mettre à jour la couleur des boutons et le plan selon la réponse validée, on incrémente aussi le score si besoin */
 function cliqueSurValider(reponseJuste, indiceRep) {
     
     /**on aura besoin de changer la couleur du plan */ 
@@ -141,37 +240,10 @@ function cliqueSurValider(reponseJuste, indiceRep) {
     var stringRep = valideReponse();
 
     if(indiceRep == 5){
-        //a changer 
-        document.getElementById('popup_video').style.display = 'block';
-        if(document.getElementById('specialite').innerHTML=="programmation"){
-            document.getElementById('titre_choixVideo').innerHTML = "La programmation : niveau supérieur";
-            document.getElementById('PopupProg').style.display = 'block';
-            fermerBot();    
-        }
-        if(document.getElementById('specialite').innerHTML=="reseaux"){
-            document.getElementById('titre_choixVideo').innerHTML = "Le réseau : niveau supérieur";
-            document.getElementById('PopupRes').style.display = 'block';
-            fermerBot(); 
-        }
-        if(document.getElementById('specialite').innerHTML== "web"){
-            document.getElementById('titre_choixVideo').innerHTML = "Le web : niveau supérieur";
-            document.getElementById('PopupWeb').style.display = 'block';
-            fermerBot();    
-        }
-        if(document.getElementById('specialite').innerHTML=="bd"){
-            document.getElementById('titre_choixVideo').innerHTML = "La base de données : niveau supérieur";
-            document.getElementById('PopupBd').style.display = 'block';
-            fermerBot();    
-        }
-        if(document.getElementById('specialite').innerHTML=="systeme"){
-            document.getElementById('titre_choixVideo').innerHTML = "Les systèmes : niveau supérieur";
-            document.getElementById('PopupSys').style.display = 'block';
-            fermerBot();    
-        }   
+       affichagePopupNiveauSuperieur("ordinateur");
     }
 
     if(indiceRep == 10){
-        //a changer
         document.getElementById('blockQuizz').style.display = 'none';
         document.getElementById('blockFinQuizz').style.display = 'flex';
     }
@@ -180,43 +252,17 @@ function cliqueSurValider(reponseJuste, indiceRep) {
         document.getElementById("score").value = parseInt(document.getElementById("score").value) + 1; 
         if(indiceRep>5) {
             document.getElementById("score").value = parseInt(document.getElementById("score").value) + 1; 
-
         }
         //coloration du plan
         if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
-            let section = 'th[class="section' + indiceRep + '"]';
-            plan.querySelectorAll(section).forEach(
-                function (currentValue) {
-                currentValue.style.backgroundColor = 'green';
-                }
-            );
+            coloriePlan(plan,"vert",indiceRep);
         }
-        //boucle for
-        if (document.getElementById('rep1').innerHTML == reponseJuste) {
-            document.getElementById('rep1').style.backgroundColor = 'green';
-        }
-         else if (document.getElementById('rep2').innerHTML == reponseJuste) {
-            document.getElementById('rep2').style.backgroundColor = 'green';
-        }
-        else if (document.getElementById('rep3').innerHTML == reponseJuste) {
-            document.getElementById('rep3').style.backgroundColor = 'green';
-        }
-        else if (document.getElementById('rep4').innerHTML == reponseJuste) {
-            document.getElementById('rep4').style.backgroundColor = 'green';            
-                
-        }
-
+        colorieReponseJuste("ordinateur",reponseJuste);
     }
     else {
 
-        //coloration du plan
         if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
-            let section = 'th[class="section' + indiceRep + '"]';
-            plan.querySelectorAll(section).forEach(
-                function (currentValue) {
-                currentValue.style.backgroundColor = 'red';
-                }
-            );
+                coloriePlan(plan,"rouge",indiceRep)
         }
 
         document.getElementById('rep2').style.backgroundColor = 'red';
@@ -226,19 +272,13 @@ function cliqueSurValider(reponseJuste, indiceRep) {
         for(let numRep = 1; numRep < 5; ++numRep) {
             if(document.getElementById('rep' + numRep.toString()).innerHTML == reponseJuste) {
                 document.getElementById('rep' + numRep.toString()).style.backgroundColor = 'green';
-            }
-                
+            }                
         }
     }
     
     //coloration de la case sur laquelle est le joueur
     if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
-        let section = 'th[class="section' + (indiceRep+1) + '"]';
-        plan.querySelectorAll(section).forEach(
-            function (currentValue) {
-            currentValue.style.backgroundColor = '#00B7E975';
-        }
-        );
+        coloriePlan(plan,"suivant",indiceRep);
     }
         
     document.getElementById('soumettre').innerHTML ="Continuer";
@@ -249,7 +289,7 @@ function cliqueSurValider(reponseJuste, indiceRep) {
 
 }
 
-/**fonction remettant les boutons a la même couleur,incremente le numero de la question, remet le bot a zero */
+/** fonction remettant les boutons a la même couleur,incrémente le numéro de la question, remet le bot a zero */
 function reinitialiseBoutons(aides,questions,indiceRep) { 
     document.getElementById('rep1').style.backgroundColor = '#00B7E9';
     document.getElementById('rep2').style.backgroundColor = '#00B7E9';
@@ -262,7 +302,7 @@ function reinitialiseBoutons(aides,questions,indiceRep) {
     document.getElementById('rep2').innerHTML = questions[indiceRep].reponseDeux;
     document.getElementById('rep3').innerHTML = questions[indiceRep].reponseTrois;
     document.getElementById('rep4').innerHTML = questions[indiceRep].reponseQuatre;
-    //changeQuestionReponse();
+
     document.getElementById('num').innerHTML = parseInt(document.getElementById('num').innerHTML) + 1;
 
     fermerBot();
@@ -270,7 +310,7 @@ function reinitialiseBoutons(aides,questions,indiceRep) {
     ouvrirBot();
 }
 
-/**fonction qui recupere les questions importees de la base de donnees et constitue un quizz */
+/** fonction qui récupère les questions importées de la base de données et constitue un quizz */
 function creerQuizz() {
     let questionUn=new Question(document.getElementById('Libelle0').innerHTML,document.getElementById('rep00').innerHTML,
     document.getElementById('bonOuMauvais00').innerHTML,document.getElementById('rep01').innerHTML,
@@ -353,13 +393,13 @@ function creerQuizz() {
     listeQuestionsGeneralesDeux=[questionSix,questionSept,questionHuit];
     listeQuestionsSpeDeux=[questionNeuf,questionDix];
 
-    /**creation du quizz */
+    /** creation du quizz */
     quizz = new Quizz(listeQuestionsGeneralesUn,listeQuestionsGeneralesDeux,
     listeQuestionsSpeUn,listeQuestionsSpeDeux);
 
 }
 
-/**fonction attribuant les questions du quizz à une liste de questions */
+/** fonction attribuant les questions du quizz à une liste de questions */
 function attribueQuestions() {
      /** tableau de questions */
     questions = [
@@ -376,7 +416,7 @@ function attribueQuestions() {
         quizz.questionsSpeDeux[1],"fin"];
 } 
 
-/** fonction qui remplit un tableau de chaines de caracteres contenant les aides contextuelles des questions */
+/** fonction qui remplit un tableau de chaines de caractères contenant les aides contextuelles des questions */
 function attribueAides() {
      /** tableau de String contenant les aides contextuelles */
     aides = [quizz.questionsGeneraleUn[0].aideQuestion,
@@ -392,7 +432,7 @@ function attribueAides() {
      quizz.questionsSpeDeux[1].aideQuestion,"fin"];
 }
 
-/** fonction qui remplit un tableau de chaines de caracteres contenant les explications des réponses */
+/** fonction qui remplit un tableau de chaines de caractères contenant les explications des réponses */
 function attribueExplications() {
     /** tableau de String contenant les explications */
     explications = [quizz.questionsGeneraleUn[0].explication,
@@ -408,7 +448,7 @@ function attribueExplications() {
     quizz.questionsSpeDeux[1].explication,"fin"];
 }
 
-/**fonction qui charge les questions, les indices, agit de deux manières, si on a répondu ou non et si on veut continuer*/
+/** fonction qui charge les questions, les indices, agit de deux manières, si on a répondu ou non et si on veut continuer */
 function cliqueValiderOuContinuer(idBoiteRep){ 
     let indiceRep =  parseInt(document.getElementById('num').innerHTML);
 
@@ -454,10 +494,7 @@ function cliqueValiderOuContinuer(idBoiteRep){
     }  
 }
 
-
-/**Partie permettant l'ouverture et la fermeture de l'onglet du bot d'aide */
-let chat = false;
-/**Fonction fermant le bot */
+/** fonction fermant le bot */
 function fermerBot() {
         document.getElementById("logoBoutonBotHaut").style.display = "initial";
         document.getElementById("logoBoutonBotBas").style.display = "none";
@@ -472,7 +509,7 @@ function fermerBot() {
         chat = false;
 }
 
-/**Fonction ouvrant le bot après un certain temps*/
+/** fonction ouvrant le bot après un certain temps */
 function ouvrirBot() {
     setTimeout(function(){
         chat = true;
@@ -489,7 +526,7 @@ function ouvrirBot() {
     
 }
 
-/**Fonction ouvrant le bot directement*/
+/** fonction ouvrant le bot directement */
 function ouvrirBotInstant() {
     chat = true;
     document.getElementById("logoBoutonBotHaut").style.display = "none";
@@ -501,10 +538,9 @@ function ouvrirBotInstant() {
     document.getElementById("logoBoutonBotBasMobile").style.display = "initial"; 
     document.getElementById("chatBotMobile").style.height += 100 + "px";
     document.getElementById("aideBotMobile").style.top = 81 + "%";
-    
 }
 
-/**Fonction qui ouvre ou ferme le bot selon la situation actuelle du bot*/
+/** fonction qui ouvre ou ferme le bot selon la situation actuelle du bot */
 function ouvrirFermerBot () {
     if (chat === true){
         fermerBot();
@@ -513,17 +549,15 @@ function ouvrirFermerBot () {
     }
 }
 
-
-
-function gestionReponseSelectionneMobile(idBoiteRep){ // fonction gestion des la couleur des boutons selectionnés
+/** fonction  gérant la réponse sélectionnée par l'utilisateur avant validation : version mobile */
+function gestionReponseSelectionneMobile(idBoiteRep){
     var colBout1 = document.getElementById('rep1Mobile').style.backgroundColor;
     var colBout2 = document.getElementById('rep2Mobile').style.backgroundColor;
     var colBout3 = document.getElementById('rep3Mobile').style.backgroundColor;
     var colBout4 = document.getElementById('rep4Mobile').style.backgroundColor;
-    var couleurBoutons = [colBout1,colBout2,colBout3,colBout4];
+    var style = document.getElementById(idBoiteRep).style.backgroundColor;
 
-    var s = document.getElementById(idBoiteRep).style.backgroundColor;
-    if(s == "rgb(0, 183, 233)"){
+    if(style == "rgb(0, 183, 233)"){
         if(colBout1 == "rgb(255, 165, 0)")
             document.getElementById('rep1Mobile').style.backgroundColor='#00B7E9';
         if(colBout2 == "rgb(255, 165, 0)")
@@ -534,13 +568,12 @@ function gestionReponseSelectionneMobile(idBoiteRep){ // fonction gestion des la
             document.getElementById('rep4Mobile').style.backgroundColor='#00B7E9';
         document.getElementById(idBoiteRep).style.backgroundColor='#FFA500'; 
     }
-    else if(s == "rgb(255, 165, 0)"){
+    else if(style == "rgb(255, 165, 0)"){
         document.getElementById(idBoiteRep).style.backgroundColor='#00B7E9';
     }
 }
 
-
-/** fonction gérant la réponse validée par l'utilisateur*/
+/** fonction gérant la réponse validée par l'utilisateur */
 function valideReponseMobile(){  
     var colBout1 = document.getElementById('rep1Mobile').style.backgroundColor;
     var colBout2 = document.getElementById('rep2Mobile').style.backgroundColor;
@@ -560,49 +593,18 @@ function valideReponseMobile(){
     return stringRep;
 }
 
-/**fonction permettant de mettre à jour la couleur des boutons et le plan selon la réponse validée, on incrémente aussi le score si besoin*/
+/** fonction permettant de mettre à jour la couleur des boutons et le plan selon la réponse validée, on incrémente aussi le score si besoin */
 function cliqueSurValiderMobile(reponseJuste, indiceRep) {
-    
     /**on aura besoin de changer la couleur du plan */ 
-    let planMobile = document.querySelector('#planMobile');
-    
+    let plan = document.querySelector('#planMobile');
+
     var stringRep = valideReponseMobile();
 
     if(indiceRep == 5){
-        //a changer for et dictionnaires
-        document.getElementById('popup_video').style.display = 'block';
-        if(document.getElementById('specialiteMobile').innerHTML=="programmation"){
-            document.getElementById('titre_choixVideo').innerHTML = "La programmation : niveau supérieur";
-            document.getElementById('PopupProg').style.display = 'block';
-            fermerBot();    
-        }
-        if(document.getElementById('specialiteMobile').innerHTML=="reseaux"){
-            document.getElementById('titre_choixVideo').innerHTML = "Le réseau : niveau supérieur";
-            document.getElementById('PopupRes').style.display = 'block';
-            fermerBot(); 
-        }
-        if(document.getElementById('specialiteMobile').innerHTML== "web"){
-            document.getElementById('titre_choixVideo').innerHTML = "Le web : niveau supérieur";
-            document.getElementById('PopupWeb').style.display = 'block';
-            fermerBot();    
-        }
-        if(document.getElementById('specialiteMobile').innerHTML=="bd"){
-            document.getElementById('titre_choixVideo').innerHTML = "La base de données : niveau supérieur";
-            document.getElementById('PopupBd').style.display = 'block';
-            fermerBot();    
-        }
-        if(document.getElementById('specialiteMobile').innerHTML=="systeme"){
-            document.getElementById('titre_choixVideo').innerHTML = "Les systèmes : niveau supérieur";
-            document.getElementById('PopupSys').style.display = 'block';
-            fermerBot();    
-        }
-          
-            //document.getElementById('titre_choixVideotitre_choixVideo').innerHTML = "Qu'est ce que la programmation ? : https://youtu.be/HSUTiFZB_-Y";
-   
+    affichagePopupNiveauSuperieur('mobile');
     }
 
     if(indiceRep == 10){
-        //a changer
         document.getElementById('blockQuizzMobile').style.display = 'none';
         document.getElementById('blockFinQuizzMobile').style.display = 'flex';
     }
@@ -611,43 +613,17 @@ function cliqueSurValiderMobile(reponseJuste, indiceRep) {
         document.getElementById("scoreMobile").value = parseInt(document.getElementById("scoreMobile").value) + 1; 
         if(indiceRep>5) {
             document.getElementById("scoreMobile").value = parseInt(document.getElementById("scoreMobile").value) + 1; 
-
         }
         //coloration du plan
         if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
-            let section = 'th[class="section' + indiceRep + '"]';
-            planMobile.querySelectorAll(section).forEach(
-                function (currentValue) {
-                currentValue.style.backgroundColor = 'green';
-                }
-            );
+            coloriePlan(plan,"vert",indiceRep)
         }
-        //boucle for
-        if (document.getElementById('rep1Mobile').innerHTML == reponseJuste) {
-            document.getElementById('rep1Mobile').style.backgroundColor = 'green';
-        }
-         else if (document.getElementById('rep2Mobile').innerHTML == reponseJuste) {
-            document.getElementById('rep2Mobile').style.backgroundColor = 'green';
-        }
-        else if (document.getElementById('rep3Mobile').innerHTML == reponseJuste) {
-            document.getElementById('rep3Mobile').style.backgroundColor = 'green';
-        }
-        else if (document.getElementById('rep4Mobile').innerHTML == reponseJuste) {
-            document.getElementById('rep4Mobile').style.backgroundColor = 'green';            
-                
-        }
-
+        colorieReponseJuste("mobile",reponseJuste);
     }
     else {
-
         //coloration du plan
         if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
-            let section = 'th[class="section' + indiceRep + '"]';
-            planMobile.querySelectorAll(section).forEach(
-                function (currentValue) {
-                currentValue.style.backgroundColor = 'red';
-                }
-            );
+            coloriePlan(plan,"rouge",indiceRep)
         }
 
         document.getElementById('rep2Mobile').style.backgroundColor = 'red';
@@ -657,19 +633,12 @@ function cliqueSurValiderMobile(reponseJuste, indiceRep) {
         for(let numRep = 1; numRep < 5; ++numRep) {
             if(document.getElementById('rep' + numRep.toString() + 'Mobile').innerHTML == reponseJuste) {
                 document.getElementById('rep' + numRep.toString() + 'Mobile').style.backgroundColor = 'green';
-            }
-                
+            }               
         }
-    }
-    
+    }  
     //coloration de la case sur laquelle est le joueur
     if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
-        let section = 'th[class="section' + (indiceRep+1) + '"]';
-        planMobile.querySelectorAll(section).forEach(
-            function (currentValue) {
-            currentValue.style.backgroundColor = '#00B7E975';
-        }
-        );
+        coloriePlan(plan,"suivant",indiceRep)
     }
         
     document.getElementById('soumettreMobile').innerHTML ="Continuer";
@@ -679,7 +648,7 @@ function cliqueSurValiderMobile(reponseJuste, indiceRep) {
     }
 }
 
-/**fonction remettant les boutons a la même couleur,incremente le numero de la question, remet le bot a zero */
+/** fonction remettant les boutons a la même couleur,incremente le numero de la question, remet le bot a zero */
 function reinitialiseBoutonsMobile(aides,questions,indiceRep) { 
     document.getElementById('rep1Mobile').style.backgroundColor = '#00B7E9';
     document.getElementById('rep2Mobile').style.backgroundColor = '#00B7E9';
@@ -692,17 +661,15 @@ function reinitialiseBoutonsMobile(aides,questions,indiceRep) {
     document.getElementById('rep2Mobile').innerHTML = questions[indiceRep].reponseDeux;
     document.getElementById('rep3Mobile').innerHTML = questions[indiceRep].reponseTrois;
     document.getElementById('rep4Mobile').innerHTML = questions[indiceRep].reponseQuatre;
-    //changeQuestionReponse();
+
     document.getElementById('numMobile').innerHTML = parseInt(document.getElementById('numMobile').innerHTML) + 1;
 
     fermerBot();
     changeAideQuestion(aides,indiceRep);
     ouvrirBot();
-
-    //if fin du jeu
 }
 
-/**fonction qui crée le quizz(questions etc..), agit de deux manières, si on a répondu ou non et si on veut continuer */
+/** fonction qui crée le quizz(questions etc..), agit de deux manières, si on a répondu ou non et si on veut continuer */
 function cliqueValiderOuContinuerMobile(idBoiteRep){ 
     let indiceRep =  parseInt(document.getElementById('numMobile').innerHTML);
     if(indiceRep == 0) {
@@ -712,10 +679,10 @@ function cliqueValiderOuContinuerMobile(idBoiteRep){
         attribueExplications();
     }
      
-    /**pour la premiere question*/
+    /** pour la premiere question */
     var reponseJuste = "oui"; 
 
-    /**pour les autres questions, on récupère la bonne réponse*/
+    /** pour les autres questions, on récupère la bonne réponse */
     if (indiceRep > 0) {
         for(let i = 1; i<2; ++i) {
             if(questions[indiceRep-1].bonOuMauvaisUn == ' bon ') {
@@ -730,15 +697,13 @@ function cliqueValiderOuContinuerMobile(idBoiteRep){
             if(questions[indiceRep-1].bonOuMauvaisQuatre == ' bon ') {
                 reponseJuste = questions[indiceRep-1].reponseQuatre;
             }
-
         }
-       
     }
 
     if (document.getElementById('soumettreMobile').innerHTML == "Valider") {
         cliqueSurValiderMobile(reponseJuste, indiceRep);
     }
-    /**si on a fini de répondre, on remet tout à zéros */ 
+    /** si on a fini de répondre, on remet tout à zéros */ 
     else {
         reinitialiseBoutonsMobile(aides,questions,indiceRep);    
         if(document.getElementById('popup_video').style.display != 'none') {

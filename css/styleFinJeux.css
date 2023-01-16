@@ -9,6 +9,14 @@
     src: url('../OpenSans/OpenSans-Bold.ttf') format('truetype');
 }
 
+#spe{
+    display: none;
+}
+
+#score{
+    display: none;
+}
+
 html{
     height: 550px;
 }

@@ -176,19 +176,6 @@ button:active {
     font-family: 'Open Sans Regular';
 }
 
-.confirmeForm{
-    display: none;
-    background-color: #0071B9;
-    color: white;
-    position:absolute;
-    top:20%;
-    left:17%;
-    z-index:2;
-    overflow:auto;
-    padding: 10px;
-    justify-content: left;
-}
-
 .vignets {
     
     animation: fadein 2s;
@@ -228,9 +215,6 @@ button:active {
         opacity: 1;
     }
 }
-/* admin */
-
-
 
 /*responsive*/
 

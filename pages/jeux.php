@@ -9,18 +9,20 @@ else{
 
 startJeux($spe); ?>
 
-<?php function startJeux($spe) { ?>
+<?php 
+/*fonction démarrant la page de jeu*/
+function startJeux($spe) { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
     <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
-        <title>BackToBachelor - Jeux</title>  
+        <title>Objectif BUT - Jeu</title>  
         <script src="../jeux.js"></script>
         <link rel="stylesheet" href="../css/styleJeux.css">
         <link rel="stylesheet" href="../css/stylePlan.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
+        <meta name="description" content="Page du jeu Objectif BUT après avoir choisi une spécialté">
     </head>
     <body>
         <div id="popup_video">
@@ -34,7 +36,7 @@ startJeux($spe); ?>
                     <div id="PopupRes"><iframe id="videoPopupRes" src="https://www.youtube.com/embed/R_FrLDrPbis" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     <div id="PopupWeb"><iframe id="videoPopupWeb" src="https://www.youtube.com/embed/SVuBQ5sImxM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     <div id="PopupBd"><iframe id="videoPopupBd" src="https://www.youtube.com/embed/YN_EONlvjjs" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-                    <div id="PopupSys"><iframe id="videoPopupSys" src="https://www.youtube.com/embed/8NuYZ0MfimA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div id="PopupSys"><iframe id="videoPopupSys" src="https://www.youtube.com/embed/xD_hwXqluBk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                     <div id="jeux" class="valideChoix" onclick="closeScreenJeux()">OK</div>
                 </div>
             </div>
@@ -42,7 +44,7 @@ startJeux($spe); ?>
         <div class="affichage">
             <div class="affichage_gauche">
                 <div id = "plan">
-                    <!-- <a id = "lienFreepik" href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a> -->
+                    <!-- source de l'image de couronne <a id = "lienFreepik" href="http://www.freepik.com">Designed by rawpixel.com / Freepik</a> -->
                     <!--2e étage-->
                     <table>
                         <tr>
@@ -141,7 +143,7 @@ startJeux($spe); ?>
             <div id="blockFinQuizz">
                 <form id="formFinQuizz" method ="post" action="finJeux.php">
                     <input id="score" name="score" type="number" value="0">
-                    <input id="speChoisie" style="display:none" type="text" name="spe" value=<?php echo($spe);?>>
+                    <input id="speChoisie" type="text" name="spe" value=<?php echo($spe);?>>
                     <input id="versFin" type="submit">
                 </form>
             </div>
@@ -152,8 +154,8 @@ startJeux($spe); ?>
                         <h3 id ="num">0</h3>
                     </div>
                     <header>
-                        <h1 class="titre">Nom</h1>
-                        <h1>du jeu</h1>
+                        <h1 class="titre">Objectif </h1>
+                        <h1> BUT</h1>
                     </header>
                 </div>
                 <div id="corps_question">
@@ -175,7 +177,7 @@ startJeux($spe); ?>
                             
                             <button id="soumettre" onclick="cliqueValiderOuContinuer(this.id)">Valider</button>
                         </div>
-                        <div id="specialite" style="display:none"><?php 
+                        <div id="specialite"><?php 
                         echo $spe; ?></div> 
                     </div>
                 </div>
@@ -336,7 +338,7 @@ startJeux($spe); ?>
                             
                             <button id="soumettreMobile" onclick="cliqueValiderOuContinuerMobile(this.id)">Valider</button>
                         </div>
-                        <div id="specialiteMobile" style="display:none"><?php 
+                        <div id="specialiteMobile"><?php 
                         echo $spe; ?></div>
                     </div>
                 </div>
@@ -360,7 +362,7 @@ startJeux($spe); ?>
                 <div id="blockFinQuizzMobile">
                 <form id="formFinQuizzMobile" method ="post" action="finJeux.php">
                     <input id="scoreMobile" name="score" type="number" value="0">
-                    <input id="speChoisieMobile" style="display:none" type="text" name="spe" value=<?php echo($spe);?>>
+                    <input id="speChoisieMobile" type="text" name="spe" value=<?php echo($spe);?>>
                     <input id="versFinMobile" type="submit">
                 </form>
             </div>
@@ -419,7 +421,8 @@ function reponses($id,$i){
 }
 ?>
 
-<?php /* Ici nous utilisons les mêmes types de fonctions qui permettent de récupérer 
+<?php 
+/* Ici nous utilisons les mêmes types de fonctions qui permettent de récupérer 
 et afficher les questions et réponses selon les spécialités*/
 ?>
 

@@ -1,20 +1,23 @@
-<?php function resultatAdmin() { ?>
+<?php 
+/*fonction démarrant la page de gestion de l'administrateur*/
+function resultatAdmin() { ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <!--<script src="https://kit.fontawesome.com/8e09982db4.js" crossorigin="anonymous"></script>-->
         <link rel="icon" type="image/x-icon" href="../images/Bachelor.ico" sizes="96x96" /> 
-        <title>BackToBachelor - Nous Contacter</title>  
+        <title>Objectif BUT - Administration</title>  
         <script src="../javascript.js"></script>
         <link rel="stylesheet" href="../css/styleResultAdmin.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta name="description" content="Page d'administration du jeu Objectif BUT après avoir supprimé une question">
     </head>
     <body>
         <header>
             <div class="entete_info">
                 <div class="rubrique_menu"><a href="../index.php"><img alt="return" id="return" src="../images/maison.png"></a></div>
-                <div class="rubrique_menu"><h1 class="contact_titre">Nous contacter</h1></div>
+                <div class="rubrique_menu"><h1 class="contact_titre">Administrateur</h1></div>
             </div>
         </header>
         <div class="menu">
@@ -25,23 +28,26 @@
 
                 <div id = "choix">
                     <button id="supprimer" onclick="afficherSupprimer()">Supprimer?</button>
-                    <br/>
+
                     <button id="modifier" onclick="afficherModifier()">Modifier?</button>
 
                     <button id="inserer" onclick="afficherInserer()">Insérer?</button>
                 </div>
+
+                <p id = "affichageThemes">Les thèmes possibles sont : General, Programmation, Reseaux, BD, Web et Systeme.</p>
+
                 <br/>
-                <form id ="formSupprimer" action="supprimer.php" method="POST" style="display:none" >
+                <form id ="formSupprimer" action="supprimer.php" method="POST">
                         <input id="idQuestion" name="idQuestion" type="text" placeholder="IdQuestion">
                 <div class="valide_form">
                         <input type="submit" name="action" value="valider"/>
                 </div>
                 </form>
 
-                <form id ="formInserer" action="inserer.php" method="POST" style="display:none" >
+                <form id ="formInserer" action="inserer.php" method="POST">
                         <input id="libelle" name="libelle" type="text" placeholder="libelle">
                         <input id="theme" name="theme" type="text" placeholder="theme">
-                        <input id="difficulte" name="difficulte" type="text" placeholder="difficulte">
+                        <input id="difficulte" name="difficulte" type="text" placeholder="difficulte(1 ou 2)">
                         <input id="indice" name="indice" type="text" placeholder="indice">
                         <input id="explication" name="explication" type="text" placeholder="explication">
                         <input id="reponse1" name="reponse1" type="text" placeholder="reponse 1">
@@ -57,11 +63,11 @@
                 </div>
                 </form>
 
-                <form id ="formModifier" action="modifier.php" method="POST" style="display:none" >
+                <form id ="formModifier" action="modifier.php" method="POST">
                         <input name="id" type="text" placeholder="id">
                         <input name="libelle" type="text" placeholder="libelle">
                         <input name="theme" type="text" placeholder="theme">
-                        <input name="difficulte" type="text" placeholder="difficulte">
+                        <input name="difficulte" type="text" placeholder="difficulte(1 ou 2)">
                         <input name="indice" type="text" placeholder="indice">
                         <input name="explication" type="text" placeholder="explication">
                         <input name="reponse1" type="text" placeholder="reponse 1">
@@ -117,6 +123,7 @@ function afficheQuestions() {
 
 
 <?php
+/* il faut avoir posté le formulaire de suppression, même avec des variables vides pour éviter d'arriver sur cette page sans être administrateur*/
 function supprimeQuestion($ID_QUESTION) {
     $dbLink = mysqli_connect("mysql-quizzbutinfoaix.alwaysdata.net","286642","ButInformatiqueBD") or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
     mysqli_select_db($dbLink , 'quizzbutinfoaix_bd')or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
@@ -134,8 +141,9 @@ function supprimeQuestion($ID_QUESTION) {
 ?>
 
 <?php
-    $Id = $_POST["idQuestion"];
-    supprimeQuestion($Id);
-    resultatAdmin();
-    
+    if(isset($_POST["idQuestion"])){
+        $Id = $_POST["idQuestion"];
+        supprimeQuestion($Id);
+        resultatAdmin();
+    }
 ?>
