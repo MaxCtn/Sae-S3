@@ -1,2 +1,7 @@
 # Sae-S3
-Contino/Toureille/Albertelli/Lecomte/Vigon
+
+Membres de l'équipe : Contino/Toureille/Albertelli/Lecomte/Vigon
+
+Lien du site : https://quizzbutinfoaix.alwaysdata.net/
+
+Description des commits détaillé disponible dans la branch WorkDir.
