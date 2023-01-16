@@ -75,7 +75,7 @@ class Quizz {
 
 /** fonction coloriant le bouton contenant la reponse juste */
 function colorieReponseJuste(version,reponseJuste) {
-    if(version = "mobile") {
+    if(version == "mobile") {
         if (document.getElementById('rep1Mobile').innerHTML == reponseJuste) {
             document.getElementById('rep1Mobile').style.backgroundColor = 'green';
         }
@@ -89,7 +89,7 @@ function colorieReponseJuste(version,reponseJuste) {
             document.getElementById('rep4Mobile').style.backgroundColor = 'green';                           
         }
     } 
-    else {
+    else if(version == "ordinateur") {
         if (document.getElementById('rep1').innerHTML == reponseJuste) {
             document.getElementById('rep1').style.backgroundColor = 'green';
         }
@@ -141,27 +141,27 @@ function affichagePopupNiveauSuperieur(version) {
         specialite = 'specialiteMobile';
     }
     document.getElementById('popup_video').style.display = 'block';
-    if(document.getElementById(specialite).innerHTML=="programmation"){
+    if(document.getElementById(specialite).innerHTML == "programmation"){
         document.getElementById('titre_choixVideo').innerHTML = "La programmation : niveau supérieur";
         document.getElementById('PopupProg').style.display = 'block';
         fermerBot();    
     }
-    if(document.getElementById(specialite).innerHTML=="reseaux"){
+    if(document.getElementById(specialite).innerHTML == "reseaux"){
         document.getElementById('titre_choixVideo').innerHTML = "Le réseau : niveau supérieur";
         document.getElementById('PopupRes').style.display = 'block';
         fermerBot(); 
     }
-    if(document.getElementById(specialite).innerHTML== "web"){
+    if(document.getElementById(specialite).innerHTML == "web"){
         document.getElementById('titre_choixVideo').innerHTML = "Le web : niveau supérieur";
         document.getElementById('PopupWeb').style.display = 'block';
         fermerBot();    
     }
-    if(document.getElementById(specialite).innerHTML=="bd"){
+    if(document.getElementById(specialite).innerHTML == "bd"){
         document.getElementById('titre_choixVideo').innerHTML = "Les base de données : niveau supérieur";
         document.getElementById('PopupBd').style.display = 'block';
         fermerBot();    
     }
-    if(document.getElementById(specialite).innerHTML=="systeme"){
+    if(document.getElementById(specialite).innerHTML == "systeme"){
         document.getElementById('titre_choixVideo').innerHTML = "Les systèmes : niveau supérieur";
         document.getElementById('PopupSys').style.display = 'block';
         fermerBot();    
@@ -174,10 +174,9 @@ function gestionReponseSelectionne(idBoiteRep){
     var colBout2 = document.getElementById('rep2').style.backgroundColor;
     var colBout3 = document.getElementById('rep3').style.backgroundColor;
     var colBout4 = document.getElementById('rep4').style.backgroundColor;
-    var couleurBoutons = [colBout1,colBout2,colBout3,colBout4];
+    var style = document.getElementById(idBoiteRep).style.backgroundColor;
 
-    var s = document.getElementById(idBoiteRep).style.backgroundColor;
-    if(s == "rgb(0, 183, 233)"){
+    if(style == "rgb(0, 183, 233)"){
         if(colBout1 == "rgb(255, 165, 0)")
             document.getElementById('rep1').style.backgroundColor='#00B7E9';
         if(colBout2 == "rgb(255, 165, 0)")
@@ -188,7 +187,7 @@ function gestionReponseSelectionne(idBoiteRep){
             document.getElementById('rep4').style.backgroundColor='#00B7E9';
         document.getElementById(idBoiteRep).style.backgroundColor='#FFA500'; 
     }
-    else if(s == "rgb(255, 165, 0)"){
+    else if(style == "rgb(255, 165, 0)"){
         document.getElementById(idBoiteRep).style.backgroundColor='#00B7E9';
     }
 }
@@ -550,15 +549,15 @@ function ouvrirFermerBot () {
     }
 }
 
-function gestionReponseSelectionneMobile(idBoiteRep){ // fonction gestion des la couleur des boutons selectionnés
+/** fonction  gérant la réponse sélectionnée par l'utilisateur avant validation : version mobile */
+function gestionReponseSelectionneMobile(idBoiteRep){
     var colBout1 = document.getElementById('rep1Mobile').style.backgroundColor;
     var colBout2 = document.getElementById('rep2Mobile').style.backgroundColor;
     var colBout3 = document.getElementById('rep3Mobile').style.backgroundColor;
     var colBout4 = document.getElementById('rep4Mobile').style.backgroundColor;
-    var couleurBoutons = [colBout1,colBout2,colBout3,colBout4];
+    var style = document.getElementById(idBoiteRep).style.backgroundColor;
 
-    var s = document.getElementById(idBoiteRep).style.backgroundColor;
-    if(s == "rgb(0, 183, 233)"){
+    if(style == "rgb(0, 183, 233)"){
         if(colBout1 == "rgb(255, 165, 0)")
             document.getElementById('rep1Mobile').style.backgroundColor='#00B7E9';
         if(colBout2 == "rgb(255, 165, 0)")
@@ -569,7 +568,7 @@ function gestionReponseSelectionneMobile(idBoiteRep){ // fonction gestion des la
             document.getElementById('rep4Mobile').style.backgroundColor='#00B7E9';
         document.getElementById(idBoiteRep).style.backgroundColor='#FFA500'; 
     }
-    else if(s == "rgb(255, 165, 0)"){
+    else if(style == "rgb(255, 165, 0)"){
         document.getElementById(idBoiteRep).style.backgroundColor='#00B7E9';
     }
 }
@@ -614,7 +613,6 @@ function cliqueSurValiderMobile(reponseJuste, indiceRep) {
         document.getElementById("scoreMobile").value = parseInt(document.getElementById("scoreMobile").value) + 1; 
         if(indiceRep>5) {
             document.getElementById("scoreMobile").value = parseInt(document.getElementById("scoreMobile").value) + 1; 
-
         }
         //coloration du plan
         if (indiceRep >= 1){ //car indice 0 correspond au didactitiel
